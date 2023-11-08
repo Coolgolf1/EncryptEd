@@ -483,15 +483,80 @@ def lecciones_menu():
         clear_terminal()
         title()
         if lecciones_choice == "1":
-            pass
+            lecciones_cifrados_clasicos()
         elif lecciones_choice == "2":
-            pass
+            lecciones_cifrados_simetricos()
         elif lecciones_choice == "3":
-            pass
+            lecciones_cifrados_asimetricos()
         elif lecciones_choice == "4":
             pass
         elif lecciones_choice == "5":
             return
+
+def lecciones_cifrados_clasicos():
+    while True:
+        lecciones_cifrados_clasicos_choice = input("========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
+        clear_terminal()
+        title()
+        if lecciones_cifrados_clasicos_choice == "1":
+                lecciones_caesar_cipher()
+        elif lecciones_cifrados_clasicos_choice == "2":
+                lecciones_vigenere_cipher()
+        elif lecciones_cifrados_clasicos_choice == "3":
+                lecciones_rail_fence_cipher()
+        elif lecciones_cifrados_clasicos_choice == "4":
+            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
+
+def lecciones_caesar_cipher():
+    pass
+
+def lecciones_vigenere_cipher():
+    pass
+
+def lecciones_rail_fence_cipher():
+    pass
+
+def lecciones_cifrados_simetricos():
+    while True:
+        lecciones_cifrados_simetricos_choice = input("========== Lecciones ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+        clear_terminal()
+        title()
+        if lecciones_cifrados_simetricos_choice == "1":
+                lecciones_AES_cipher()
+        elif lecciones_cifrados_simetricos_choice == "2":
+                lecciones_DES_cipher()
+        elif lecciones_cifrados_simetricos_choice == "3":
+            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
+
+def lecciones_AES_cipher():
+    pass
+
+def lecciones_DES_cipher():
+    pass
+
+def lecciones_cifrados_asimetricos():
+    while True:
+        maquinas_cifrados_simetricos_choice = input("=========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
+        clear_terminal()
+        title()
+        if maquinas_cifrados_simetricos_choice == "1":
+                lecciones_RSA_cipher()
+        elif maquinas_cifrados_simetricos_choice == "2":
+                lecciones_ECC_cipher()
+        elif maquinas_cifrados_simetricos_choice == "3":
+            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
+
+def lecciones_RSA_cipher():
+    pass
+
+def lecciones_ECC_cipher():
+    pass
 
 def retos_menu():
     while True:
@@ -516,7 +581,7 @@ def maquinas_menu():
 
 def maquinas_cifrados_clasicos():
     while True:
-        maquinas_cifrados_clasicos_choice = input("===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
+        maquinas_cifrados_clasicos_choice = input("========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_clasicos_choice == "1":
@@ -532,7 +597,7 @@ def maquinas_cifrados_clasicos():
 
 def maquinas_cifrados_simetricos():
     while True:
-        maquinas_cifrados_simetricos_choice = input("===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+        maquinas_cifrados_simetricos_choice = input("========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_simetricos_choice == "1":
@@ -546,7 +611,7 @@ def maquinas_cifrados_simetricos():
 
 def maquinas_cifrados_asimetricos():
     while True:
-        maquinas_cifrados_simetricos_choice = input("===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
+        maquinas_cifrados_simetricos_choice = input("=========== Máquinas ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_simetricos_choice == "1":
