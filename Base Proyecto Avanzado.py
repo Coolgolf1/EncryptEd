@@ -520,7 +520,7 @@ def lecciones_rail_fence_cipher():
 
 def lecciones_cifrados_simetricos():
     while True:
-        lecciones_cifrados_simetricos_choice = input("========== Lecciones ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+        lecciones_cifrados_simetricos_choice = input("========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if lecciones_cifrados_simetricos_choice == "1":
@@ -540,7 +540,7 @@ def lecciones_DES_cipher():
 
 def lecciones_cifrados_asimetricos():
     while True:
-        maquinas_cifrados_simetricos_choice = input("=========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
+        maquinas_cifrados_simetricos_choice = input("========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_simetricos_choice == "1":
