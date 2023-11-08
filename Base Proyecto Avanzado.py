@@ -1,14 +1,14 @@
 import os
+import binascii
+import base64
 from Crypto.Cipher import AES
 from Crypto.Cipher import DES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Hash import SHA256
-import binascii
 from Crypto.PublicKey import RSA, ECC
 from Crypto.Cipher import PKCS1_OAEP
-import base64
 
 def clear_terminal():                                                    # Esta función limpia la terminal por estética
     os.system("cls") 
