@@ -648,7 +648,7 @@ def lecciones_cifrados_clasicos():
         clear_terminal()
         title()
         if lecciones_cifrados_clasicos_choice == "1":
-            lecciones_introducida_cipher()
+            lecciones_introduccion()
         elif lecciones_cifrados_clasicos_choice == "2":
             lecciones_caesar_cipher()
         elif lecciones_cifrados_clasicos_choice == "3":
@@ -659,6 +659,16 @@ def lecciones_cifrados_clasicos():
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
+
+
+def lecciones_introduccion():
+    print("¡Bienvenido A La Lección Introductorio De EncryptEd")
+    name = get_name()
+    input(f"\nPerfecto! {name}. Vamos a empezar con una introducción a como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
+    clear_terminal()
+    title()
+    print("""Estructura del programa:\n1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
+          \n2. """)
 
 
 def lecciones_caesar_cipher():
