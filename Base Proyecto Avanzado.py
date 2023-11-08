@@ -606,7 +606,7 @@ def main_menu():
         clear_terminal()
         title()
         main_menu_choice = (input(
-            "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Ajustes \n5. Salir\n\nIntroduce tu opción: "))
+            "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Salir\n\nIntroduce tu opción: "))
         clear_terminal()
         title()
         if main_menu_choice == "1":
@@ -616,8 +616,6 @@ def main_menu():
         elif main_menu_choice == "3":
             maquinas_menu()
         elif main_menu_choice == "4":
-            ajustes_menu()
-        elif main_menu_choice == "5":
             exit_programa()
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
@@ -625,50 +623,74 @@ def main_menu():
 
 def lecciones_menu():
     while True:
+        clear_terminal()
+        title()
         lecciones_choice = input(
-            "===== Lecciones =====\n1. Cifrados Clásicos\n2. Cifrados Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
+            "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if lecciones_choice == "1":
-            lecciones_cifrados_clasicos()
+            lecciones_introduccion()
         elif lecciones_choice == "2":
-            lecciones_cifrados_simetricos()
+            lecciones_cifrados_clasicos()
         elif lecciones_choice == "3":
-            lecciones_cifrados_asimetricos()
+            lecciones_cifrados_simetricos()
         elif lecciones_choice == "4":
-            pass
+            lecciones_cifrados_asimetricos()
         elif lecciones_choice == "5":
+            pass
+        elif lecciones_choice == "6":
             return
 
 
 def lecciones_cifrados_clasicos():
     while True:
+        clear_terminal()
+        title()
         lecciones_cifrados_clasicos_choice = input(
-            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Introducción\n2. Cifrado César\n3. Cifrado Vigénere\n4. Cifrado Rail Fence\n5. Atrás\n\nIntroduce tu opción: ")
+            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if lecciones_cifrados_clasicos_choice == "1":
-            lecciones_introduccion()
-        elif lecciones_cifrados_clasicos_choice == "2":
             lecciones_caesar_cipher()
-        elif lecciones_cifrados_clasicos_choice == "3":
+        elif lecciones_cifrados_clasicos_choice == "2":
             lecciones_vigenere_cipher()
-        elif lecciones_cifrados_clasicos_choice == "4":
+        elif lecciones_cifrados_clasicos_choice == "3":
             lecciones_rail_fence_cipher()
-        elif lecciones_cifrados_clasicos_choice == "5":
+        elif lecciones_cifrados_clasicos_choice == "4":
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def lecciones_introduccion():
-    print("¡Bienvenido A La Lección Introductorio De EncryptEd")
+    print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
     name = get_name()
     input(f"\nPerfecto! {name}. Vamos a empezar con una introducción a como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     title()
-    print("""Estructura del programa:\n1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
-          \n2. """)
+    print("""Estructura del programa:\n
+    1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
+    2. Retos: En este apartado, hay retos que puedes intentar usando lo que has aprendido en el apartado de Lecciones.
+    3. Máquina: En la máquina se encuentran todo los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
+    input("Pulsa enter para continuar.")
+    clear_terminal()
+    title()
+    print("¿Qué Es La Criptografía?:\n  Definición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n")
+    print("""Historia De La Criptografía
+    La criptografía es tan antigua como la necesidad de comunicación en secreto. 
+    Desde los tiempos de Julio César, quien usaba un sistema de cifrado por sustitución para proteger sus mensajes, 
+    hasta los jeroglíficos del Egipto faraónico que ocultaban significados solo conocidos por unos pocos, la criptografía ha tenido un papel fundamental en la historia.
+
+    Durante la Segunda Guerra Mundial, la criptografía alcanzó un punto crucial. 
+    La máquina Enigma, utilizada por Alemania para enviar mensajes codificados, fue descifrada por los aliados (con Alan Turing), 
+    lo que contribuyó significativamente al resultado de la guerra. 
+
+    Hoy en día, la criptografía sigue evolucionando con la tecnología digital, asegurando que la comunicación privada,
+    desde correos electrónicos hasta transacciones bancarias, permanezca segura y confidencial.""")
+    input("Pulsa enter para continuar.")
+    clear_terminal()
+    title()
 
 
 def lecciones_caesar_cipher():
@@ -687,6 +709,8 @@ def lecciones_rail_fence_cipher():
 
 def lecciones_cifrados_simetricos():
     while True:
+        clear_terminal()
+        title()
         lecciones_cifrados_simetricos_choice = input(
             "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -711,6 +735,8 @@ def lecciones_DES_cipher():
 
 def lecciones_cifrados_asimetricos():
     while True:
+        clear_terminal()
+        title()
         maquinas_cifrados_simetricos_choice = input(
             "========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -735,6 +761,8 @@ def lecciones_ECC_cipher():
 
 def retos_menu():
     while True:
+        clear_terminal()
+        title()
         retos_choice = input("===== Retos =====\n1. ")
         clear_terminal()
         title()
@@ -743,6 +771,8 @@ def retos_menu():
 
 def maquinas_menu():
     while True:
+        clear_terminal()
+        title()
         maquinas_choice = input(
             "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -759,6 +789,8 @@ def maquinas_menu():
 
 def maquinas_cifrados_clasicos():
     while True:
+        clear_terminal()
+        title()
         maquinas_cifrados_clasicos_choice = input(
             "========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -777,6 +809,8 @@ def maquinas_cifrados_clasicos():
 
 def maquinas_cifrados_simetricos():
     while True:
+        clear_terminal()
+        title()
         maquinas_cifrados_simetricos_choice = input(
             "========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -793,6 +827,8 @@ def maquinas_cifrados_simetricos():
 
 def maquinas_cifrados_asimetricos():
     while True:
+        clear_terminal()
+        title()
         maquinas_cifrados_simetricos_choice = input(
             "=========== Máquinas ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
@@ -805,10 +841,6 @@ def maquinas_cifrados_asimetricos():
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
-
-
-def ajustes_menu():
-    pass
 
 
 def exit_programa():
