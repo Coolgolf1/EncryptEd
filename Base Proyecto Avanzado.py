@@ -22,7 +22,16 @@ def title():                                                             # Esta 
                                                            _|  _|                                      
                                                          _|_|  _|   \n""") 
 
-def caesar_cipher_process(input_text_caesar, caesar_key, modo):      # Es el proceso de encripción/desencripción del cifrado césar
+def get_name():
+    name = str(input("¿Cómo te llamas? "))
+    while len(name) > 12:
+        print("Error. Nombre demasiado largo.")
+        name = str(input("¿Cómo te llamas? "))
+    if name == "" or name in (" "*12):
+        name = "user"
+    return name
+
+def caesar_cipher_process(input_text_caesar, caesar_key, modo):          # Es el proceso de encripción/desencripción del cifrado césar
     caesar_key = int(caesar_key) % 26                                    # Hace módulo de la llave ya que tiene que estar entre 0 y 25
     caesar_original = "abcdefghijklmnopqrstuvwxyz"
     shifted_text_caesar = ""
@@ -510,7 +519,12 @@ def lecciones_cifrados_clasicos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 def lecciones_caesar_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado César!")
+    name = get_name()
+    print("")
+
+    
+    
 
 def lecciones_vigenere_cipher():
     pass
