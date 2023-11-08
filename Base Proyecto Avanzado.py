@@ -378,52 +378,80 @@ def RSA_cipher():
         decrypted_text = RSA_cipher_process(plaintext, RSA_private_key, "D")
         print(f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\nLlave privada: \n\n{RSA_private_key.export_key().decode()}\n")
     input("Pulsa enter para continuar.")
-    
-def generar_ECC_keys():
-    key = ECC.generate(curve="P-256")
-    ECC_private_key = key.export_key(format="PEM")
-    ECC_public_key = key.public_key().export_key(format="PEM")
-    return ECC_private_key, ECC_public_key
 
-def encriptar_ecc(plaintext, ECC_public_key):
-    ECC_key = ECC.generate(curve='P-256')
+def generar_ECC_keys():
+    ECC_key = ECC.generate(curve="P-256")
+    ECC_private_key = ECC_key.export_key(format="PEM")
+    ECC_public_key = ECC_key.public_key().export_key(format="PEM")
+    return ECC_key, ECC_private_key, ECC_public_key
+
+def encriptar_ECC(plaintext, ECC_public_key, ECC_key):
     receptor_key = ECC.import_key(ECC_public_key)
-    compartido = ECC_key.d * receptor_key.pointQ
-    key_derivada = SHA256.new(str(compartido.x).encode()).digest()[:16]
+    shared_key = ECC_key.d * receptor_key.pointQ
+    key_derivada = SHA256.new(str(shared_key.x).encode()).digest()[:16]
     AES_cipher = AES.new(key_derivada, AES.MODE_EAX)
     ciphertext, tag = AES_cipher.encrypt_and_digest(pad(plaintext.encode(), AES.block_size))
     
     return ECC_key.public_key().export_key(format='PEM'), AES_cipher.nonce, tag, ciphertext
 
-def desencriptar_ecc(ECC_public_key, nonce, tag, ciphertext, ECC_private_key):
-    ECC_private_key = ECC.import_key(ECC_private_key)
-    user_key = ECC.import_key(ECC_public_key)
-    compartido = ECC_private_key.d * user_key.pointQ
-    key_derivada = SHA256.new(str(compartido.x).encode()).digest()[:16]
-    AES_cipher = AES.new(key_derivada, AES.MODE_EAX, nonce)
-    data = unpad(AES_cipher.decrypt_and_verify(ciphertext, tag), AES.block_size)
-    return data
+def display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext):
+    nonce_b64 = base64.b64encode(nonce).decode('utf-8')
+    tag_b64 = base64.b64encode(tag).decode('utf-8')
+    ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
+    
+    print("===== Guarda esta información para desencriptar el mensaje posteriormente =====\n")
+    print(f"Llave pública ECC (PEM):\n{ECC_public_key}\n")
+    print(f"Llave privada ECC (PEM):\n{ECC_private_key}\n")
+    print(f"Nonce (Base64):\n{nonce_b64}\n")
+    print(f"Tag (Base64):\n{tag_b64}\n")
+    print(f"Texto encriptado (Base64):\n{ciphertext_b64}\n")
+    print("=============================================================")
+
+def desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key):
+
+    compartido = ECC_private_key.d * ECC_public_key.pointQ
+    llave_derivada = SHA256.new(str(compartido.x).encode()).digest()[:16]
+    
+    AES_cipher = AES.new(llave_derivada, AES.MODE_EAX, nonce)
+    plaintext = unpad(AES_cipher.decrypt_and_verify(ciphertext, tag), AES.block_size)
+    
+    return plaintext
 
 def ECC_cipher():
-    print("=====Cifrado ECC =====")                                      # Printea un menú por estética
+    print("===== Cifrado ECC =====")                                     # Printea un menú por estética
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()       # Pide un input de encriptar/desencriptar
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED": # Mira que la respuesta al input sea válida
         print("Error")
-        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-
-    plaintext = input("Introduce un texto: ").lower()                        
-    while len(plaintext) < 1:                                            
-        print("Error. Introduce un texto válido.")
-        plaintext = input("Introduce un texto: ").lower()
-
-    ECC_private_key, ECC_public_key = generar_ECC_keys()
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()                       
+    
+    ECC_key, ECC_private_key, ECC_public_key = generar_ECC_keys()
     if modo == "E":
-        ECC_public_key, nonce, tag, ciphertext = encriptar_ecc(plaintext, ECC_public_key)
-        print(f"\nEl texto encriptado es: \n{ciphertext}\n\nCifrado ECC\nLlave pública: \n\n{ECC_public_key}\n")
+        plaintext = input("Introduce un texto: ") 
+        while len(plaintext) < 1:                                            
+            print("Error. Introduce un texto válido.")
+            plaintext = input("Introduce un texto: ")
+        ECC_public_key, nonce, tag, ciphertext = encriptar_ECC(plaintext, ECC_public_key, ECC_key)
+        display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
+
     else:
-        decrypted_message = desencriptar_ecc(nonce, tag, ciphertext, ECC_private_key)
+        ciphertext_b64 = input("Introduce el texto encriptado: ")
+        while len(ciphertext_b64) < 1:                                            
+            print("Error. Introduce un texto válido.")
+            ciphertext_b64 = input("Introduce el texto encriptado: ")
+        ECC_public_key_encoded = (input("Introduce la llave pública usada durante la encripción: "))
+        ECC_private_key_encoded = (input("Introduce la llave privada usada durante la encripción: "))
+        nonce_b64 = (input("Introduce el nonce usado durante la encripción: "))
+        tag_b64 = (input("Introduce el tag usado durante la encripción: "))
+        ECC_public_key = ECC.import_key(base64.b64decode(ECC_public_key_encoded))
+        ECC_private_key = ECC.import_key(base64.b64decode(ECC_private_key_encoded))
+        nonce = base64.b64decode(nonce_b64)
+        tag = base64.b64decode(tag_b64)
+        ciphertext = base64.b64decode(ciphertext_b64)
+        decrypted_message = desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
         print(f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\n\nCifrado ECC\nLlave privada: \n\n{ECC_private_key}\n")
     input("Pulsa enter para continuar.")
+    clear_terminal()
+    title()
 
 def main_menu():
     while True:
@@ -500,7 +528,7 @@ def maquinas_cifrados_clasicos():
 
 def maquinas_cifrados_simetricos():
     while True:
-        maquinas_cifrados_simetricos_choice = input("===== Cifrados Clásicos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+        maquinas_cifrados_simetricos_choice = input("===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_simetricos_choice == "1":
