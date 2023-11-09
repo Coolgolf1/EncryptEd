@@ -408,15 +408,15 @@ def DES_cipher_process(plaintext, DES_key, modo):
 
             return binascii.hexlify(iv + ciphertext).decode()
         else:
-            
-                encriptado = binascii.unhexlify(plaintext)
-                iv = encriptado[:DES.block_size]
-                ciphertext = encriptado[DES.block_size:]
 
-                cipher = DES.new(DES_key, DES.MODE_OFB, iv)
-                plaintext_padded = cipher.decrypt(ciphertext)
+            encriptado = binascii.unhexlify(plaintext)
+            iv = encriptado[:DES.block_size]
+            ciphertext = encriptado[DES.block_size:]
 
-                return unpad(plaintext_padded, DES.block_size).decode()
+            cipher = DES.new(DES_key, DES.MODE_OFB, iv)
+            plaintext_padded = cipher.decrypt(ciphertext)
+
+            return unpad(plaintext_padded, DES.block_size).decode()
     except:
         print("Error. La contraseña no es la correcta.")
 
@@ -770,7 +770,8 @@ def lecciones_caesar_cipher():
     while respuesta_1 != "¡muy bien!":
         print("El mensaje no ha sido desencriptado.\n")
         respuesta_1 = input("Introduce el texto desencriptado: ")
-    print(f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
+    print(
+        f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
     input("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
     clear_terminal()
     title()
@@ -799,7 +800,8 @@ def lecciones_caesar_cipher():
         caesar_cipher()
         respuesta = input("Introduce el mensaje desencriptado: ")
         print()
-    print(f"\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡{name}, prepara una ofensiva para vencerles!\n")
+    print(
+        f"\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡{name}, prepara una ofensiva para vencerles!\n")
 
     input("Pulsa enter para continuar.")
     clear_terminal()
@@ -989,10 +991,13 @@ def lecciones_vigenere_cipher():
     while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-    
-    print(f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
-    print(f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
+
+    print(
+        f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
+    print(
+        f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
     input()
+
 
 def lecciones_rail_fence_cipher():
     pass
