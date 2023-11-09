@@ -729,21 +729,21 @@ def lecciones_caesar_cipher():
                      la "b" se encriptaría --> g
                      la "c" se encriptaría --> h
                      ...
-                     la "z" se encriptaría --> e\n""")
-    input("")
-    print(f""""\n\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" 
+                     la "z" se encriptaría --> e""")
+    input()
+    print(f"""\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
           
         Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
-    
-        "Hola Mundo!" --> "mtqf rzsit!"
+
+        "Hola Mundo!" --> "mtqf rzsit!" (llave = 5)
           
-    Para desencriptar: 
+    Para desencriptar el mensaje con llave 5: 
     
         Cogemos el abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
         y shifteamos el abecedario:     [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
           
-        Ahora, en vez de coger las letras del abecedario original --> abecedarios shifteado, como en la encripción,
-        metemos el texto encriptado en el abecedario shifteado --> abecedario original.
+        Ahora, en vez de coger las letras del abecedario original y pasarlas al abecedario shifteado, como se hace en la encripción,
+        metemos el texto encriptado en el abecedario shifteado y sacamos las letras correspondientes del abecedario original.
         
         "m" --> "h"
         "t" --> "o"
@@ -754,11 +754,22 @@ def lecciones_caesar_cipher():
         "!" --> "!"
 
         "mtqf rzsit!" --> "hola mundo!"\n""")
-    input("Debes entender esto muy bien para seguir con el reto. Pulsa enter para ir al reto.")
+    input(f"{name} debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.")
+
+    print("""Reto Manual:\n
+    Texto encriptado: "¡pxb elhq!"
+    Llave: (el segundo número primo)\n
+    Intenta desencriptarlo de forma manual, con una hoja y un boli.\n""")
+    respuesta_1 = input("Introduce el texto desencriptado: ")
+    while respuesta_1 != "¡muy bien!":
+        print("El mensaje no ha sido desencriptado.\n")
+        respuesta_1 = input("Introduce el texto desencriptado: ")
+    print(f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
+    input("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
     clear_terminal()
     title()
-    input("""Reto:\n
-    Imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
+    input(f"""Reto Con Máquina:\n
+    {name}, imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
     Eres un soldado leal al gran general Pompeyo. 
     En medio del caos, interceptas un mensaje de tu adversario, Julio César, destinado a sus legiones. 
     Sabes que descifrar su contenido podría cambiar el curso de la guerra y potencialmente llevar a tu lado a la victoria. 
@@ -782,12 +793,12 @@ def lecciones_caesar_cipher():
         caesar_cipher()
         respuesta = input("Introduce el mensaje desencriptado: ")
         print()
-    print("\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡Prepara una ofensiva para vencerles!\n")
+    print(f"\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡{name}, prepara una ofensiva para vencerles!\n")
 
-    input("Pulsa enter para continuar")
+    input("Pulsa enter para continuar.")
     clear_terminal()
     title()
-    input("¡Ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
+    input(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
 
 
 def lecciones_vigenere_cipher():
