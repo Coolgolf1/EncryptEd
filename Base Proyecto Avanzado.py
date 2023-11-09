@@ -646,26 +646,6 @@ def lecciones_menu():
             return
 
 
-def lecciones_cifrados_clasicos():
-    while True:
-        clear_terminal()
-        title()
-        lecciones_cifrados_clasicos_choice = input(
-            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
-        clear_terminal()
-        title()
-        if lecciones_cifrados_clasicos_choice == "1":
-            lecciones_caesar_cipher()
-        elif lecciones_cifrados_clasicos_choice == "2":
-            lecciones_vigenere_cipher()
-        elif lecciones_cifrados_clasicos_choice == "3":
-            lecciones_rail_fence_cipher()
-        elif lecciones_cifrados_clasicos_choice == "4":
-            return
-        else:
-            input("Error. No es una opción correcta. Pulsa enter para continuar.")
-
-
 def lecciones_introduccion():
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
     name = get_name()
@@ -694,12 +674,41 @@ def lecciones_introduccion():
     input("Pulsa enter para continuar.")
     clear_terminal()
     title()
+    print("""Recomendación:
+        Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
+        
+        Luego, ya entendidos los cifrados clásicos, ¡podrás adentrarte en el mundo de la criptografía simétrica y asimétrica!
+          
+        La criptografía es difícil de entender, pero es preciosa una vez entiendes diferentes partes de ella.
+        Por ello, ¡¡¡no perdamos más tiempo en la introducción y a comenzar!!!\n""")
+    input("Recuerda: deberías empezar por la clase del cifrado César. Pulsa enter para continuar.")
+
+
+def lecciones_cifrados_clasicos():
+    while True:
+        clear_terminal()
+        title()
+        lecciones_cifrados_clasicos_choice = input(
+            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
+        clear_terminal()
+        title()
+        if lecciones_cifrados_clasicos_choice == "1":
+            lecciones_caesar_cipher()
+        elif lecciones_cifrados_clasicos_choice == "2":
+            lecciones_vigenere_cipher()
+        elif lecciones_cifrados_clasicos_choice == "3":
+            lecciones_rail_fence_cipher()
+        elif lecciones_cifrados_clasicos_choice == "4":
+            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def lecciones_caesar_cipher():
     print("¡Bienvenido A La Lección Del Cifrado César!")
     name = get_name()
-    input("\n")
+    input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!")
+    input("""""")
 
 
 def lecciones_vigenere_cipher():
