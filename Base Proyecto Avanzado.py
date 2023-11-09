@@ -666,13 +666,13 @@ def lecciones_cifrados_clasicos():
 def lecciones_introduccion():
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
     name = get_name()
-    input(f"\nPerfecto! {name}. Vamos a empezar con una introducción a como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
+    input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     title()
     print("""Estructura del programa:\n
     1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
     2. Retos: En este apartado, hay retos que puedes intentar usando lo que has aprendido en el apartado de Lecciones.
-    3. Máquina: En la máquina se encuentran todo los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
+    3. Máquina: En la máquina se encuentran todos los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
     input("Pulsa enter para continuar.")
     clear_terminal()
     title()
