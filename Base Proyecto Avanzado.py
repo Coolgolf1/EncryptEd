@@ -802,7 +802,98 @@ def lecciones_caesar_cipher():
 
 
 def lecciones_vigenere_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado Vigénere!")
+    name = get_name()
+    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre este cifrado precioso.\n")
+    input("""Historia Del Cifrado Vigénere\n
+    El cifrado Vigenère, atribuido al francés Blaise de Vigenère en el siglo XVI, representa una evolución del cifrado por sustitución. 
+          
+    A pesar de su complejidad, que le valió el título de "cifrado indescifrable",
+    fue finalmente descifrado en el siglo XIX gracias a los avances en el análisis de frecuencias.
+          
+    Breve explicación: el análisis de frecuencias permite, con gran complejidad matemática,
+    asociar ciertas letras encriptadas a letras del abecedario original para desencriptar el mensaje.""")
+    clear_terminal()
+    title()
+    print("""Teoría\n
+    Este cifrado es un cifrado de sustitución más avanzado que el Cifrado César.
+    
+    A diferencia del cifrado César que utiliza un desplazamiento fijo,
+    el cifrado Vigenère emplea una clave de palabra que corresponde a múltiples desplazamientos a lo largo del mensaje. 
+    Esto significa que la letra a ser sustituida en el mensaje depende de la letra correspondiente de la clave.
+          
+    Para encriptar/desencriptar el mensaje, se necesita una contraseña:
+    Por ejemplo: key (llave) = KEY
+    
+    Primero se repite la llave hasta que tenga la misma longitud que el texto que se va a encriptar/desencriptar:
+    
+    Clave repetida:       keykeykeykeykeykey
+    Mensaje original:     atacar al amanecer
+    Abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+          
+    Para encriptar el mensaje:
+    Desplazamos cada letra del mensaje un número de posiciones en el alfabeto igual al valor (índice) de la letra correspondiente de la clave en el alfabeto. 
+
+    Así que, con nuestra clave 'KEY' y mensaje: "atacar al amanecer":
+                                                                    _                                     _
+                                             abecedario original:  [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+                                                                    _
+            K --> 11 posiciones adelante --> abecedario shifteado: [k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e,f,g,h,i,j] --> k
+                                                                                                          _
+            E --> 5 posiciones adelante  --> abecedario shifteado: [e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d] --> x
+                                                                    _
+            Y --> 25 posiciones adelante --> abecedario shifteado: [y,z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x] --> y
+                                             
+    Mensaje encriptado: kxymep kp ywelogcb""")
+    input()
+    clear_terminal()
+    title()
+    print("""También se puede usar la matriz del Cifrado Vigénere:
+                                                        
+                                                              TEXTO
+                a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
+            -----------------------------------------------------------------------------------------------------------
+            a : a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
+            b : b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a |
+            c : c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b |
+            d : d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c |
+            e : e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d |
+            f : f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e |
+            g : g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f |
+            h : h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g |
+            i : i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h |
+            j : j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i |
+            k : k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j |
+            l : l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k |
+   LLAVE    m : m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l |
+            n : n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m |
+            o : o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n |
+            p : p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o |
+            q : q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p |
+            r : r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q |
+            s : s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r |
+            t : t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s |
+            u : u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t |
+            v : v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u |
+            w : w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v |
+            x : x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w |
+            y : y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x |
+            z : z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y |
+
+    Para usar la matriz tienes que ir letra por letra mirando primero la fila de la LLAVE y cogiendo la columna de TEXTO, sacas la letra encriptada.
+    
+    Con el ejemplo anterior:
+    
+    Llave =   keykeykeykeykeykey
+    Mensaje = atacar al amanecer
+    
+    fila k, columna a --> k
+    fila e, columna t --> x
+    fila y, columna a --> y
+    ...
+    fila y, columna r --> p
+    
+    Mensaje encriptado: kxymep kp ywelogcb""")
 
 
 def lecciones_rail_fence_cipher():
