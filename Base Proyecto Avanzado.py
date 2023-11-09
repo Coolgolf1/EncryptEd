@@ -391,25 +391,28 @@ def DES_cipher_process(plaintext, DES_key, modo):
     if len(DES_key) < 8:
         DES_key = DES_key.ljust(8)
     DES_key = DES_key[:8].encode()
+    try:
+        if modo == "E":
+            iv = get_random_bytes(DES.block_size)
 
-    if modo == "E":
-        iv = get_random_bytes(DES.block_size)
+            # OFB (Using Output Feedback)
+            cipher = DES.new(DES_key, DES.MODE_OFB, iv)
+            plaintext_padded = pad(plaintext.encode(), DES.block_size)
+            ciphertext = cipher.encrypt(plaintext_padded)
 
-        # OFB (Using Output Feedback)
-        cipher = DES.new(DES_key, DES.MODE_OFB, iv)
-        plaintext_padded = pad(plaintext.encode(), DES.block_size)
-        ciphertext = cipher.encrypt(plaintext_padded)
+            return binascii.hexlify(iv + ciphertext).decode()
+        else:
+            
+                encriptado = binascii.unhexlify(plaintext)
+                iv = encriptado[:DES.block_size]
+                ciphertext = encriptado[DES.block_size:]
 
-        return binascii.hexlify(iv + ciphertext).decode()
-    else:
-        encriptado = binascii.unhexlify(plaintext)
-        iv = encriptado[:DES.block_size]
-        ciphertext = encriptado[DES.block_size:]
+                cipher = DES.new(DES_key, DES.MODE_OFB, iv)
+                plaintext_padded = cipher.decrypt(ciphertext)
 
-        cipher = DES.new(DES_key, DES.MODE_OFB, iv)
-        plaintext_padded = cipher.decrypt(ciphertext)
-
-        return unpad(plaintext_padded, DES.block_size).decode()
+                return unpad(plaintext_padded, DES.block_size).decode()
+    except:
+        print("Error. La contraseña no es la correcta.")
 
 
 def DES_cipher():
