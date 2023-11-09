@@ -147,6 +147,9 @@ def vigenere_cipher():
 
     # El cifrado vigénere no acepta mayúsculas
     plaintext = input("Introduce un texto: ").lower()
+    while len(plaintext) < 1:
+        print("Error. Introduce un texto válido.")
+        plaintext = input("Introduce un texto: ").lower()
     vigenere_key = input("Introduce una llave: ").lower()
     # Si la llave es mayor al texto, la acorta para que sea igual de larga que el plaintext o texto
     while len(vigenere_key) > len(plaintext):
@@ -283,6 +286,9 @@ def rail_fence_cipher():
         modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # El plaintext solo acepta minúsculas
     plaintext = input("Introduce un texto: ").lower()
+    while len(plaintext) < 1:
+        print("Error. Introduce un texto válido.")
+        plaintext = input("Introduce un texto: ").lower()
     # El número de railes (llave)
     rails = input("Introduce el número de railes: ")
     # Tiene que ser númerica y además entre 1 y la longitud del texto ya que si no, no sirve de nada (con esto explico las siguientes líneas):
@@ -804,7 +810,7 @@ def lecciones_caesar_cipher():
 def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigénere!")
     name = get_name()
-    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre este cifrado precioso.\n")
+    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     input("""Historia Del Cifrado Vigénere\n
     El cifrado Vigenère, atribuido al francés Blaise de Vigenère en el siglo XVI, representa una evolución del cifrado por sustitución. 
           
@@ -849,7 +855,7 @@ def lecciones_vigenere_cipher():
     clear_terminal()
     title()
     print("""También se puede usar la matriz del Cifrado Vigénere:
-                                                        
+                                                            
                                                               TEXTO
                 a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
             -----------------------------------------------------------------------------------------------------------
@@ -881,7 +887,6 @@ def lecciones_vigenere_cipher():
             z : z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y |
 
     Para usar la matriz tienes que ir letra por letra mirando primero la fila de la LLAVE y cogiendo la columna de TEXTO, sacas la letra encriptada.
-    
     Con el ejemplo anterior:
     
     Llave =   keykeykeykeykeykey
@@ -893,7 +898,98 @@ def lecciones_vigenere_cipher():
     ...
     fila y, columna r --> p
     
-    Mensaje encriptado: kxymep kp ywelogcb""")
+    Mensaje encriptado: kxymep ej ekkrcmip""")
+    input()
+    clear_terminal()
+    title()
+    print("""Para no tener que crear una matriz cada vez que vayamos a encriptar/desencriptar, podemos usar un truco:\n
+        El truco consiste en sumar (restar si se desencripta) los índices de la letra del texto y de la letra de la llave, hacer su módulo 26 y eso dará un número entre 0 y 25.
+        Este número será el índice de la letra encriptada/desencriptada.
+        Los índices de todas las letras (incluyendo llave) se cogerán respecto al abecedario.
+          
+        Usando el ejemplo anterior:
+        
+        Llave =   keykeykeykeykeykey
+        Mensaje = atacar al amanecer
+        
+        indíce texto + índice llave --> índice encriptado
+           (a) 0      +   (k) 10     -->   (k) 10
+           (t) 19     +   (e) 4     -->    (x) 23
+           (a) 0      +   (y) 24     -->   (y) 24
+           (c) 2      +   (k) 10     -->   (m) 12
+           (a) 0      +   (e) 4      -->   (e) 4
+           ...
+           (r) 17     +   (y) 24     -->   (k) 41 (hacemos el módulo 26) --> (p) 15
+        
+        Mensaje encriptado: kxymep ej ekkrcmip
+        
+        Ahora vamos a desencriptarlo:
+          
+          índice encriptado - índice llave --> índice texto
+              (k) 10        -    (k) 10    -->    (a) 0 
+              (x) 23        -    (e) 4     -->    (t) 19
+              (y) 24        -    (y) 24    -->    (a) 0
+              (m) 12        -    (k) 10    -->    (c) 2
+              (e) 4         -    (e) 4     -->    (a) 0
+              ...       
+              (p) 41        -    (y) 24    -->    (r) 17      o bien     (p) 15 - (y) 24 --> (r) -9  (se cuenta desde atrás)""")
+    input()
+    clear_terminal()
+    title()
+    print(f"""\n{"="*100}Ahora vamos a ver un ejemplo:\n
+    Mensaje: "Hola Mundo!"
+    Llave: "hola"
+
+    Primero vamos a encriptar el mensaje usando el truco:
+        llave + letra --> letra encriptada
+          h   +   h   -->   o
+          o   +   o   -->   c
+          l   +   l   -->   w
+          a   +   a   -->   a
+          h   +       -->   
+          o   +   m   -->   a
+          l   +   u   -->   f
+          a   +   m   -->   n
+          h   +   d   -->   k
+          o   +   o   -->   c   
+          l   +   !   -->   !   
+             
+        Mensaje encriptado: ocwa afnkc!
+    
+    Ahora vamos a desencriptarlo sabiendo la llave: "hola" (también veremos que da igual el orden de la resta ya que el índice puede ser negativo también)
+          letra encriptada   -   llave  --> letra desencriptada
+              o (14)         -   h (7)  -->         h (7) 
+              c (2)          -   o (14) -->         o (-12)
+              w (22)         -   l (11) -->         l (11)
+              a (0)          -   a (0)  -->         a (0)
+                             -   h (7)  -->        
+              a (0)          -   o (14) -->         m (-14)       
+              f (5)          -   l (11) -->         u (-3)
+              n (13)         -   a (0)  -->         n (13)
+              k (10)         -   h (7)  -->         d (3)
+              c (2)          -   o (14) -->         o (-12)
+              !              -   l (11) -->         !
+              
+        Mensaje desencriptado: hola mundo!\n""")
+    input("¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
+    clear_terminal()
+    title()
+    print("""Reto Con Máquina:\n
+    Imagina que has interceptado un mensaje cifrado durante una misión de espionaje. Sabes que el mensaje ha sido cifrado usando la clave "VIGENERE". 
+    Sin embargo, el mensaje es confuso y necesitas descifrarlo para completar tu misión con éxito.\n 
+    Aquí está el texto cifrado:
+
+    "xqze wvgmmze ec vugrrgvv mt bpu wzohti. zavieie hiy vrjxmcigvsein."
+
+    ¿Puedes descifrar el mensaje completo?""")
+    vigenere_cipher()
+    respuesta = input("Introduce el mensaje desencriptado: ")
+    while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":
+        print("El mensaje no ha sido desencriptado.\n")
+        respuesta = input("Introduce el texto desencriptado: ")
+    
+    print(f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigénere!")
+    print(f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
 
 
 def lecciones_rail_fence_cipher():
