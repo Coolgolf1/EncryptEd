@@ -100,7 +100,7 @@ def caesar_cipher():
     input("Pulsa enter para continuar.")
 
 
-# Es el proceso de encripción/desencripción del cifrado vigénere
+# Es el proceso de encripción/desencripción del cifrado Vigènere
 def vigenere_cipher_process(plaintext, vigenere_key, modo):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     # Extiende la llave para que pueda encriptar/desencriptar el plaintext entero
@@ -130,22 +130,22 @@ def vigenere_cipher_process(plaintext, vigenere_key, modo):
             cipher_vigenere_text += char
 
     if modo == "E":
-        return f"\nEl texto encriptado es: {cipher_vigenere_text}\nCifrado Vigénere\nLlave: {vigenere_key}\n"
+        return f"\nEl texto encriptado es: {cipher_vigenere_text}\nCifrado Vigènere\nLlave: {vigenere_key}\n"
     elif modo == "D":
-        return f"\nEl texto desencriptado es: {cipher_vigenere_text}\nCifrado Vigénere\nLlave: {vigenere_key}\n"
+        return f"\nEl texto desencriptado es: {cipher_vigenere_text}\nCifrado Vigènere\nLlave: {vigenere_key}\n"
 
 
 # Admite los inputs y genera las respuestas llamando a la funcion vigenere_cipher_process, y los imprime en la terminal
 def vigenere_cipher():
 
-    print("=====Cifrado Vigénere=====")
+    print("=====Cifrado Vigènere=====")
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Hace un check y valida que la opción elegida es correcta
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
         print("Error")
         modo = input("Elige encriptar o desencriptar (E/D): ").upper()
 
-    # El cifrado vigénere no acepta mayúsculas
+    # El cifrado Vigènere no acepta mayúsculas
     plaintext = input("Introduce un texto: ").lower()
     while len(plaintext) < 1:
         print("Error. Introduce un texto válido.")
@@ -696,7 +696,7 @@ def lecciones_cifrados_clasicos():
         clear_terminal()
         title()
         lecciones_cifrados_clasicos_choice = input(
-            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
+            "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if lecciones_cifrados_clasicos_choice == "1":
@@ -808,10 +808,10 @@ def lecciones_caesar_cipher():
 
 
 def lecciones_vigenere_cipher():
-    print("¡Bienvenido A La Lección Del Cifrado Vigénere!")
+    print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     name = get_name()
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
-    input("""Historia Del Cifrado Vigénere\n
+    input("""Historia Del Cifrado Vigènere\n
     El cifrado Vigenère, atribuido al francés Blaise de Vigenère en el siglo XVI, representa una evolución del cifrado por sustitución. 
           
     A pesar de su complejidad, que le valió el título de "cifrado indescifrable",
@@ -854,7 +854,7 @@ def lecciones_vigenere_cipher():
     input()
     clear_terminal()
     title()
-    print("""También se puede usar la matriz del Cifrado Vigénere:
+    print("""También se puede usar la matriz del Cifrado Vigènere:
                                                             
                                                               TEXTO
                 a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
@@ -988,7 +988,7 @@ def lecciones_vigenere_cipher():
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
     
-    print(f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigénere!")
+    print(f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
     print(f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
 
 
@@ -1081,7 +1081,7 @@ def maquinas_cifrados_clasicos():
         clear_terminal()
         title()
         maquinas_cifrados_clasicos_choice = input(
-            "========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigénere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
+            "========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         title()
         if maquinas_cifrados_clasicos_choice == "1":
