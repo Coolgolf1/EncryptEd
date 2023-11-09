@@ -654,13 +654,14 @@ def lecciones_introduccion():
     title()
     print("""Estructura del programa:\n
     1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
+                  En las lecciones encontrarás un poco de historia, teoría con una demostración práctica y un reto final para porerlo en práctica.
     2. Retos: En este apartado, hay retos que puedes intentar usando lo que has aprendido en el apartado de Lecciones.
     3. Máquina: En la máquina se encuentran todos los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
     input("Pulsa enter para continuar.")
     clear_terminal()
     title()
-    print("¿Qué Es La Criptografía?:\n  Definición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n")
-    print("""Historia De La Criptografía
+    print("¿Qué Es La Criptografía?:\n\n  Definición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n")
+    print("""Historia De La Criptografía\n
     La criptografía es tan antigua como la necesidad de comunicación en secreto. 
     Desde los tiempos de Julio César, quien usaba un sistema de cifrado por sustitución para proteger sus mensajes, 
     hasta los jeroglíficos del Egipto faraónico que ocultaban significados solo conocidos por unos pocos, la criptografía ha tenido un papel fundamental en la historia.
@@ -670,17 +671,17 @@ def lecciones_introduccion():
     lo que contribuyó significativamente al resultado de la guerra. 
 
     Hoy en día, la criptografía sigue evolucionando con la tecnología digital, asegurando que la comunicación privada,
-    desde correos electrónicos hasta transacciones bancarias, permanezca segura y confidencial.""")
+    desde correos electrónicos hasta transacciones bancarias, permanezca segura y confidencial.\n""")
     input("Pulsa enter para continuar.")
     clear_terminal()
     title()
-    print("""Recomendación:
-        Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
+    print("""Recomendación:\n
+    Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
         
-        Luego, ya entendidos los cifrados clásicos, ¡podrás adentrarte en el mundo de la criptografía simétrica y asimétrica!
+    Luego, ya entendidos los cifrados clásicos, ¡podrás adentrarte en el mundo de la criptografía simétrica y asimétrica!
           
-        La criptografía es difícil de entender, pero es preciosa una vez entiendes diferentes partes de ella.
-        Por ello, ¡¡¡no perdamos más tiempo en la introducción y a comenzar!!!\n""")
+    La criptografía es difícil de entender, pero es preciosa una vez entiendes diferentes partes de ella.
+    Por ello, ¡¡¡no perdamos más tiempo en la introducción y a comenzar!!!\n""")
     input("Recuerda: deberías empezar por la clase del cifrado César. Pulsa enter para continuar.")
 
 
@@ -707,8 +708,86 @@ def lecciones_cifrados_clasicos():
 def lecciones_caesar_cipher():
     print("¡Bienvenido A La Lección Del Cifrado César!")
     name = get_name()
-    input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!")
-    input("""""")
+    input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
+    input("""Historia Del Cifrado César\n
+    Aunque no es el primer cifrado de la historia, se considera uno de los cifrados más importantes historicamente.
+          
+    El cifrado se usaba para poder mandar mensajes entre divisiones del ejército de forma segura.""")
+    clear_terminal()
+    title()
+    print("""Teoría\n
+    Este cifrado es un cifrado de sustitución, es decir, sustituye (de forma constante) una letra por otra:
+          
+    Para encriptar y desencriptar el mensaje era necesaria una llave númerica, que shiftee el abecedario.
+    Por ejemplo: key (llave) = 5
+
+    key = 5
+    abecedario original:  [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+    abecedario shifteado: [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
+          
+    En este ejemplo: la "a" se encriptaría --> f
+                     la "b" se encriptaría --> g
+                     la "c" se encriptaría --> h
+                     ...
+                     la "z" se encriptaría --> e\n""")
+    input("")
+    print(f""""\n\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" 
+          
+        Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
+    
+        "Hola Mundo!" --> "mtqf rzsit!"
+          
+    Para desencriptar: 
+    
+        Cogemos el abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+        y shifteamos el abecedario:     [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
+          
+        Ahora, en vez de coger las letras del abecedario original --> abecedarios shifteado, como en la encripción,
+        metemos el texto encriptado en el abecedario shifteado --> abecedario original.
+        
+        "m" --> "h"
+        "t" --> "o"
+        "q" --> "l"
+        "f" --> "a"
+        ...
+        "t" --> "o" 
+        "!" --> "!"
+
+        "mtqf rzsit!" --> "hola mundo!"\n""")
+    input("Debes entender esto muy bien para seguir con el reto. Pulsa enter para ir al reto.")
+    clear_terminal()
+    title()
+    input("""Reto:\n
+    Imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
+    Eres un soldado leal al gran general Pompeyo. 
+    En medio del caos, interceptas un mensaje de tu adversario, Julio César, destinado a sus legiones. 
+    Sabes que descifrar su contenido podría cambiar el curso de la guerra y potencialmente llevar a tu lado a la victoria. 
+    El mensaje está codificado con un método desconocido para muchos, pero tú has oído rumores sobre este tipo de cifrado: 
+    El cifrado César, un ingenioso sistema de desplazamiento que el propio César utiliza para comunicarse con sus generales. 
+    Descifrarlo podría ser la clave para anticipar sus movimientos y asegurar la gloria para Pompeyo y para Roma.
+          
+    Junto al mensaje encriptado encuentras una nota, en la que pone: VIII
+          
+    El mensaje encriptado: 
+    "tmoqwv bzma, uwdquqmvbw qvumlqibw pikqi tia kwtqvia lm xpizaitca. zmncmzhw vmkmaizqw mv mt ntivkw lmzmkpw xizi mvdwtdmz it mvmuqow. uivbmvoiv ti nwzuikqwv lm bmabclw piabi ti amvit lm ibiycm. dqkbwzqi maxmzi."
+          
+    ¿Usando la máquina del Cifrado César crees que puedes interceptar el mensaje?
+          
+    Pulsa enter para continuar.""")
+
+    caesar_cipher()
+    respuesta = input("\nIntroduce el mensaje desencriptado: ")
+    while respuesta != "legion tres, movimiento inmediato hacia las colinas de pharsalus. refuerzo necesario en el flanco derecho para envolver al enemigo. mantengan la formacion de testudo hasta la senal de ataque. victoria espera.":
+        print("El mensaje no ha sido desencriptado.\n")
+        caesar_cipher()
+        respuesta = input("Introduce el mensaje desencriptado: ")
+        print()
+    print("\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡Prepara una ofensiva para vencerles!\n")
+
+    input("Pulsa enter para continuar")
+    clear_terminal()
+    title()
+    input("¡Ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
 
 
 def lecciones_vigenere_cipher():
