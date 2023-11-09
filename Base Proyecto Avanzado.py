@@ -913,46 +913,48 @@ def lecciones_vigenere_cipher():
         Mensaje = atacar al amanecer
         
         indíce texto + índice llave --> índice encriptado
-           (a) 0      +   (k) 10     -->   (k) 10
-           (t) 19     +   (e) 4     -->    (x) 23
-           (a) 0      +   (y) 24     -->   (y) 24
-           (c) 2      +   (k) 10     -->   (m) 12
-           (a) 0      +   (e) 4      -->   (e) 4
+           (a) 0     +   (k) 10     -->   (k) 10
+           (t) 19    +   (e) 4      -->   (x) 23
+           (a) 0     +   (y) 24     -->   (y) 24
+           (c) 2     +   (k) 10     -->   (m) 12
+           (a) 0     +   (e) 4      -->   (e) 4
            ...
-           (r) 17     +   (y) 24     -->   (k) 41 (hacemos el módulo 26) --> (p) 15
+           (r) 17    +   (y) 24     -->   (k) 41 (hacemos el módulo 26) --> (p) 15
         
         Mensaje encriptado: kxymep ej ekkrcmip
         
         Ahora vamos a desencriptarlo:
           
-          índice encriptado - índice llave --> índice texto
-              (k) 10        -    (k) 10    -->    (a) 0 
-              (x) 23        -    (e) 4     -->    (t) 19
-              (y) 24        -    (y) 24    -->    (a) 0
-              (m) 12        -    (k) 10    -->    (c) 2
-              (e) 4         -    (e) 4     -->    (a) 0
-              ...       
-              (p) 41        -    (y) 24    -->    (r) 17      o bien     (p) 15 - (y) 24 --> (r) -9  (se cuenta desde atrás)""")
+        índice encriptado - índice llave --> índice texto
+            (k) 10        -    (k) 10    -->    (a) 0 
+            (x) 23        -    (e) 4     -->    (t) 19
+            (y) 24        -    (y) 24    -->    (a) 0
+            (m) 12        -    (k) 10    -->    (c) 2
+            (e) 4         -    (e) 4     -->    (a) 0
+            ...       
+            (p) 41        -    (y) 24    -->    (r) 17      o bien     (p) 15 - (y) 24 --> (r) -9  (se cuenta desde atrás)
+        
+        Mensaje dseencriptado: atacar al amanecer""")
     input()
     clear_terminal()
     title()
-    print(f"""\n{"="*100}Ahora vamos a ver un ejemplo:\n
+    print(f"""\n{"="*100}\nAhora vamos a ver un ejemplo:\n
     Mensaje: "Hola Mundo!"
     Llave: "hola"
 
     Primero vamos a encriptar el mensaje usando el truco:
-        llave + letra --> letra encriptada
-          h   +   h   -->   o
-          o   +   o   -->   c
-          l   +   l   -->   w
-          a   +   a   -->   a
-          h   +       -->   
-          o   +   m   -->   a
-          l   +   u   -->   f
-          a   +   m   -->   n
-          h   +   d   -->   k
-          o   +   o   -->   c   
-          l   +   !   -->   !   
+        llave  +   letra  --> letra encriptada
+        h (7)  +   h (7)  -->   o (14)
+        o (14) +   o (14) -->   c (28) --> c (2)
+        l (11) +   l (11) -->   w (22)
+        a (0)  +   a (0)  -->   a (0)
+        h (7)  +          -->   
+        o (14) +   m (12) -->   a (0)
+        l (11) +   u (20) -->   f (31) --> f (5)
+        a (0)  +   n (13) -->   n (13)
+        h (7)  +   d (3)  -->   k (10)
+        o (14) +   o (14) -->   c (28) --> c (2)
+        l (11) +   !      -->   !   
              
         Mensaje encriptado: ocwa afnkc!
     
@@ -964,7 +966,7 @@ def lecciones_vigenere_cipher():
               a (0)          -   a (0)  -->         a (0)
                              -   h (7)  -->        
               a (0)          -   o (14) -->         m (-14)       
-              f (5)          -   l (11) -->         u (-3)
+              f (5)          -   l (11) -->         u (-6)
               n (13)         -   a (0)  -->         n (13)
               k (10)         -   h (7)  -->         d (3)
               c (2)          -   o (14) -->         o (-12)
@@ -983,14 +985,14 @@ def lecciones_vigenere_cipher():
 
     ¿Puedes descifrar el mensaje completo?""")
     vigenere_cipher()
-    respuesta = input("Introduce el mensaje desencriptado: ")
+    respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
     
     print(f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
     print(f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
-
+    input()
 
 def lecciones_rail_fence_cipher():
     pass
