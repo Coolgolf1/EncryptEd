@@ -545,112 +545,93 @@ def generar_ECC_keys():
     ECC_key = ECC.generate(curve="P-256")
     ECC_private_key = ECC_key.export_key(format="PEM")
     ECC_public_key = ECC_key.public_key().export_key(format="PEM")
-    return ECC_private_key, ECC_public_key
+    return ECC_key, ECC_private_key, ECC_public_key
 
-def cargar_clave_ECC(ruta_archivo):
-    with open(ruta_archivo, "r") as archivo:
-        clave_pem = archivo.read()
-    return ECC.import_key(clave_pem)
 
-def encriptar_ECC(plaintext, ECC_public_key_pem):
+def encriptar_ECC(plaintext, ECC_public_key, ECC_key):
+    receptor_key = ECC.import_key(ECC_public_key)
+    shared_key = ECC_key.d * receptor_key.pointQ
+    key_derivada = SHA256.new(str(shared_key.x).encode()).digest()[:16]
+    AES_cipher = AES.new(key_derivada, AES.MODE_EAX)
+    ciphertext, tag = AES_cipher.encrypt_and_digest(
+        pad(plaintext.encode(), AES.block_size))
 
-        receptor_key = ECC.import_key(ECC_public_key_pem)
-        ephemeral_key = ECC.generate(curve="P-256")
-        ephemeral_public_key_pem = ephemeral_key.public_key().export_key(format="PEM")
-
-        shared_secret = ephemeral_key.d * receptor_key.pointQ
-
-        key_derivada = SHA256.new(str(shared_secret.x).encode()).digest()[:16]
-
-        AES_cipher = AES.new(key_derivada, AES.MODE_EAX)
-        ciphertext, tag = AES_cipher.encrypt_and_digest(pad(plaintext.encode(), AES.block_size))
-
-        return ephemeral_public_key_pem, AES_cipher.nonce, tag, ciphertext
+    return ECC_key.public_key().export_key(format='PEM'), AES_cipher.nonce, tag, ciphertext
 
 
 def display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext):
     nonce_b64 = base64.b64encode(nonce).decode('utf-8')
     tag_b64 = base64.b64encode(tag).decode('utf-8')
     ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
-    with open(f".\Llaves\ECC\public_key.pem", 'w') as key_file:
-        key_file.write(ECC_public_key)
-    with open(f".\Llaves\ECC\private_key.pem", 'w') as key_file:
-        key_file.write(ECC_private_key)
-    with open(f".\Llaves\ECC\\nonce.txt", 'w') as key_file:
-        key_file.write(nonce_b64)
-    with open(f".\Llaves\ECC\\tag.txt", 'w') as key_file:
-        key_file.write(tag_b64)
-    with open(f".\Llaves\ECC\ciphertext.txt", 'w') as key_file:
-        key_file.write(ciphertext_b64)
-    print(ciphertext_b64)
+
+    print("===== Guarda esta información para desencriptar el mensaje posteriormente =====\n")
+    print(f"Llave pública ECC (PEM):\n{ECC_public_key}\n")
+    print(f"Llave privada ECC (PEM):\n{ECC_private_key}\n")
+    print(f"Nonce (Base64):\n{nonce_b64}\n")
+    print(f"Tag (Base64):\n{tag_b64}\n")
+    print(f"Texto encriptado (Base64):\n{ciphertext_b64}\n")
+    print("=============================================================")
 
 
-def desencriptar_ECC(ECC_public_key_pem, nonce, tag, ciphertext, ECC_private_key_pem):
-    try:
-        # Importar claves ECC
-        ECC_private_key = ECC.import_key(ECC_private_key_pem)
-        ECC_public_key = ECC.import_key(ECC_public_key_pem)
+def desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key):
 
-        # Calcular la clave compartida utilizando ECDH
-        shared_secret = ECC_private_key.d * ECC_public_key.pointQ
+    compartido = ECC_private_key.d * ECC_public_key.pointQ
+    llave_derivada = SHA256.new(str(compartido.x).encode()).digest()[:16]
 
-        # Derivar la clave AES del secreto compartido
-        key_derivada = SHA256.new(str(shared_secret.x).encode()).digest()[:16]
+    AES_cipher = AES.new(llave_derivada, AES.MODE_EAX, nonce)
+    plaintext = unpad(AES_cipher.decrypt_and_verify(
+        ciphertext, tag), AES.block_size)
 
-        # Crear cifrador AES y desencriptar
-        AES_cipher = AES.new(key_derivada, AES.MODE_EAX, nonce)
-        plaintext = unpad(AES_cipher.decrypt_and_verify(ciphertext, tag), AES.block_size)
-
-        return plaintext
-    except Exception as e:
-        raise Exception(f"Error en desencriptación: {e}")
+    return plaintext
 
 
 def ECC_cipher():
+    # Printea un menú por estética
     print("===== Cifrado ECC =====")
+    # Pide un input de encriptar/desencriptar
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-
+    # Mira que la respuesta al input sea válida
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
         print("Error")
         modo = input("Elige encriptar o desencriptar (E/D): ").upper()
 
-    ECC_private_key, ECC_public_key = generar_ECC_keys()
-
+    ECC_key, ECC_private_key, ECC_public_key = generar_ECC_keys()
     if modo == "E":
         plaintext = input("Introduce un texto: ")
         while len(plaintext) < 1:
             print("Error. Introduce un texto válido.")
             plaintext = input("Introduce un texto: ")
-
-        ECC_public_key, nonce, tag, ciphertext = encriptar_ECC(plaintext, ECC_public_key)
-        display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
-        print("Se ha guardado la llave privada, la llave pública, el nonce y el tag en archivos.\n")
+        ECC_public_key, nonce, tag, ciphertext = encriptar_ECC(
+            plaintext, ECC_public_key, ECC_key)
+        display_datos_encriptados(
+            ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
 
     else:
         ciphertext_b64 = input("Introduce el texto encriptado: ")
         while len(ciphertext_b64) < 1:
             print("Error. Introduce un texto válido.")
             ciphertext_b64 = input("Introduce el texto encriptado: ")
-
         try:
-            ECC_private_key_encoded = cargar_clave_ECC(".\\Llaves\\ECC\\private_key.pem")
-            ECC_public_key_encoded = cargar_clave_ECC(".\\Llaves\\ECC\\public_key.pem")
-
-            with open(".\\Llaves\\ECC\\nonce.txt", "r") as f:
-                nonce_b64 = f.read()
+            ECC_public_key_encoded = (
+                input("Introduce la llave pública usada durante la encripción: "))
+            ECC_private_key_encoded = (
+                input("Introduce la llave privada usada durante la encripción: "))
+            nonce_b64 = (
+                input("Introduce el nonce usado durante la encripción: "))
+            tag_b64 = (input("Introduce el tag usado durante la encripción: "))
+            ECC_public_key = ECC.import_key(
+                base64.b64decode(ECC_public_key_encoded))
+            ECC_private_key = ECC.import_key(
+                base64.b64decode(ECC_private_key_encoded))
             nonce = base64.b64decode(nonce_b64)
-
-            with open(".\\Llaves\\ECC\\tag.txt", "r") as f:
-                tag_b64 = f.read()
             tag = base64.b64decode(tag_b64)
-
             ciphertext = base64.b64decode(ciphertext_b64)
-
-            decrypted_message = desencriptar_ECC(ECC_public_key_encoded, nonce, tag, ciphertext, ECC_private_key_encoded)
-            print(f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
-
-        except Exception as e:
-            print("Ha ocurrido un error durante la desencriptación: ", e)
+            decrypted_message = desencriptar_ECC(
+                ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
+        except:
+            print("Has introducido algún dato de forma incorrecta.")
 
     input("Pulsa enter para continuar.")
     clear_terminal()
