@@ -53,6 +53,6 @@ def exit_programa():
 if __name__ == "__main__":
     clear_terminal()
     name = get_name()
-    with open(f".\\temp\\nombre.txt", 'wb'):
-        "nombre.txt".write(name)
+    with open(".\\temp\\nombre.txt", "w", encoding="utf-8") as f:
+        f.write(name)
     main_menu()

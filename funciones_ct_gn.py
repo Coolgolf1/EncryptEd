@@ -21,4 +21,4 @@ def get_name():
         name = str(input("¿Cómo te llamas? "))
     if name == "" or name in (" "*12):
         name = "User"
-    return name
+    return (name.capitalize())
