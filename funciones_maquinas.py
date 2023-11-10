@@ -617,6 +617,7 @@ def ECC_cipher():
             plaintext, ECC_public_key, ECC_key)
         guardar_datos_encriptados(
             ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
+        print(f"El texto encriptado es: {ciphertext}")
 
     else:
         try:
@@ -624,7 +625,7 @@ def ECC_cipher():
             ECC_private_key_pem = leer_de_archivo("private_key.pem")
             nonce_b64 = leer_de_archivo("nonce.txt")
             tag_b64 = leer_de_archivo("tag.txt")
-            ciphertext_b64 = leer_de_archivo("ciphertext.txt")
+            ciphertext_b64 = input("Introduce el texto encriptado: ")
 
             ECC_public_key = ECC.import_key(ECC_public_key_pem)
             ECC_private_key = ECC.import_key(ECC_private_key_pem)
