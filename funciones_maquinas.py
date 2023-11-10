@@ -563,16 +563,17 @@ def display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphe
     nonce_b64 = base64.b64encode(nonce).decode('utf-8')
     tag_b64 = base64.b64encode(tag).decode('utf-8')
     ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
-    with open(f".\Llaves\ECC\public_key.pem", 'wb') as key_file:
+    with open(f".\Llaves\ECC\public_key.pem", 'w') as key_file:
         key_file.write(ECC_public_key)
-    with open(f".\Llaves\ECC\private_key.pem", 'wb') as key_file:
+    with open(f".\Llaves\ECC\private_key.pem", 'w') as key_file:
         key_file.write(ECC_private_key)
-    with open(f".\Llaves\ECC\\nonce.txt", 'wb') as key_file:
+    with open(f".\Llaves\ECC\\nonce.txt", 'w') as key_file:
         key_file.write(nonce_b64)
-    with open(f".\Llaves\ECC\\tag.txt", 'wb') as key_file:
+    with open(f".\Llaves\ECC\\tag.txt", 'w') as key_file:
         key_file.write(tag_b64)
-    with open(f".\Llaves\ECC\ciphertext.txt", 'wb') as key_file:
+    with open(f".\Llaves\ECC\ciphertext.txt", 'w') as key_file:
         key_file.write(ciphertext_b64)
+    print(ciphertext_b64)
 
 
 def desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key):
@@ -607,6 +608,7 @@ def ECC_cipher():
             plaintext, ECC_public_key, ECC_key)
         display_datos_encriptados(
             ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
+        print("Se ha guardado la llave privada, la llave pública, el nonce y el tag en archivos.\n")
 
     else:
         ciphertext_b64 = input("Introduce el texto encriptado: ")
