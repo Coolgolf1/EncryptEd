@@ -540,6 +540,7 @@ def RSA_cipher():
     except:
         print("Has introducido algún dato de forma incorrecta.")
 
+
 def guardar_en_archivo(nombre_archivo, datos):
     ruta = f".\\Llaves\\ECC\\{nombre_archivo}"
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
@@ -634,8 +635,10 @@ def ECC_cipher():
             tag = base64.b64decode(tag_b64)
             ciphertext = base64.b64decode(ciphertext_b64)
 
-            decrypted_message = desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
-            print(f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
+            decrypted_message = desencriptar_ECC(
+                ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
         except Exception as e:
             print("Error durante la desencriptación: ", e)
 
