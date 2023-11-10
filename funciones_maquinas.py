@@ -482,12 +482,12 @@ def generar_RSA_keys():
 
 
 def guardar_llave_en_archivo(key, filename):
-    with open(filename, 'wb') as key_file:
+    with open(f".\Llaves\{filename}", 'wb') as key_file:
         key_file.write(key)
 
 
 def cargar_llave_de_archivo(filename):
-    with open(filename, 'rb') as key_file:
+    with open(f".\Llaves\{filename}", 'rb') as key_file:
         return RSA.import_key(key_file.read())
 
 
