@@ -1000,8 +1000,11 @@ def lecciones_vigenere_cipher():
 
 
 def lecciones_rail_fence_cipher():
-    pass
-
+    print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
+    name = get_name()
+    input(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos! 
+    Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
+    
 
 def lecciones_cifrados_simetricos():
     while True:
