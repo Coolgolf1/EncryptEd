@@ -1063,6 +1063,32 @@ def lecciones_rail_fence_cipher():
     
     Luego volvemos a leerlo en el orden de zigzag:
     El texto desencriptado: \n"hola mundo!\"""")
+    input(f"\n¡{name} si entiendes este ejemplo, pulsa entera para ir a los retos!")
+    clear_terminal()
+    title()
+    print("""Reto
+          
+    Imagina que eres un detective en una operación encubierta y has interceptado un mensaje cifrado que podría ser clave para tu investigación. 
+    El mensaje ha sido codificado utilizando el cifrado Rail Fence. 
+    Sin embargo, el remitente ha sido astuto y ha utilizado un número de raíles (líneas) que no conoces. 
+          
+    El texto cifrado es el siguiente: "eeoco mllaenunr ert ne ulea mncrctseele ae"
+
+    Tu misión es descifrar este mensaje. 
+    Sabes que el Rail Fence implica reorganizar las letras en un patrón de zigzag, pero sin conocer el número exacto de raíles, 
+    tendrás que probar diferentes posibilidades. 
+          
+    Piensa en cómo las letras podrían estar distribuidas y cómo se leerían en líneas horizontales para revelar el mensaje oculto.
+
+    ¿Puedes descifrar el mensaje y descubrir cuántos raíles se utilizaron?\n\nPuedes hacerlo manualmente o usando la máquina.""")
+    rail_fence_cipher()
+    respuesta = input("\nIntroduce el mensaje desencriptado: ")
+    while respuesta != "encuentro secreto en el muelle al amanecer":
+        print("El mensaje no ha sido desencriptado.\n")
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
+    print(f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
+    input()
 
 
 def lecciones_cifrados_simetricos():
