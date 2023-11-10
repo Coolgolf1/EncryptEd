@@ -617,7 +617,8 @@ def ECC_cipher():
             plaintext, ECC_public_key, ECC_key)
         guardar_datos_encriptados(
             ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
-        print(f"El texto encriptado es: {ciphertext}")
+        ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
+        print(f"El texto encriptado es: {ciphertext_b64}")
 
     else:
         try:
