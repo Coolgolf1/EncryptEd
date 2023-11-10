@@ -1,4 +1,4 @@
-from funciones_ct import *
+from funciones_ct_gn import *
 from funciones_maquinas import *
 from funciones_lecciones import *
 
@@ -52,10 +52,7 @@ def exit_programa():
 
 if __name__ == "__main__":
     clear_terminal()
-    name = str(input("¿Cómo te llamas? "))
-    while len(name) > 12:
-        print("Error. Nombre demasiado largo.")
-        name = str(input("¿Cómo te llamas? "))
-    if name == "" or name in (" "*12):
-        name = "User"
+    name = get_name()
+    with open(f".\\temp\\nombre.txt", 'wb'):
+        "nombre.txt".write(name)
     main_menu()

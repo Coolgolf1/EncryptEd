@@ -11,7 +11,7 @@ from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA, ECC
 from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
-from funciones_ct import *
+from funciones_ct_gn import *
 
 
 def lecciones_menu():
@@ -35,8 +35,9 @@ def lecciones_menu():
 
 
 def lecciones_introduccion():
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    global name
     input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     f = open(".\Lecciones\intro\estructura_intro.txt", "r", encoding="utf-8")
@@ -76,7 +77,8 @@ def lecciones_cifrados_clasicos():
 
 
 def lecciones_caesar_cipher():
-    global name
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
     print("¡Bienvenido A La Lección Del Cifrado César!")
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
     f = open(".\Lecciones\caesar\historia_caesar.txt", "r", encoding="utf-8")
@@ -128,7 +130,8 @@ def lecciones_caesar_cipher():
 
 def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
-    global name
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     f = open(".\Lecciones\\vigenere\\historia_vigenere.txt",
              "r", encoding="utf-8")
@@ -178,7 +181,8 @@ def lecciones_vigenere_cipher():
 
 def lecciones_rail_fence_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
-    global name
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
     f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
