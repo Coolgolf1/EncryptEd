@@ -1,4 +1,4 @@
-from funciones_ct_gn import *
+from funciones_ct import *
 from funciones_maquinas import *
 from funciones_lecciones import *
 

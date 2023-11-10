@@ -11,7 +11,7 @@ from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA, ECC
 from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
-from funciones_ct_gn import *
+from funciones_ct import *
 
 def lecciones_menu():
     while True:
