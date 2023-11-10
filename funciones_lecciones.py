@@ -13,6 +13,7 @@ from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
 from funciones_ct import *
 
+
 def lecciones_menu():
     while True:
         clear_terminal()
@@ -35,9 +36,7 @@ def lecciones_menu():
 
 def lecciones_introduccion():
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    if count == 0:
-        name = get_name()
-    count = 1
+    global name
     input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     f = open(".\Lecciones\intro\estructura_intro.txt", "r", encoding="utf-8")
@@ -65,11 +64,11 @@ def lecciones_cifrados_clasicos():
             "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_clasicos_choice == "1":
-            lecciones_caesar_cipher(name, count)
+            lecciones_caesar_cipher()
         elif lecciones_cifrados_clasicos_choice == "2":
-            lecciones_vigenere_cipher(name, count)
+            lecciones_vigenere_cipher()
         elif lecciones_cifrados_clasicos_choice == "3":
-            lecciones_rail_fence_cipher(name, count)
+            lecciones_rail_fence_cipher()
         elif lecciones_cifrados_clasicos_choice == "4":
             return
         else:
@@ -77,10 +76,8 @@ def lecciones_cifrados_clasicos():
 
 
 def lecciones_caesar_cipher():
+    global name
     print("¡Bienvenido A La Lección Del Cifrado César!")
-    if count == 0:
-        name = get_name()
-    count = 1
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
     f = open(".\Lecciones\caesar\historia_caesar.txt", "r", encoding="utf-8")
     print(f.read())
@@ -131,9 +128,7 @@ def lecciones_caesar_cipher():
 
 def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
-    if count == 0:
-        name = get_name()
-    count = 1
+    global name
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     f = open(".\Lecciones\\vigenere\\historia_vigenere.txt",
              "r", encoding="utf-8")
@@ -183,9 +178,7 @@ def lecciones_vigenere_cipher():
 
 def lecciones_rail_fence_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
-    if count == 0:
-        name = get_name()
-    count = 1
+    global name
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
     f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
@@ -225,9 +218,9 @@ def lecciones_cifrados_simetricos():
             "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_simetricos_choice == "1":
-            lecciones_AES_cipher(name, count)
+            lecciones_AES_cipher()
         elif lecciones_cifrados_simetricos_choice == "2":
-            lecciones_DES_cipher(name, count)
+            lecciones_DES_cipher()
         elif lecciones_cifrados_simetricos_choice == "3":
             return
         else:

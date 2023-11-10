@@ -532,7 +532,8 @@ def RSA_cipher():
 
         else:
             RSA_private_key = cargar_llave_de_archivo('private_key.pem')
-            decrypted_text = RSA_cipher_process(plaintext, RSA_private_key, "D")
+            decrypted_text = RSA_cipher_process(
+                plaintext, RSA_private_key, "D")
             print(
                 f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\nLlave privada: \n\n{RSA_private_key.export_key().decode()}\n")
         input("Pulsa enter para continuar.")
