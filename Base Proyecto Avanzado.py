@@ -715,28 +715,15 @@ def lecciones_caesar_cipher():
     print("¡Bienvenido A La Lección Del Cifrado César!")
     name = get_name()
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
-    print("""Historia Del Cifrado César\n
-    Aunque no es el primer cifrado de la historia, se considera uno de los cifrados más importantes historicamente.
-          
-    El cifrado se usaba para poder mandar mensajes entre divisiones del ejército de forma segura.""")
+    f = open(".\Lecciones\caesar\historia_caesar.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
     title()
-    print("""Teoría\n
-    Este cifrado es un cifrado de sustitución, es decir, sustituye (de forma constante) una letra por otra:
-          
-    Para encriptar y desencriptar el mensaje era necesaria una llave númerica, que shiftee el abecedario.
-    Por ejemplo: key (llave) = 5
-
-    key = 5
-    abecedario original:  [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-    abecedario shifteado: [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
-          
-    En este ejemplo: la "a" se encriptaría --> f
-                     la "b" se encriptaría --> g
-                     la "c" se encriptaría --> h
-                     ...
-                     la "z" se encriptaría --> e""")
+    f = open(".\Lecciones\caesar\teoria_caesar.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     print(f"""\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
           
