@@ -1002,8 +1002,10 @@ def lecciones_vigenere_cipher():
 def lecciones_rail_fence_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
     name = get_name()
-    input(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos! 
-    Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
+    print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos! 
+          
+Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
+    input()
     print("""Historia Del Cifrado Rail Fence:\n
     El cifrado Rail Fence, conocido también como cifrado de valla o zigzag, se destaca por su simplicidad. 
     
@@ -1081,6 +1083,7 @@ def lecciones_rail_fence_cipher():
     Piensa en cómo las letras podrían estar distribuidas y cómo se leerían en líneas horizontales para revelar el mensaje oculto.
 
     ¿Puedes descifrar el mensaje y descubrir cuántos raíles se utilizaron?\n\nPuedes hacerlo manualmente o usando la máquina.""")
+    input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "encuentro secreto en el muelle al amanecer":
