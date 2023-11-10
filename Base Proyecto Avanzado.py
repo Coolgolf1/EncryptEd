@@ -142,7 +142,7 @@ def lecciones_caesar_cipher():
     print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
     input()
     clear_terminal()
-    f = open(".\Lecciones\caesar\\ejemplo_caesar.txt", "r", encoding="utf-8")
+    f = open(".\Lecciones\caesar\\reto_caesar.txt", "r", encoding="utf-8")
     print(f"""Reto Con Máquina:\n\n{name}, {f.read()}""")
     f.close()
     input("Pulsa enter para continuar.")
