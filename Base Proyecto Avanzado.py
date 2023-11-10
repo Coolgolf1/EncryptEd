@@ -834,14 +834,9 @@ def lecciones_vigenere_cipher():
     input("\n¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
     clear_terminal()
     title()
-    print("""Reto Con Máquina:\n
-    Imagina que has interceptado un mensaje cifrado durante una misión de espionaje. Sabes que el mensaje ha sido cifrado usando la clave "VIGENERE". 
-    Sin embargo, el mensaje es confuso y necesitas descifrarlo para completar tu misión con éxito.\n 
-    Aquí está el texto cifrado:
-
-    "xqze wvgmmze ec vugrrgvv mt bpu wzohti. zavieie hiy vrjxmcigvsein."
-
-    ¿Puedes descifrar el mensaje completo?""")
+    f = open(".\Lecciones\\vigenere\\reto_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":

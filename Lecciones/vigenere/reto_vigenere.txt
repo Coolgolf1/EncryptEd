@@ -1,0 +1,9 @@
+Reto Con Máquina:
+
+    Imagina que has interceptado un mensaje cifrado durante una misión de espionaje. Sabes que el mensaje ha sido cifrado usando la clave "VIGENERE". 
+    Sin embargo, el mensaje es confuso y necesitas descifrarlo para completar tu misión con éxito.\n 
+    Aquí está el texto cifrado:
+
+    "xqze wvgmmze ec vugrrgvv mt bpu wzohti. zavieie hiy vrjxmcigvsein."
+
+    ¿Puedes descifrar el mensaje completo?
