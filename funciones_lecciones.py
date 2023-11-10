@@ -185,6 +185,7 @@ def lecciones_rail_fence_cipher():
     name = f.read()
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
+    clear_terminal()
     f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
@@ -219,7 +220,7 @@ def lecciones_cifrados_simetricos():
     while True:
         clear_terminal()
         lecciones_cifrados_simetricos_choice = input(
-            "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+            "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-256\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_simetricos_choice == "1":
             lecciones_AES_cipher()
@@ -232,7 +233,34 @@ def lecciones_cifrados_simetricos():
 
 
 def lecciones_AES_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado AES!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, ahora empieza lo interesante! Vas a aprender mucho sobre el cifrado más importante del mundo, usado en todo tipo de sistemas digitales y de comunicación, como WhatsApp.\n
+Bienvenido al corazón de la seguridad en internet.""")
+    input()
+    f = open(".\\temp\\historia_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\\temp\\teoria_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"{name}, es bastante abstracto, por lo que es normal si no lo entiendes de primeras.\n\nVuelve a leerlo hasta que entiendas la estructura.")
+    input()
+    clear_terminal()
+    f = open(".\\temp\\ejemplo_encrypt_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\\temp\\ejemplo_decrypt_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
 
 
 def lecciones_DES_cipher():
