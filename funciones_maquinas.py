@@ -482,12 +482,12 @@ def generar_RSA_keys():
 
 
 def guardar_llave_en_archivo(key, filename):
-    with open(f".\Llaves\{filename}", 'wb') as key_file:
+    with open(f".\Llaves\RSA\{filename}", 'wb') as key_file:
         key_file.write(key)
 
 
 def cargar_llave_de_archivo(filename):
-    with open(f".\Llaves\{filename}", 'rb') as key_file:
+    with open(f".\Llaves\RSA\{filename}", 'rb') as key_file:
         return RSA.import_key(key_file.read())
 
 
@@ -563,14 +563,16 @@ def display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphe
     nonce_b64 = base64.b64encode(nonce).decode('utf-8')
     tag_b64 = base64.b64encode(tag).decode('utf-8')
     ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
-
-    print("===== Guarda esta información para desencriptar el mensaje posteriormente =====\n")
-    print(f"Llave pública ECC (PEM):\n{ECC_public_key}\n")
-    print(f"Llave privada ECC (PEM):\n{ECC_private_key}\n")
-    print(f"Nonce (Base64):\n{nonce_b64}\n")
-    print(f"Tag (Base64):\n{tag_b64}\n")
-    print(f"Texto encriptado (Base64):\n{ciphertext_b64}\n")
-    print("=============================================================")
+    with open(f".\Llaves\ECC\public_key.pem", 'wb') as key_file:
+        key_file.write(ECC_public_key)
+    with open(f".\Llaves\ECC\private_key.pem", 'wb') as key_file:
+        key_file.write(ECC_private_key)
+    with open(f".\Llaves\ECC\\nonce.txt", 'wb') as key_file:
+        key_file.write(nonce_b64)
+    with open(f".\Llaves\ECC\\tag.txt", 'wb') as key_file:
+        key_file.write(tag_b64)
+    with open(f".\Llaves\ECC\ciphertext.txt", 'wb') as key_file:
+        key_file.write(ciphertext_b64)
 
 
 def desencriptar_ECC(ECC_public_key, nonce, tag, ciphertext, ECC_private_key):
@@ -612,13 +614,18 @@ def ECC_cipher():
             print("Error. Introduce un texto válido.")
             ciphertext_b64 = input("Introduce el texto encriptado: ")
         try:
-            ECC_public_key_encoded = (
-                input("Introduce la llave pública usada durante la encripción: "))
-            ECC_private_key_encoded = (
-                input("Introduce la llave privada usada durante la encripción: "))
-            nonce_b64 = (
-                input("Introduce el nonce usado durante la encripción: "))
-            tag_b64 = (input("Introduce el tag usado durante la encripción: "))
+            f = open(".\Llaves\ECC\public_key.pem", "r", encoding="utf-8")
+            ECC_public_key_encoded = f.read()
+            f.close()
+            f = open(".\Llaves\ECC\private_key.pem", "r", encoding="utf-8")
+            ECC_private_key_encoded = f.read()
+            f.close()
+            f = open(".\Llaves\ECC\\nonce.txt", "r", encoding="utf-8")
+            nonce_b64 = f.read()
+            f.close()
+            f = open(".\Llaves\ECC\\tag.txt", "r", encoding="utf-8")
+            tag_b64 = f.read()
+            f.close()
             ECC_public_key = ECC.import_key(
                 base64.b64decode(ECC_public_key_encoded))
             ECC_private_key = ECC.import_key(
