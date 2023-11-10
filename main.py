@@ -3,14 +3,14 @@ from funciones_maquinas import *
 from funciones_lecciones import *
 
 
-def main_menu(name, count):
+def main_menu():
     while True:
         clear_terminal()
         main_menu_choice = (input(
             "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Salir\n\nIntroduce tu opción: "))
         clear_terminal()
         if main_menu_choice == "1":
-            lecciones_menu(name, count)
+            lecciones_menu()
         elif main_menu_choice == "2":
             retos_menu()
         elif main_menu_choice == "3":
@@ -51,6 +51,11 @@ def exit_programa():
 
 
 if __name__ == "__main__":
-    count = 0
-    name = ""
+    clear_terminal()
+    name = str(input("¿Cómo te llamas? "))
+    while len(name) > 12:
+        print("Error. Nombre demasiado largo.")
+        name = str(input("¿Cómo te llamas? "))
+    if name == "" or name in (" "*12):
+        name = "User"
     main_menu()
