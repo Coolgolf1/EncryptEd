@@ -46,6 +46,7 @@ def maquinas_menu():
 
 
 def exit_programa():
+    os.remove(".\\temp\\nombre.txt")
     print("Saliendo del programa...")
     exit(0)
 
