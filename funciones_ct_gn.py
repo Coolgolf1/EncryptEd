@@ -1,6 +1,8 @@
 import os
 
 # Esta función limpia la terminal por estética
+
+
 def clear_terminal():
     os.system("cls")
     print("""\n\n             _|_|_|_|                                                      _|      _|_|_|_|        _|  

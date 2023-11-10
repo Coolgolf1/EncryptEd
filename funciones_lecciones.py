@@ -13,6 +13,7 @@ from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
 from funciones_ct_gn import *
 
+
 def clear_terminal():
     os.system("cls")
     print("""\n\n             _|_|_|_|                                                      _|      _|_|_|_|        _|  
