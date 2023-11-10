@@ -107,6 +107,7 @@ def lecciones_caesar_cipher():
     f = open(".\Lecciones\caesar\\teoria_caesar.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
+    input()
     print(f"""\n{"="*100}""")
     f = open(".\Lecciones\caesar\\ejemplo_caesar.txt", "r", encoding="utf-8")
     print(f.read())
