@@ -516,26 +516,28 @@ def RSA_cipher():
     while len(plaintext) < 1:
         print("Error. Introduce un texto válido.")
         plaintext = input("Introduce un texto: ").lower()
+    try:
+        if modo == "E":
+            generar = input("¿Quieres generar nuevas llaves? (Y/N): ").upper()
+            if generar == 'Y':
+                RSA_private_key, RSA_public_key = generar_RSA_keys()
+                guardar_llave_en_archivo(RSA_private_key, "private_key.pem")
+                guardar_llave_en_archivo(RSA_public_key, "public_key.pem")
+                print("Llaves guardadas en \"private_key.pem\" y \"public_key.pem\".")
 
-    if modo == "E":
-        generar = input("¿Quieres generar nuevas llaves? (Y/N): ").upper()
-        if generar == 'Y':
-            RSA_private_key, RSA_public_key = generar_RSA_keys()
-            guardar_llave_en_archivo(RSA_private_key, "private_key.pem")
-            guardar_llave_en_archivo(RSA_public_key, "public_key.pem")
-            print("Llaves guardadas en \"private_key.pem\" y \"public_key.pem\".")
+            RSA_public_key = cargar_llave_de_archivo("public_key.pem")
+            encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
+            print(
+                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\nLlave pública: \n\n{RSA_public_key.export_key().decode()}\n")
 
-        RSA_public_key = cargar_llave_de_archivo("public_key.pem")
-        encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
-        print(
-            f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\nLlave pública: \n\n{RSA_public_key.export_key().decode()}\n")
-
-    else:
-        RSA_private_key = cargar_llave_de_archivo('private_key.pem')
-        decrypted_text = RSA_cipher_process(plaintext, RSA_private_key, "D")
-        print(
-            f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\nLlave privada: \n\n{RSA_private_key.export_key().decode()}\n")
-    input("Pulsa enter para continuar.")
+        else:
+            RSA_private_key = cargar_llave_de_archivo('private_key.pem')
+            decrypted_text = RSA_cipher_process(plaintext, RSA_private_key, "D")
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\nLlave privada: \n\n{RSA_private_key.export_key().decode()}\n")
+        input("Pulsa enter para continuar.")
+    except:
+        print("Has introducido algún dato de forma incorrecta.")
 
 
 def generar_ECC_keys():
