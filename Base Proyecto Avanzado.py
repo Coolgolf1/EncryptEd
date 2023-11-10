@@ -648,35 +648,21 @@ def lecciones_introduccion():
     name = get_name()
     input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
-    print("""Estructura del programa:\n
-    1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
-                  En las lecciones encontrarás un poco de historia, teoría con una demostración práctica y un reto final para porerlo en práctica.
-    2. Retos: En este apartado, hay retos que puedes intentar usando lo que has aprendido en el apartado de Lecciones.
-    3. Máquina: En la máquina se encuentran todos los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
-    input("Pulsa enter para continuar.")
+    f = open(".\Lecciones\intro\estructura_intro.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input("\nPulsa enter para continuar.")
     clear_terminal()
-    print("¿Qué Es La Criptografía?:\n\n  Definición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n")
-    print("""Historia De La Criptografía\n
-    La criptografía es tan antigua como la necesidad de comunicación en secreto. 
-    Desde los tiempos de Julio César, quien usaba un sistema de cifrado por sustitución para proteger sus mensajes, 
-    hasta los jeroglíficos del Egipto faraónico que ocultaban significados solo conocidos por unos pocos, la criptografía ha tenido un papel fundamental en la historia.
-
-    Durante la Segunda Guerra Mundial, la criptografía alcanzó un punto crucial. 
-    La máquina Enigma, utilizada por Alemania para enviar mensajes codificados, fue descifrada por los aliados (con Alan Turing), 
-    lo que contribuyó significativamente al resultado de la guerra. 
-
-    Hoy en día, la criptografía sigue evolucionando con la tecnología digital, asegurando que la comunicación privada,
-    desde correos electrónicos hasta transacciones bancarias, permanezca segura y confidencial.\n""")
-    input("Pulsa enter para continuar.")
+    print("""¿Qué Es La Criptografía?:\n\nDefinición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n""")
+    f = open(".\Lecciones\intro\historia_intro.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input("\nPulsa enter para continuar.")
     clear_terminal()
-    print("""Recomendación:\n
-    Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
-        
-    Luego, ya entendidos los cifrados clásicos, ¡podrás adentrarte en el mundo de la criptografía simétrica y asimétrica!
-          
-    La criptografía es difícil de entender, pero es preciosa una vez entiendes diferentes partes de ella.
-    Por ello, ¡¡¡no perdamos más tiempo en la introducción y a comenzar!!!\n""")
-    input("Recuerda: deberías empezar por la clase del cifrado César. Pulsa enter para continuar.")
+    f = open(".\Lecciones\intro\\recomendacion_intro.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input("\nRecuerda: deberías empezar por la clase del cifrado César. Pulsa enter para continuar.")
 
 
 def lecciones_cifrados_clasicos():
