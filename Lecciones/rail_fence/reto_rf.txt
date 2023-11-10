@@ -1,0 +1,17 @@
+Reto
+          
+    Imagina que eres un detective en una operación encubierta y has interceptado un mensaje cifrado que podría ser clave para tu investigación. 
+    El mensaje ha sido codificado utilizando el cifrado Rail Fence. 
+    Sin embargo, el remitente ha sido astuto y ha utilizado un número de raíles (líneas) que no conoces. 
+          
+    El texto cifrado es el siguiente: "eeoco mllaenunr ert ne ulea mncrctseele ae"
+
+    Tu misión es descifrar este mensaje. 
+    Sabes que el Rail Fence implica reorganizar las letras en un patrón de zigzag, pero sin conocer el número exacto de raíles, 
+    tendrás que probar diferentes posibilidades. 
+          
+    Piensa en cómo las letras podrían estar distribuidas y cómo se leerían en líneas horizontales para revelar el mensaje oculto.
+
+    ¿Puedes descifrar el mensaje y descubrir cuántos raíles se utilizaron?
+          
+    Puedes hacerlo manualmente o usando la máquina.

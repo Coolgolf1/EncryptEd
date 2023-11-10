@@ -1,0 +1,14 @@
+imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
+    Eres un soldado leal al gran general Pompeyo. 
+    En medio del caos, interceptas un mensaje de tu adversario, Julio César, destinado a sus legiones. 
+    Sabes que descifrar su contenido podría cambiar el curso de la guerra y potencialmente llevar a tu lado a la victoria. 
+    El mensaje está codificado con un método desconocido para muchos, pero tú has oído rumores sobre este tipo de cifrado: 
+    El cifrado César, un ingenioso sistema de desplazamiento que el propio César utiliza para comunicarse con sus generales. 
+    Descifrarlo podría ser la clave para anticipar sus movimientos y asegurar la gloria para Pompeyo y para Roma.
+          
+    Junto al mensaje encriptado encuentras una nota, en la que pone: VIII
+          
+    El mensaje encriptado: 
+    "tmoqwv bzma, uwdquqmvbw qvumlqibw pikqi tia kwtqvia lm xpizaitca. zmncmzhw vmkmaizqw mv mt ntivkw lmzmkpw xizi mvdwtdmz it mvmuqow. uivbmvoiv ti nwzuikqwv lm bmabclw piabi ti amvit lm ibiycm. dqkbwzqi maxmzi."
+          
+    ¿Usando la máquina del Cifrado César crees que puedes interceptar el mensaje?

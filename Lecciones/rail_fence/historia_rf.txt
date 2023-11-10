@@ -1,0 +1,7 @@
+Historia Del Cifrado Rail Fence:
+          
+    El cifrado Rail Fence, conocido también como cifrado de valla o zigzag, se destaca por su simplicidad. 
+    
+    Es un cifrado de trasposición, que, en este cifrado, funciona reorganizando las letras en un patrón de zigzag.
+    
+    No se sabe el origen específicio, pero se sabe que era un sistem fácil de usar sin necesidad de herramientas complejas.

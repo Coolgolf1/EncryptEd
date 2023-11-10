@@ -14,10 +14,6 @@ from Crypto.Cipher import PKCS1_OAEP
 # Esta función limpia la terminal por estética
 def clear_terminal():
     os.system("cls")
-
-
-# Esta función imprime el título del juego cuando se llame
-def title():
     print("""\n\n             _|_|_|_|                                                      _|      _|_|_|_|        _|  
              _|        _|_|_|      _|_|_|  _|  _|_|  _|    _|  _|_|_|    _|_|_|_|  _|          _|_|_|  
              _|_|_|    _|    _|  _|        _|_|      _|    _|  _|    _|    _|      _|_|_|    _|    _|  
@@ -607,17 +603,14 @@ def ECC_cipher():
 
     input("Pulsa enter para continuar.")
     clear_terminal()
-    title()
 
 
 def main_menu():
     while True:
         clear_terminal()
-        title()
         main_menu_choice = (input(
             "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Salir\n\nIntroduce tu opción: "))
         clear_terminal()
-        title()
         if main_menu_choice == "1":
             lecciones_menu()
         elif main_menu_choice == "2":
@@ -633,11 +626,9 @@ def main_menu():
 def lecciones_menu():
     while True:
         clear_terminal()
-        title()
         lecciones_choice = input(
             "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if lecciones_choice == "1":
             lecciones_introduccion()
         elif lecciones_choice == "2":
@@ -657,7 +648,6 @@ def lecciones_introduccion():
     name = get_name()
     input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
-    title()
     print("""Estructura del programa:\n
     1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
                   En las lecciones encontrarás un poco de historia, teoría con una demostración práctica y un reto final para porerlo en práctica.
@@ -665,7 +655,6 @@ def lecciones_introduccion():
     3. Máquina: En la máquina se encuentran todos los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.\n""")
     input("Pulsa enter para continuar.")
     clear_terminal()
-    title()
     print("¿Qué Es La Criptografía?:\n\n  Definición formal: La criptografía es el arte y la ciencia de cifrar mensajes para proteger su contenido.\n")
     print("""Historia De La Criptografía\n
     La criptografía es tan antigua como la necesidad de comunicación en secreto. 
@@ -680,7 +669,6 @@ def lecciones_introduccion():
     desde correos electrónicos hasta transacciones bancarias, permanezca segura y confidencial.\n""")
     input("Pulsa enter para continuar.")
     clear_terminal()
-    title()
     print("""Recomendación:\n
     Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
         
@@ -694,11 +682,9 @@ def lecciones_introduccion():
 def lecciones_cifrados_clasicos():
     while True:
         clear_terminal()
-        title()
         lecciones_cifrados_clasicos_choice = input(
             "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if lecciones_cifrados_clasicos_choice == "1":
             lecciones_caesar_cipher()
         elif lecciones_cifrados_clasicos_choice == "2":
@@ -720,34 +706,14 @@ def lecciones_caesar_cipher():
     f.close()
     input()
     clear_terminal()
-    title()
     f = open(".\Lecciones\caesar\\teoria_caesar.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
-    print(f"""\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
-          
-        Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
-
-        "Hola Mundo!" --> "mtqf rzsit!" (llave = 5)
-          
-    Para desencriptar el mensaje con llave 5: 
-    
-        Cogemos el abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-        y shifteamos el abecedario:     [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
-          
-        Ahora, en vez de coger las letras del abecedario original y pasarlas al abecedario shifteado, como se hace en la encripción,
-        metemos el texto encriptado en el abecedario shifteado y sacamos las letras correspondientes del abecedario original.
-        
-        "m" --> "h"
-        "t" --> "o"
-        "q" --> "l"
-        "f" --> "a"
-        ...
-        "t" --> "o" 
-        "!" --> "!"
-
-        "mtqf rzsit!" --> "hola mundo!"\n\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.""")
-    input()
+    print(f"""\n{"="*100}""")
+    f = open(".\Lecciones\caesar\\ejemplo_caesar.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input(f"{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.")
     print("""Reto Manual:\n
     Texto encriptado: "¡pxb elhq!"
     Llave: (el segundo número primo)\n
@@ -761,22 +727,9 @@ def lecciones_caesar_cipher():
     print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
     input()
     clear_terminal()
-    title()
-    print(f"""Reto Con Máquina:\n
-    {name}, imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
-    Eres un soldado leal al gran general Pompeyo. 
-    En medio del caos, interceptas un mensaje de tu adversario, Julio César, destinado a sus legiones. 
-    Sabes que descifrar su contenido podría cambiar el curso de la guerra y potencialmente llevar a tu lado a la victoria. 
-    El mensaje está codificado con un método desconocido para muchos, pero tú has oído rumores sobre este tipo de cifrado: 
-    El cifrado César, un ingenioso sistema de desplazamiento que el propio César utiliza para comunicarse con sus generales. 
-    Descifrarlo podría ser la clave para anticipar sus movimientos y asegurar la gloria para Pompeyo y para Roma.
-          
-    Junto al mensaje encriptado encuentras una nota, en la que pone: VIII
-          
-    El mensaje encriptado: 
-    "tmoqwv bzma, uwdquqmvbw qvumlqibw pikqi tia kwtqvia lm xpizaitca. zmncmzhw vmkmaizqw mv mt ntivkw lmzmkpw xizi mvdwtdmz it mvmuqow. uivbmvoiv ti nwzuikqwv lm bmabclw piabi ti amvit lm ibiycm. dqkbwzqi maxmzi."
-          
-    ¿Usando la máquina del Cifrado César crees que puedes interceptar el mensaje?""")
+    f = open(".\Lecciones\caesar\\ejemplo_caesar.txt", "r", encoding="utf-8")
+    print(f"""Reto Con Máquina:\n\n{name}, {f.read()}""")
+    f.close()
     input("Pulsa enter para continuar.")
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
@@ -790,7 +743,6 @@ def lecciones_caesar_cipher():
 
     input("Pulsa enter para continuar.")
     clear_terminal()
-    title()
     print(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
     input()
 
@@ -799,41 +751,31 @@ def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     name = get_name()
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
-    input("""Historia Del Cifrado Vigènere\n
-    El cifrado Vigenère, atribuido al francés Blaise de Vigenère en el siglo XVI, representa una evolución del cifrado por sustitución. 
-          
-    A pesar de su complejidad, que le valió el título de "cifrado indescifrable",
-    fue finalmente descifrado en el siglo XIX gracias a los avances en el análisis de frecuencias.
-          
-    Breve explicación: el análisis de frecuencias permite, con gran complejidad matemática,
-    asociar ciertas letras encriptadas a letras del abecedario original para desencriptar el mensaje.""")
+    f = open(".\Lecciones\\vigenere\\historia_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     clear_terminal()
-    title()
     f = open(".\Lecciones\\vigenere\\teoria_1_vigenere.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
     clear_terminal()
-    title()
     f = open(".\Lecciones\\vigenere\\teoria_2_vigenere.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
     clear_terminal()
-    title()
     f = open(".\Lecciones\\vigenere\\teoria_3_vigenere.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
     clear_terminal()
-    title()
     print(f"""\n{"="*100}\nAhora vamos a ver un ejemplo:\n""")
     f = open(".\Lecciones\\vigenere\\ejemplo_vigenere.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input("\n¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
     clear_terminal()
-    title()
     f = open(".\Lecciones\\vigenere\\reto_vigenere.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
@@ -853,87 +795,26 @@ def lecciones_vigenere_cipher():
 def lecciones_rail_fence_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
     name = get_name()
-    print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos! 
-          
-Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
+    print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
-    print("""Historia Del Cifrado Rail Fence:\n
-    El cifrado Rail Fence, conocido también como cifrado de valla o zigzag, se destaca por su simplicidad. 
-    
-    Es un cifrado de trasposición, que, en este cifrado, funciona reorganizando las letras en un patrón de zigzag.
-    
-    No se sabe el origen específicio, pero se sabe que era un sistem fácil de usar sin necesidad de herramientas complejas.""")
+    f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
-    title()
-    print("""Teoría\n
-    Es un cifrado más simple que los anteriores, pero entenderlo puede ser algo abstracto.
-
-    El cifrado Rail Fence es notablemente más simple que otros métodos de cifrado, como el César o el Vigenère. 
-    Este cifrado no se basa en la sustitución de letras, sino en su reorganización a través de un patrón de zigzag.
-
-    Imagina que las letras de tu mensaje se colocan a lo largo de las tablas de una valla imaginaria, zigzagueando hacia arriba y hacia abajo. 
-        
-    El texto cifrado se forma entonces leyendo las letras línea por línea. 
-    Este patrón crea un efecto de mezcla que desordena su secuencia original, haciéndolo menos obvio para un observador no autorizado.
-
-    Aunque es un cifrado simple y no ofrece un nivel de seguridad tan alto como otros métodos más complejos, 
-    el Rail Fence es eficaz para ocultar mensajes en un contexto donde la velocidad y la facilidad de cifrado/descifrado son prioritarias.""")
+    f = open(".\Lecciones\\rail_fence\\teoria_rf.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
-    title()
-    print("""Ejemplo:
-    
-    texto = "Hola Mundo!"
-    railes = 4
-          
-    Vamos a escribir el texto en los railes:
-          
-    h     u
-     o   m n 
-      l     d !
-       a     o
-    
-    Al leer fila por fila:
-    El texto encriptado es: huomnl d!ao
-
-    Para desencriptar: 
-          
-    Primero colocamos creamos unos placeholders:
-          
-    *     *     *...
-     *   * *   *
-      * *   * *
-       *     *
-    
-    Luego colocamos fila por fila las letras (al saber la longitud de la cadena podemos saber donde cortar los placeholders):
-    Es decir, el ejemplo de placeholders anterior sería incorrecto por lo que ajustamos sabiendo que el número de * debe ser igual que la longitud del texto:
-    
-    *     *                                 h     u
-     *   * *                                 o   m n
-      * *   * *      -->   y lo rellenamos:   l     d !
-       *     *                                 a     o
-    
-    Luego volvemos a leerlo en el orden de zigzag:
-    El texto desencriptado: \n"hola mundo!\"""")
+    f = open(".\Lecciones\\rail_fence\\ejemplo_rf.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input(f"\n¡{name} si entiendes este ejemplo, pulsa entera para ir a los retos!")
     clear_terminal()
-    title()
-    print("""Reto
-          
-    Imagina que eres un detective en una operación encubierta y has interceptado un mensaje cifrado que podría ser clave para tu investigación. 
-    El mensaje ha sido codificado utilizando el cifrado Rail Fence. 
-    Sin embargo, el remitente ha sido astuto y ha utilizado un número de raíles (líneas) que no conoces. 
-          
-    El texto cifrado es el siguiente: "eeoco mllaenunr ert ne ulea mncrctseele ae"
-
-    Tu misión es descifrar este mensaje. 
-    Sabes que el Rail Fence implica reorganizar las letras en un patrón de zigzag, pero sin conocer el número exacto de raíles, 
-    tendrás que probar diferentes posibilidades. 
-          
-    Piensa en cómo las letras podrían estar distribuidas y cómo se leerían en líneas horizontales para revelar el mensaje oculto.
-
-    ¿Puedes descifrar el mensaje y descubrir cuántos raíles se utilizaron?\n\nPuedes hacerlo manualmente o usando la máquina.""")
+    f = open(".\Lecciones\\rail_fence\\reto_rf.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
@@ -949,11 +830,9 @@ Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados
 def lecciones_cifrados_simetricos():
     while True:
         clear_terminal()
-        title()
         lecciones_cifrados_simetricos_choice = input(
             "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if lecciones_cifrados_simetricos_choice == "1":
             lecciones_AES_cipher()
         elif lecciones_cifrados_simetricos_choice == "2":
@@ -975,11 +854,9 @@ def lecciones_DES_cipher():
 def lecciones_cifrados_asimetricos():
     while True:
         clear_terminal()
-        title()
         maquinas_cifrados_simetricos_choice = input(
             "========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if maquinas_cifrados_simetricos_choice == "1":
             lecciones_RSA_cipher()
         elif maquinas_cifrados_simetricos_choice == "2":
@@ -1001,21 +878,17 @@ def lecciones_ECC_cipher():
 def retos_menu():
     while True:
         clear_terminal()
-        title()
         retos_choice = input("===== Retos =====\n1. ")
         clear_terminal()
-        title()
         # opciones = ...
 
 
 def maquinas_menu():
     while True:
         clear_terminal()
-        title()
         maquinas_choice = input(
             "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if maquinas_choice == "1":
             maquinas_cifrados_clasicos()
         elif maquinas_choice == "2":
@@ -1029,11 +902,9 @@ def maquinas_menu():
 def maquinas_cifrados_clasicos():
     while True:
         clear_terminal()
-        title()
         maquinas_cifrados_clasicos_choice = input(
             "========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if maquinas_cifrados_clasicos_choice == "1":
             caesar_cipher()
         elif maquinas_cifrados_clasicos_choice == "2":
@@ -1049,11 +920,9 @@ def maquinas_cifrados_clasicos():
 def maquinas_cifrados_simetricos():
     while True:
         clear_terminal()
-        title()
         maquinas_cifrados_simetricos_choice = input(
             "========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if maquinas_cifrados_simetricos_choice == "1":
             AES_cipher()
         elif maquinas_cifrados_simetricos_choice == "2":
@@ -1067,11 +936,9 @@ def maquinas_cifrados_simetricos():
 def maquinas_cifrados_asimetricos():
     while True:
         clear_terminal()
-        title()
         maquinas_cifrados_simetricos_choice = input(
             "=========== Máquinas ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        title()
         if maquinas_cifrados_simetricos_choice == "1":
             RSA_cipher()
         elif maquinas_cifrados_simetricos_choice == "2":

@@ -1,4 +1,4 @@
-\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
+Ejemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
           
         Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
 
@@ -20,4 +20,4 @@
         "t" --> "o" 
         "!" --> "!"
 
-        "mtqf rzsit!" --> "hola mundo!"\n\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.
+        "mtqf rzsit!" --> "hola mundo!
