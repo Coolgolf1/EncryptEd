@@ -9,7 +9,7 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA, ECC
 from Crypto.Cipher import PKCS1_OAEP
-
+from funciones_maquinas import *
 
 # Esta función limpia la terminal por estética
 def clear_terminal():
