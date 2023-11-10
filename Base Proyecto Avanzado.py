@@ -1015,9 +1015,54 @@ def lecciones_rail_fence_cipher():
     title()
     print("""Teoría\n
     Es un cifrado más simple que los anteriores, pero entenderlo puede ser algo abstracto.
-     
+
+    El cifrado Rail Fence es notablemente más simple que otros métodos de cifrado, como el César o el Vigenère. 
+    Este cifrado no se basa en la sustitución de letras, sino en su reorganización a través de un patrón de zigzag.
+
+    Imagina que las letras de tu mensaje se colocan a lo largo de las tablas de una valla imaginaria, zigzagueando hacia arriba y hacia abajo. 
+        
+    El texto cifrado se forma entonces leyendo las letras línea por línea. 
+    Este patrón crea un efecto de mezcla que desordena su secuencia original, haciéndolo menos obvio para un observador no autorizado.
+
+    Aunque es un cifrado simple y no ofrece un nivel de seguridad tan alto como otros métodos más complejos, 
+    el Rail Fence es eficaz para ocultar mensajes en un contexto donde la velocidad y la facilidad de cifrado/descifrado son prioritarias.""")
+    input()
+    clear_terminal()
+    title()
+    print("""Ejemplo:
     
-    """)
+    texto = "Hola Mundo!"
+    railes = 4
+          
+    Vamos a escribir el texto en los railes:
+          
+    h     u
+     o   m n 
+      l     d !
+       a     o
+    
+    Al leer fila por fila:
+    El texto encriptado es: huomnl d!ao
+
+    Para desencriptar: 
+          
+    Primero colocamos creamos unos placeholders:
+          
+    *     *     *...
+     *   * *   *
+      * *   * *
+       *     *
+    
+    Luego colocamos fila por fila las letras (al saber la longitud de la cadena podemos saber donde cortar los placeholders):
+    Es decir, el ejemplo de placeholders anterior sería incorrecto por lo que ajustamos sabiendo que el número de * debe ser igual que la longitud del texto:
+    
+    *     *                                 h     u
+     *   * *                                 o   m n
+      * *   * *      -->   y lo rellenamos:   l     d !
+       *     *                                 a     o
+    
+    Luego volvemos a leerlo en el orden de zigzag:
+    El texto desencriptado: \n"hola mundo!\"""")
 
 
 def lecciones_cifrados_simetricos():
