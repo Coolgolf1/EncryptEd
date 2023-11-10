@@ -715,10 +715,11 @@ def lecciones_caesar_cipher():
     print("¡Bienvenido A La Lección Del Cifrado César!")
     name = get_name()
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
-    input("""Historia Del Cifrado César\n
+    print("""Historia Del Cifrado César\n
     Aunque no es el primer cifrado de la historia, se considera uno de los cifrados más importantes historicamente.
           
     El cifrado se usaba para poder mandar mensajes entre divisiones del ejército de forma segura.""")
+    input()
     clear_terminal()
     title()
     print("""Teoría\n
@@ -759,8 +760,7 @@ def lecciones_caesar_cipher():
         "t" --> "o" 
         "!" --> "!"
 
-        "mtqf rzsit!" --> "hola mundo!"\n""")
-    input(f"{name} debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.")
+        "mtqf rzsit!" --> "hola mundo!"\n\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.""")
 
     print("""Reto Manual:\n
     Texto encriptado: "¡pxb elhq!"
@@ -772,10 +772,11 @@ def lecciones_caesar_cipher():
         respuesta_1 = input("Introduce el texto desencriptado: ")
     print(
         f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
-    input("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
+    print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
+    input()
     clear_terminal()
     title()
-    input(f"""Reto Con Máquina:\n
+    print(f"""Reto Con Máquina:\n
     {name}, imagina que estás en la época romana, el aire está impregnado con el polvo y el clamor de la batalla. 
     Eres un soldado leal al gran general Pompeyo. 
     En medio del caos, interceptas un mensaje de tu adversario, Julio César, destinado a sus legiones. 
@@ -789,10 +790,8 @@ def lecciones_caesar_cipher():
     El mensaje encriptado: 
     "tmoqwv bzma, uwdquqmvbw qvumlqibw pikqi tia kwtqvia lm xpizaitca. zmncmzhw vmkmaizqw mv mt ntivkw lmzmkpw xizi mvdwtdmz it mvmuqow. uivbmvoiv ti nwzuikqwv lm bmabclw piabi ti amvit lm ibiycm. dqkbwzqi maxmzi."
           
-    ¿Usando la máquina del Cifrado César crees que puedes interceptar el mensaje?
-          
-    Pulsa enter para continuar.""")
-
+    ¿Usando la máquina del Cifrado César crees que puedes interceptar el mensaje?""")
+    input("Pulsa enter para continuar.")
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "legion tres, movimiento inmediato hacia las colinas de pharsalus. refuerzo necesario en el flanco derecho para envolver al enemigo. mantengan la formacion de testudo hasta la senal de ataque. victoria espera.":
@@ -806,7 +805,8 @@ def lecciones_caesar_cipher():
     input("Pulsa enter para continuar.")
     clear_terminal()
     title()
-    input(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
+    print(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
+    input()
 
 
 def lecciones_vigenere_cipher():
@@ -1086,7 +1086,8 @@ def lecciones_rail_fence_cipher():
     while respuesta != "encuentro secreto en el muelle al amanecer":
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-    print(f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
+    print(
+        f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
     print(f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
     input()
 
