@@ -721,10 +721,9 @@ def lecciones_caesar_cipher():
     input()
     clear_terminal()
     title()
-    f = open(".\Lecciones\caesar\teoria_caesar.txt", "r", encoding="utf-8")
+    f = open(".\Lecciones\caesar\\teoria_caesar.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
-    input()
     print(f"""\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
           
         Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
@@ -748,7 +747,7 @@ def lecciones_caesar_cipher():
         "!" --> "!"
 
         "mtqf rzsit!" --> "hola mundo!"\n\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.""")
-
+    input()
     print("""Reto Manual:\n
     Texto encriptado: "¡pxb elhq!"
     Llave: (el segundo número primo)\n
@@ -810,159 +809,29 @@ def lecciones_vigenere_cipher():
     asociar ciertas letras encriptadas a letras del abecedario original para desencriptar el mensaje.""")
     clear_terminal()
     title()
-    print("""Teoría\n
-    Este cifrado es un cifrado de sustitución más avanzado que el Cifrado César.
-    
-    A diferencia del cifrado César que utiliza un desplazamiento fijo,
-    el cifrado Vigenère emplea una clave de palabra que corresponde a múltiples desplazamientos a lo largo del mensaje. 
-    Esto significa que la letra a ser sustituida en el mensaje depende de la letra correspondiente de la clave.
-          
-    Para encriptar/desencriptar el mensaje, se necesita una contraseña:
-    Por ejemplo: key (llave) = KEY
-    
-    Primero se repite la llave hasta que tenga la misma longitud que el texto que se va a encriptar/desencriptar:
-    
-    Clave repetida:       keykeykeykeykeykey
-    Mensaje original:     atacar al amanecer
-    Abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-          
-    Para encriptar el mensaje:
-    Desplazamos cada letra del mensaje un número de posiciones en el alfabeto igual al valor (índice) de la letra correspondiente de la clave en el alfabeto. 
-
-    Así que, con nuestra clave 'KEY' y mensaje: "atacar al amanecer":
-                                                                    _                                     _
-                                             abecedario original:  [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-                                                                    _
-            K --> 11 posiciones adelante --> abecedario shifteado: [k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e,f,g,h,i,j] --> k
-                                                                                                          _
-            E --> 5 posiciones adelante  --> abecedario shifteado: [e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d] --> x
-                                                                    _
-            Y --> 25 posiciones adelante --> abecedario shifteado: [y,z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x] --> y
-                                             
-    Mensaje encriptado: kxymep kp ywelogcb""")
+    f = open(".\Lecciones\\vigenere\\teoria_1_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
     title()
-    print("""También se puede usar la matriz del Cifrado Vigènere:
-                                                            
-                                                              TEXTO
-                a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
-            -----------------------------------------------------------------------------------------------------------
-            a : a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
-            b : b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a |
-            c : c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b |
-            d : d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c |
-            e : e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d |
-            f : f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e |
-            g : g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f |
-            h : h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g |
-            i : i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h |
-            j : j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i |
-            k : k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j |
-            l : l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k |
-   LLAVE    m : m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l |
-            n : n | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m |
-            o : o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n |
-            p : p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o |
-            q : q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p |
-            r : r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q |
-            s : s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r |
-            t : t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s |
-            u : u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t |
-            v : v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u |
-            w : w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v |
-            x : x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w |
-            y : y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x |
-            z : z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y |
-
-    Para usar la matriz tienes que ir letra por letra mirando primero la fila de la LLAVE y cogiendo la columna de TEXTO, sacas la letra encriptada.
-    Con el ejemplo anterior:
-    
-    Llave =   keykeykeykeykeykey
-    Mensaje = atacar al amanecer
-    
-    fila k, columna a --> k
-    fila e, columna t --> x
-    fila y, columna a --> y
-    ...
-    fila y, columna r --> p
-    
-    Mensaje encriptado: kxymep ej ekkrcmip""")
+    f = open(".\Lecciones\\vigenere\\teoria_2_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
     title()
-    print("""Para no tener que crear una matriz cada vez que vayamos a encriptar/desencriptar, podemos usar un truco:\n
-        El truco consiste en sumar (restar si se desencripta) los índices de la letra del texto y de la letra de la llave, hacer su módulo 26 y eso dará un número entre 0 y 25.
-        Este número será el índice de la letra encriptada/desencriptada.
-        Los índices de todas las letras (incluyendo llave) se cogerán respecto al abecedario.
-          
-        Usando el ejemplo anterior:
-        
-        Llave =   keykeykeykeykeykey
-        Mensaje = atacar al amanecer
-        
-        indíce texto + índice llave --> índice encriptado
-           (a) 0     +   (k) 10     -->   (k) 10
-           (t) 19    +   (e) 4      -->   (x) 23
-           (a) 0     +   (y) 24     -->   (y) 24
-           (c) 2     +   (k) 10     -->   (m) 12
-           (a) 0     +   (e) 4      -->   (e) 4
-           ...
-           (r) 17    +   (y) 24     -->   (k) 41 (hacemos el módulo 26) --> (p) 15
-        
-        Mensaje encriptado: kxymep ej ekkrcmip
-        
-        Ahora vamos a desencriptarlo:
-          
-        índice encriptado - índice llave --> índice texto
-            (k) 10        -    (k) 10    -->    (a) 0 
-            (x) 23        -    (e) 4     -->    (t) 19
-            (y) 24        -    (y) 24    -->    (a) 0
-            (m) 12        -    (k) 10    -->    (c) 2
-            (e) 4         -    (e) 4     -->    (a) 0
-            ...       
-            (p) 41        -    (y) 24    -->    (r) 17      o bien     (p) 15 - (y) 24 --> (r) -9  (se cuenta desde atrás)
-        
-        Mensaje dseencriptado: atacar al amanecer""")
+    f = open(".\Lecciones\\vigenere\\teoria_3_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
     input()
     clear_terminal()
     title()
-    print(f"""\n{"="*100}\nAhora vamos a ver un ejemplo:\n
-    Mensaje: "Hola Mundo!"
-    Llave: "hola"
-
-    Primero vamos a encriptar el mensaje usando el truco:
-        llave  +   letra  --> letra encriptada
-        h (7)  +   h (7)  -->   o (14)
-        o (14) +   o (14) -->   c (28) --> c (2)
-        l (11) +   l (11) -->   w (22)
-        a (0)  +   a (0)  -->   a (0)
-        h (7)  +          -->   
-        o (14) +   m (12) -->   a (0)
-        l (11) +   u (20) -->   f (31) --> f (5)
-        a (0)  +   n (13) -->   n (13)
-        h (7)  +   d (3)  -->   k (10)
-        o (14) +   o (14) -->   c (28) --> c (2)
-        l (11) +   !      -->   !   
-             
-        Mensaje encriptado: ocwa afnkc!
-    
-    Ahora vamos a desencriptarlo sabiendo la llave: "hola" (también veremos que da igual el orden de la resta ya que el índice puede ser negativo también)
-          letra encriptada   -   llave  --> letra desencriptada
-              o (14)         -   h (7)  -->         h (7) 
-              c (2)          -   o (14) -->         o (-12)
-              w (22)         -   l (11) -->         l (11)
-              a (0)          -   a (0)  -->         a (0)
-                             -   h (7)  -->        
-              a (0)          -   o (14) -->         m (-14)       
-              f (5)          -   l (11) -->         u (-6)
-              n (13)         -   a (0)  -->         n (13)
-              k (10)         -   h (7)  -->         d (3)
-              c (2)          -   o (14) -->         o (-12)
-              !              -   l (11) -->         !
-              
-        Mensaje desencriptado: hola mundo!\n""")
-    input("¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
+    print(f"""\n{"="*100}\nAhora vamos a ver un ejemplo:\n""")
+    f = open(".\Lecciones\\vigenere\\ejemplo_vigenere.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input("\n¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
     clear_terminal()
     title()
     print("""Reto Con Máquina:\n
@@ -996,7 +865,7 @@ Aprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados
     print("""Historia Del Cifrado Rail Fence:\n
     El cifrado Rail Fence, conocido también como cifrado de valla o zigzag, se destaca por su simplicidad. 
     
-    Es un cifrado de sustitución, que, en este cifrado, funciona reorganizando las letras en un patrón de zigzag.
+    Es un cifrado de trasposición, que, en este cifrado, funciona reorganizando las letras en un patrón de zigzag.
     
     No se sabe el origen específicio, pero se sabe que era un sistem fácil de usar sin necesidad de herramientas complejas.""")
     input()

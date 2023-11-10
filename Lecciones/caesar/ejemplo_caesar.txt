@@ -1,0 +1,23 @@
+\n{"="*100}\n\nEjemplo: vamos a encriptar "Hola Mundo!" con key (llave) = 5.
+          
+        Nota: las mayúsculas se transforman en minúsculas para encriptar, y cualquier símbolo fuera del abecedario se mantiene en la posición en la que está en el texto original.
+
+        "Hola Mundo!" --> "mtqf rzsit!" (llave = 5)
+          
+    Para desencriptar el mensaje con llave 5: 
+    
+        Cogemos el abecedario original: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+        y shifteamos el abecedario:     [f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a,b,c,d,e]
+          
+        Ahora, en vez de coger las letras del abecedario original y pasarlas al abecedario shifteado, como se hace en la encripción,
+        metemos el texto encriptado en el abecedario shifteado y sacamos las letras correspondientes del abecedario original.
+        
+        "m" --> "h"
+        "t" --> "o"
+        "q" --> "l"
+        "f" --> "a"
+        ...
+        "t" --> "o" 
+        "!" --> "!"
+
+        "mtqf rzsit!" --> "hola mundo!"\n\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.

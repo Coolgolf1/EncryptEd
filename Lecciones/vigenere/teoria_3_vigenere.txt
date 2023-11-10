@@ -1,0 +1,33 @@
+Para no tener que crear una matriz cada vez que vayamos a encriptar/desencriptar, podemos usar un truco:\n
+        El truco consiste en sumar (restar si se desencripta) los índices de la letra del texto y de la letra de la llave, hacer su módulo 26 y eso dará un número entre 0 y 25.
+        Este número será el índice de la letra encriptada/desencriptada.
+        Los índices de todas las letras (incluyendo llave) se cogerán respecto al abecedario.
+          
+        Usando el ejemplo anterior:
+        
+        Llave =   keykeykeykeykeykey
+        Mensaje = atacar al amanecer
+        
+        indíce texto + índice llave --> índice encriptado
+           (a) 0     +   (k) 10     -->   (k) 10
+           (t) 19    +   (e) 4      -->   (x) 23
+           (a) 0     +   (y) 24     -->   (y) 24
+           (c) 2     +   (k) 10     -->   (m) 12
+           (a) 0     +   (e) 4      -->   (e) 4
+           ...
+           (r) 17    +   (y) 24     -->   (k) 41 (hacemos el módulo 26) --> (p) 15
+        
+        Mensaje encriptado: kxymep ej ekkrcmip
+        
+        Ahora vamos a desencriptarlo:
+          
+        índice encriptado - índice llave --> índice texto
+            (k) 10        -    (k) 10    -->    (a) 0 
+            (x) 23        -    (e) 4     -->    (t) 19
+            (y) 24        -    (y) 24    -->    (a) 0
+            (m) 12        -    (k) 10    -->    (c) 2
+            (e) 4         -    (e) 4     -->    (a) 0
+            ...       
+            (p) 41        -    (y) 24    -->    (r) 17      o bien     (p) 15 - (y) 24 --> (r) -9  (se cuenta desde atrás)
+        
+        Mensaje dseencriptado: atacar al amanecer
