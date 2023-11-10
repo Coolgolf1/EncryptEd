@@ -55,9 +55,11 @@ def lecciones_menu():
             return
 
 
-def lecciones_introduccion():
+def lecciones_introduccion(name, count):
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    name = get_name()
+    if count == 0:
+        name = get_name()
+    count = 1
     input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     f = open(".\Lecciones\intro\estructura_intro.txt", "r", encoding="utf-8")
@@ -96,9 +98,11 @@ def lecciones_cifrados_clasicos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
-def lecciones_caesar_cipher():
+def lecciones_caesar_cipher(name, count):
     print("¡Bienvenido A La Lección Del Cifrado César!")
-    name = get_name()
+    if count == 0:
+        name = get_name()
+    count = 1
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
     f = open(".\Lecciones\caesar\historia_caesar.txt", "r", encoding="utf-8")
     print(f.read())
@@ -147,9 +151,11 @@ def lecciones_caesar_cipher():
     input()
 
 
-def lecciones_vigenere_cipher():
+def lecciones_vigenere_cipher(name, count):
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
-    name = get_name()
+    if count == 0:
+        name = get_name()
+    count = 1
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     f = open(".\Lecciones\\vigenere\\historia_vigenere.txt",
              "r", encoding="utf-8")
@@ -197,9 +203,11 @@ def lecciones_vigenere_cipher():
     input()
 
 
-def lecciones_rail_fence_cipher():
+def lecciones_rail_fence_cipher(name, count):
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
-    name = get_name()
+    if count == 0:
+        name = get_name()
+    count = 1
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
     f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
@@ -248,11 +256,11 @@ def lecciones_cifrados_simetricos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
-def lecciones_AES_cipher():
+def lecciones_AES_cipher(name, count):
     pass
 
 
-def lecciones_DES_cipher():
+def lecciones_DES_cipher(name, count):
     pass
 
 

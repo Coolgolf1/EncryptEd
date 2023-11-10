@@ -51,4 +51,5 @@ def exit_programa():
 
 
 if __name__ == "__main__":
+    count = 0
     main_menu()
