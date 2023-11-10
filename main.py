@@ -3,14 +3,14 @@ from funciones_maquinas import *
 from funciones_lecciones import *
 
 
-def main_menu():
+def main_menu(name, count):
     while True:
         clear_terminal()
         main_menu_choice = (input(
             "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Salir\n\nIntroduce tu opción: "))
         clear_terminal()
         if main_menu_choice == "1":
-            lecciones_menu()
+            lecciones_menu(name, count)
         elif main_menu_choice == "2":
             retos_menu()
         elif main_menu_choice == "3":
@@ -52,4 +52,5 @@ def exit_programa():
 
 if __name__ == "__main__":
     count = 0
+    name = ""
     main_menu()

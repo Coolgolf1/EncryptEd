@@ -13,42 +13,20 @@ from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
 from funciones_ct_gn import *
 
-
-def clear_terminal():
-    os.system("cls")
-    print("""\n\n             _|_|_|_|                                                      _|      _|_|_|_|        _|  
-             _|        _|_|_|      _|_|_|  _|  _|_|  _|    _|  _|_|_|    _|_|_|_|  _|          _|_|_|  
-             _|_|_|    _|    _|  _|        _|_|      _|    _|  _|    _|    _|      _|_|_|    _|    _|  
-             _|        _|    _|  _|        _|        _|    _|  _|    _|    _|      _|        _|    _|  
-             _|_|_|_|  _|    _|    _|_|_|  _|          _|_|_|  _|_|_|        _|_|  _|_|_|_|    _|_|_|  
-                                                           _|  _|                                      
-                                                         _|_|  _|   \n""")
-
-
-def get_name():
-    name = str(input("¿Cómo te llamas? "))
-    while len(name) > 12:
-        print("Error. Nombre demasiado largo.")
-        name = str(input("¿Cómo te llamas? "))
-    if name == "" or name in (" "*12):
-        name = "user"
-    return name
-
-
-def lecciones_menu():
+def lecciones_menu(name, count):
     while True:
         clear_terminal()
         lecciones_choice = input(
             "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_choice == "1":
-            lecciones_introduccion()
+            lecciones_introduccion(name, count)
         elif lecciones_choice == "2":
-            lecciones_cifrados_clasicos()
+            lecciones_cifrados_clasicos(name, count)
         elif lecciones_choice == "3":
-            lecciones_cifrados_simetricos()
+            lecciones_cifrados_simetricos(name, count)
         elif lecciones_choice == "4":
-            lecciones_cifrados_asimetricos()
+            lecciones_cifrados_asimetricos(name, count)
         elif lecciones_choice == "5":
             pass
         elif lecciones_choice == "6":
@@ -80,18 +58,18 @@ def lecciones_introduccion(name, count):
     input("\nRecuerda: deberías empezar por la clase del cifrado César. Pulsa enter para continuar.")
 
 
-def lecciones_cifrados_clasicos():
+def lecciones_cifrados_clasicos(name, count):
     while True:
         clear_terminal()
         lecciones_cifrados_clasicos_choice = input(
             "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_clasicos_choice == "1":
-            lecciones_caesar_cipher()
+            lecciones_caesar_cipher(name, count)
         elif lecciones_cifrados_clasicos_choice == "2":
-            lecciones_vigenere_cipher()
+            lecciones_vigenere_cipher(name, count)
         elif lecciones_cifrados_clasicos_choice == "3":
-            lecciones_rail_fence_cipher()
+            lecciones_rail_fence_cipher(name, count)
         elif lecciones_cifrados_clasicos_choice == "4":
             return
         else:
@@ -240,16 +218,16 @@ def lecciones_rail_fence_cipher(name, count):
     input()
 
 
-def lecciones_cifrados_simetricos():
+def lecciones_cifrados_simetricos(name, count):
     while True:
         clear_terminal()
         lecciones_cifrados_simetricos_choice = input(
             "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_simetricos_choice == "1":
-            lecciones_AES_cipher()
+            lecciones_AES_cipher(name, count)
         elif lecciones_cifrados_simetricos_choice == "2":
-            lecciones_DES_cipher()
+            lecciones_DES_cipher(name, count)
         elif lecciones_cifrados_simetricos_choice == "3":
             return
         else:
@@ -264,7 +242,7 @@ def lecciones_DES_cipher(name, count):
     pass
 
 
-def lecciones_cifrados_asimetricos():
+def lecciones_cifrados_asimetricos(name, count):
     while True:
         clear_terminal()
         maquinas_cifrados_simetricos_choice = input(
@@ -280,9 +258,9 @@ def lecciones_cifrados_asimetricos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
-def lecciones_RSA_cipher():
+def lecciones_RSA_cipher(name, count):
     pass
 
 
-def lecciones_ECC_cipher():
+def lecciones_ECC_cipher(name, count):
     pass

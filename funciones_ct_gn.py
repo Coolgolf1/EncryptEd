@@ -20,5 +20,5 @@ def get_name():
         print("Error. Nombre demasiado largo.")
         name = str(input("¿Cómo te llamas? "))
     if name == "" or name in (" "*12):
-        name = "user"
+        name = "User"
     return name
