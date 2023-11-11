@@ -287,7 +287,18 @@ Bienvenido al corazón de la seguridad en internet.""")
 
 
 def lecciones_DES_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado DES!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n 
+Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n 
+Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n 
+¡Descubramos juntos cómo este algoritmo clásico transformó el mundo de la seguridad digital!""")
+    input()
+    f = open(".\Lecciones\des\historia_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
 
 
 def lecciones_cifrados_asimetricos():
