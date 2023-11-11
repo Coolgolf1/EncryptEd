@@ -1,0 +1,24 @@
+Reto
+
+    Eres un aventurero que ha encontrado un antiguo cofre del tesoro. 
+    Dentro del cofre, hay un mensaje cifrado que se cree contiene la ubicación de un tesoro escondido. 
+    La clave para descifrar el mensaje, sin embargo, es un misterio.
+
+    Junto al mensaje cifrado, encuentras un viejo medallón con símbolos que parecen indicar una secuencia numérica. 
+    La clave del cifrado DES podría estar basada en esta secuencia numérica.
+
+    Medallón:
+                   
+                            ,-----.     
+                        .'  .-,  '.   
+                        / ,-.| 8\ _ \  
+                        ;  \  '_ / 4|: 
+                        |  _`,/ \ _/  | 
+                        : (3 '\_/ \   ; 
+                        \ `"/  \ 1) /  
+                        '. \_/``".'   
+                            '-----'     
+                
+    El mensaje cifrado:
+
+    a63d4a413f58f076a84c7a4053f7430aab7e1068b2cb19c1e531b2f943db02a92d81479e6d3ad2fa541f5d67c6c104f5214451c9769fda54aec1e922db1fd992493b6c32e8c25d151eaf18f3e1ae2ee60f6b698eb0e4bea477009fae03d2a2db9ecc79e7604d8bc36f9d8cd236b35623

@@ -1,0 +1,31 @@
+Teoría
+
+    ¿Qué es DES?
+        El Data Encryption Standard (DES) es un algoritmo de cifrado desarrollado en los años 70. 
+        Fue uno de los primeros estándares para la protección de información digital, especialmente en el gobierno y las industrias.
+
+    ¿Cómo Funciona?
+        DES es un cifrado simétrico, lo que significa que utiliza la misma clave para cifrar y descifrar datos. 
+        Opera transformando los datos originales (texto plano) en texto cifrado a través de una serie de pasos específicos.
+
+    Pasos Clave del DES:
+
+    1. Permutación Inicial: Se reorganizan los bits del texto según una tabla fija.
+    2. Rondas de Cifrado: DES realiza 16 rondas de cifrado. Cada ronda incluye:
+        · Expansión: Se expanden los bits de datos para prepararlos para la mezcla con la clave.
+        · Mezcla con la Subclave: Se combina con una subclave generada de la clave principal.
+        · Sustitución: Los bits se reemplazan según una tabla de sustitución.
+        · Permutación: Se reorganizan los bits nuevamente.
+    3. Permutación Final: Una última reorganización de los bits para obtener el texto cifrado.
+
+    Claves de Cifrado:
+        DES utiliza una clave de 56 bits, lo que en su momento ofrecía un nivel adecuado de seguridad. S
+        in embargo, con el tiempo, esta longitud de clave se volvió vulnerable a ataques.
+
+    ¿Por Qué fue Seguro?
+        DES fue considerado seguro debido a su complejidad y al número de transformaciones que realiza. 
+        Sin embargo, la seguridad de DES se debilitó con el aumento de la potencia de cómputo y técnicas de ataque más sofisticadas.
+
+    Aplicaciones de DES:
+        A pesar de ser reemplazado por AES, DES fue ampliamente utilizado en la protección de transacciones financieras, 
+        comunicaciones gubernamentales y sistemas de información corporativos.

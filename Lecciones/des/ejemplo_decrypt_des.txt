@@ -1,0 +1,19 @@
+    1. Preparación de Datos y Clave:
+
+        Texto cifrado: "057744eee2602362f0654b783ed99bd56c0a97a634a20af0"
+        Clave de cifrado: "ClaveDES123" 
+        El texto cifrado se organiza en un bloque de datos (64 bits) y la clave se procesa para su uso en las rondas de descifrado.
+
+    2. Rondas de Descifrado:
+
+        DES utiliza 16 rondas de descifrado, que son básicamente el proceso de cifrado pero en orden inverso. Cada ronda consiste en varios pasos:
+        
+            1. Mezcla con la Subclave: Se combina el bloque con una subclave, que es la misma utilizada en la ronda correspondiente del proceso de cifrado, pero aplicada en orden inverso.
+            2. Inversión de Permutación: Los bits se reorganizan para revertir la última permutación del proceso de cifrado.
+            3. Inversión de Sustitución (S-Box Inversa): Se revierte la sustitución de los bits utilizando tablas de sustitución inversa.
+            4. Inversión de Expansión: Se devuelve el bloque a su tamaño original, revirtiendo la expansión realizada durante el cifrado.
+        
+    3. Resultado del Descifrado:
+
+        Después de completar las 16 rondas, el texto cifrado se transforma de nuevo en el mensaje original:
+        Mensaje descifrado: "Hola Mundo!"

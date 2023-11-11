@@ -299,7 +299,40 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
     f = open(".\Lecciones\des\historia_des.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
-
+    f = open(".\Lecciones\des\\teoria_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, como puedes observar, es un cifrado más simple que el AES. Por ello, dejó de usarse, ya que no era lo suficientemente seguro.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\des\ejemplo_encrypt_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\\des\ejemplo_decrypt_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\des\\reto_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    DES_cipher()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas.":
+        print("El mensaje no ha sido desencriptado.\n")
+        DES_cipher()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡Enhorabuena, {name}! ¡¡¡Es hora de ir a por el oro!!!.")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya lo sabes todo sobre los cifrados simétricos!\n\n¡Enhorabuena!")
+    input()
+    print(f"\n\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
+    input()
 
 def lecciones_cifrados_asimetricos():
     while True:
