@@ -345,8 +345,98 @@ def lecciones_cifrados_asimetricos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
+def RSA_cipher_process_lecciones(plaintext, RSA_key, modo):
+    if modo == "E":
+        RSA_cipher = PKCS1_OAEP.new(RSA_key)
+        encrypted_message = RSA_cipher.encrypt(plaintext.encode())
+        return binascii.hexlify(encrypted_message).decode()
+    else:
+        RSA_cipher = PKCS1_OAEP.new(RSA_key)
+        decrypted_message = RSA_cipher.decrypt(binascii.unhexlify(plaintext))
+        return decrypted_message.decode()
+
+
+def RSA_cipher_lecciones():
+    # Printea un menú por estética
+    print("=====Cifrado RSA =====")
+    # Pide un input de encriptar/desencriptar
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    # Mira que la respuesta al input sea válida
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    plaintext = input("Introduce un texto: ").lower()
+    while len(plaintext) < 1:
+        print("Error. Introduce un texto válido.")
+        plaintext = input("Introduce un texto: ").lower()
+    try:
+        if modo == "E":
+            RSA_public_key = cargar_llave_de_archivo("public_key_leccion.pem")
+            encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
+            print(
+                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
+
+        else:
+            RSA_private_key = cargar_llave_de_archivo('private_key_leccion.pem')
+            decrypted_text = RSA_cipher_process(
+                plaintext, RSA_private_key, "D")
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\n\n")
+        input("Pulsa enter para continuar.")
+    except:
+        print("Has introducido algún dato de forma incorrecta.")
+
+
 def lecciones_RSA_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado DES!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n 
+Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad en el vasto mundo de Internet.""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\historia_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\\teoria_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, como se puede observar, el cifrado RSA requiere un cierto nivel matemático, aunque podemos entender la parte teórica del cifrado.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\ejemplo_encrypt_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\\rsa\ejemplo_decrypt_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\\reto_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    RSA_cipher_lecciones()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "descubierto: un método innovador para fortalecer rsa contra futuros ataques cuánticos.":
+        print("El mensaje no ha sido desencriptado.\n")
+        RSA_cipher_lecciones()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡{name}, vamos a buscar por el resto de su laboratorio a ver si encontramos el gran descubrimiento!")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya has aprendido sobre el cifrado RSA, uno de los más importantes en todo el mundo!\n\n¡Enhorabuena!")
+    input()
+    print(f"\n!A por el cifrado de Curva Elíptica! Suena raro, pero sí, existe un cifrado con ese nombre...")
+    input()
 
 
 def lecciones_ECC_cipher():

@@ -1,0 +1,30 @@
+Ejemplo
+
+    1. Generación de Claves:
+
+        Selecciona dos números primos grandes, p y q.
+        Calcula N = p × q.
+        Calcula la función totiente: phi(N) = (p - 1) × (q - 1).
+        Elige un número entero e que sea coprimo con phi(N). Una elección común es e = 65537.
+        La clave pública es (N, e).
+
+    2. Cifrado de "Hola Mundo!":
+
+        Mensaje original: "Hola Mundo!"
+        Convertir "Hola Mundo!" en un número. 
+        Una forma de hacerlo es usando el valor ASCII de cada letra y formando un número grande. 
+        Por ejemplo, H = 72, o = 111, l = 108, a = 97, espacio = 32, M = 77, u = 117, n = 110, d = 100, o = 111, ! = 33, lo que da el número 72111108197327711711010011133.
+        Cifrar el mensaje: 
+        Mensaje cifrado = Mensaje^(e) mod N
+     
+    3. Resultado del Cifrado:
+
+        El mensaje cifrado es un número grande, que luego puede convertirse en una cadena en base 64 para facilitar su manejo y transmisión.
+        
+        Texto cifrado en base 64: 
+        59bc7c2b207143f102a308380960afbb7290e516d04e242e17f6b53b98c89860cedb6c50b6bb3c7b8039c01b82ffb712d03b6eb07e444013bb9b1d74ebb791779f51
+        b100bb431b0d02a1285cb4fc4a779f504a81cf5ecfe42da95b04f347c9a0f04874b85e81c105ff10b59a98fa55de0bf81d0491e4faa6250e449e6cb15a6ad871143b
+        4f007117daf88bdbe07651f8ba8266db3ee349f55b751407bdae50e5df61cf48d90b827a91d1b3a46dedfbaa2b2cd75de7452b34a2e2dc3c746e586d2957cd60eeb8
+        d9df62ecddca2c920a63662cd459def5888aa0be2f3a6acd3bf340805dee36b6ebd23efc5d0bdd2c2f3f8572259b73064246608acea0beb27cab
+
+        Aunque está acortado, es un texto inmenso.
