@@ -1,0 +1,19 @@
+Ejemplo
+
+    1. Generación de Claves:
+
+        Elige una curva elíptica y un punto base G en esa curva.
+        Genera una clave privada k, que es un número aleatorio.
+        La clave pública P se obtiene multiplicando k por G (es decir, P = k x G).
+
+    2. Cifrado de un Mensaje:
+
+        Mensaje original: "Hola Mundo!"
+        Selecciona un número aleatorio r y calcula R = r x G (un punto en la curva).
+        Calcula el punto compartido S = r x P.
+        El mensaje se cifra combinándolo con S.
+        El mensaje cifrado consiste en el punto R y el mensaje cifrado combinado.
+
+    3. Resultado del Cifrado:
+
+        Se obtiene el mensaje cifrado, que incluye el punto R y el texto cifrado.

@@ -14,11 +14,14 @@ Teoría
 
     Pasos Clave del RSA:
 
-    1. Generación de Claves: Se seleccionan dos números primos grandes y se calcula su producto N y la función totiente de Euler phi(N). 
-                             Luego se elige un número entero e que sea coprimo con phi(N) y menor que este. 
-                             La clave pública es (N, e) y la clave privada se deriva de estos valores.
-    2. Cifrado: Para cifrar un mensaje, se convierte en un número menor que N y luego se eleva a la potencia e módulo N.
-    3. Descifrado: El mensaje cifrado se eleva a la potencia de la clave privada módulo N, recuperando el mensaje original.
+    1. Generación de Claves: 
+        · Se seleccionan dos números primos grandes y se calcula su producto N y la función totiente de Euler phi(N). 
+        · Luego se elige un número entero e que sea coprimo con phi(N) y menor que este. 
+        · La clave pública es (N, e) y la clave privada se deriva de estos valores.
+    2. Cifrado: 
+        · Para cifrar un mensaje, se convierte en un número menor que N y luego se eleva a la potencia e módulo N.
+    3. Descifrado: 
+        · El mensaje cifrado se eleva a la potencia de la clave privada módulo N, recuperando el mensaje original.
 
     Seguridad de RSA:
         La seguridad de RSA reside en la dificultad de factorizar el producto 

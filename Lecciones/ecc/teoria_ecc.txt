@@ -1,0 +1,27 @@
+Teoría
+
+    ¿Qué es ECC?
+        ECC es un enfoque de criptografía asimétrica que utiliza las propiedades matemáticas de las curvas elípticas sobre campos finitos. 
+        Ofrece una seguridad comparable a otros sistemas criptográficos, pero con claves significativamente más cortas.
+
+    ¿Cómo Funciona?
+        ECC se basa en la dificultad de resolver el problema del logaritmo discreto en curvas elípticas, lo que lo hace resistente a métodos de ataque comunes.
+
+    Pasos Clave del ECC:
+
+    1. Generación de Claves:
+        · Selecciona una curva elíptica y un punto base en esa curva.
+        · Genera una clave privada, un número aleatorio.
+        · La clave pública es el punto resultante de multiplicar el punto base por la clave privada.
+    2. Cifrado:
+        · La clave pública del receptor para generar un punto compartido en la curva, que se utiliza para cifrar el mensaje.
+    3. Descifrado:
+        · Usa la clave privada para recuperar el punto compartido y descifrar el mensaje.
+
+    Seguridad de ECC:
+        La seguridad de ECC reside en la dificultad de calcular el logaritmo discreto en curvas elípticas. 
+        Esto permite que ECC sea seguro con claves más pequeñas en comparación con sistemas como RSA.
+
+    Aplicaciones de ECC:
+        ECC se utiliza en una variedad de aplicaciones, desde la seguridad de navegadores web hasta criptomonedas. 
+        Su eficiencia lo hace ideal para dispositivos con recursos limitados o para aplicaciones que requieren procesos rápidos de cifrado y descifrado.

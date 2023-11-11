@@ -378,7 +378,8 @@ def RSA_cipher_lecciones():
                 f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
 
         else:
-            RSA_private_key = cargar_llave_de_archivo('private_key_leccion.pem')
+            RSA_private_key = cargar_llave_de_archivo(
+                'private_key_leccion.pem')
             decrypted_text = RSA_cipher_process(
                 plaintext, RSA_private_key, "D")
             print(
@@ -389,7 +390,7 @@ def RSA_cipher_lecciones():
 
 
 def lecciones_RSA_cipher():
-    print("¡Bienvenido A La Lección Del Cifrado DES!")
+    print("¡Bienvenido A La Lección Del Cifrado RSA!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
@@ -439,5 +440,88 @@ Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad e
     input()
 
 
+def ECC_cipher_lecciones():
+    # Printea un menú por estética
+    print("===== Cifrado ECC =====")
+    # Pide un input de encriptar/desencriptar
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    # Mira que la respuesta al input sea válida
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    if modo == "E":
+        print("No se puede encriptar en este ejercicio.")
+    else:
+        try:
+            ECC_public_key_pem = leer_de_archivo("public_key_lecciones.pem")
+            ECC_private_key_pem = leer_de_archivo("private_key_lecciones.pem")
+            nonce_b64 = leer_de_archivo("nonce_lecciones.txt")
+            tag_b64 = leer_de_archivo("tag_lecciones.txt")
+            ciphertext_b64 = input("Introduce el texto encriptado: ")
+
+            ECC_public_key = ECC.import_key(ECC_public_key_pem)
+            ECC_private_key = ECC.import_key(ECC_private_key_pem)
+            nonce = base64.b64decode(nonce_b64)
+            tag = base64.b64decode(tag_b64)
+            ciphertext = base64.b64decode(ciphertext_b64)
+
+            decrypted_message = desencriptar_ECC(
+                ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
+        except Exception as e:
+            print("Error durante la desencriptación: ", e)
+
+
 def lecciones_ECC_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado ECC!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n 
+Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n 
+Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para crear un sistema criptográfico eficiente y poderoso.""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\historia_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\\teoria_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, al igual que RSA, requiere un cierto nivel en matemáticas, pero la teoría se puede seguir para entender el cifrado.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\ejemplo_encrypt_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\ecc\ejemplo_decrypt_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\\reto_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    ECC_cipher_lecciones()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
+        print("El mensaje no ha sido desencriptado.\n")
+        ECC_cipher_lecciones()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡{name}, vamos al templo! ¡Pero cuidado con las trampas que puede haber!")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
+    input()
+    print(
+        f"\n¿Por qué no pruebas los retos {name}? Puede que sean interesantes ;)")
+    input()

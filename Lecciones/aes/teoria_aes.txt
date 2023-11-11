@@ -1,12 +1,12 @@
 Teoría 
 
     ¿Qué es AES?
-    El Advanced Encryption Standard (AES) es un algoritmo de cifrado utilizado para proteger datos. 
-    Es un estándar global para la seguridad de la información, especialmente en la transmisión y almacenamiento de datos digitales.
+        El Advanced Encryption Standard (AES) es un algoritmo de cifrado utilizado para proteger datos. 
+        Es un estándar global para la seguridad de la información, especialmente en la transmisión y almacenamiento de datos digitales.
 
     ¿Cómo Funciona?
-    AES es un cifrado simétrico, lo que significa que utiliza la misma clave para cifrar y descifrar datos. 
-    Funciona transformando los datos originales (texto plano) en una versión indescifrable (texto cifrado) mediante una serie de pasos bien definidos.
+        AES es un cifrado simétrico, lo que significa que utiliza la misma clave para cifrar y descifrar datos. 
+        Funciona transformando los datos originales (texto plano) en una versión indescifrable (texto cifrado) mediante una serie de pasos bien definidos.
 
     Pasos Clave del AES:
 
@@ -18,13 +18,13 @@ Teoría
     Estos pasos se repiten en varias rondas (10, 12 o 14 rondas, dependiendo del tamaño de la clave: 128, 192 o 256 bits, respectivamente).
 
     Claves de Cifrado:
-    La seguridad de AES depende de la clave utilizada. 
-    Las claves pueden ser de 128, 192 o 256 bits, siendo más largas más seguras pero también más lentas en el proceso de cifrado y descifrado.
+        La seguridad de AES depende de la clave utilizada. 
+        Las claves pueden ser de 128, 192 o 256 bits, siendo más largas más seguras pero también más lentas en el proceso de cifrado y descifrado.
 
     ¿Por Qué es Seguro?
-    La seguridad de AES reside en su complejidad y en el número de transformaciones que se realizan. 
-    Es resistente a muchos tipos de ataques criptográficos debido a su estructura bien diseñada.
+        La seguridad de AES reside en su complejidad y en el número de transformaciones que se realizan. 
+        Es resistente a muchos tipos de ataques criptográficos debido a su estructura bien diseñada.
 
     Aplicaciones de AES:
-    AES se usa en una amplia variedad de aplicaciones: 
-    Desde asegurar transacciones financieras y proteger comunicaciones gubernamentales hasta cifrar mensajes en aplicaciones de mensajería como WhatsApp.
+        AES se usa en una amplia variedad de aplicaciones: 
+        Desde asegurar transacciones financieras y proteger comunicaciones gubernamentales hasta cifrar mensajes en aplicaciones de mensajería como WhatsApp.
