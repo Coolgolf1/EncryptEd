@@ -509,7 +509,17 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
     print(f.read())
     f.close()
     print()
-    ECC_cipher_lecciones()
+    print("===== Cifrado ECC =====")
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    if modo == "E":
+        print("No se puede encriptar en este ejercicio.")
+    else:
+        input("Introduce el texto encriptado: ")
+        print("\nEl texto desencriptado es: revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.\nCifrado ECC\n")
     respuesta = input("\nIntroduce el texto desencriptado: ")
     while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
         print("El mensaje no ha sido desencriptado.\n")
@@ -523,5 +533,5 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
         f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
     input()
     print(
-        f"\n¿Por qué no pruebas los retos {name}? Puede que sean interesantes ;)")
+        f"\n¿Por qué no pruebas los retos ,{name}? Puede que sean interesantes ;)")
     input()
