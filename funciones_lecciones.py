@@ -240,6 +240,7 @@ def lecciones_AES_cipher():
     print(f"""\n¡{name}, ahora empieza lo interesante! Vas a aprender mucho sobre el cifrado más importante del mundo, usado en todo tipo de sistemas digitales y de comunicación, como WhatsApp.\n
 Bienvenido al corazón de la seguridad en internet.""")
     input()
+    clear_terminal()
     f = open(".\Lecciones\\aes\historia_aes.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
@@ -282,7 +283,7 @@ Bienvenido al corazón de la seguridad en internet.""")
     print(
         f"\n¡¡¡{name} has aprendido sobre el cifrado más importante del mundo!!!\n\n¡Enhorabuena!")
     input()
-    print(f"\n\nEn el siguiente cifrado vamos a volver algo atrás en el tiempo... al sistema de cifrado anterior al AES. El DES.")
+    print(f"\nEn el siguiente cifrado vamos a volver algo atrás en el tiempo... al sistema de cifrado anterior al AES. El DES.")
     input()
 
 
@@ -296,9 +297,12 @@ Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel 
 Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n 
 ¡Descubramos juntos cómo este algoritmo clásico transformó el mundo de la seguridad digital!""")
     input()
+    clear_terminal()
     f = open(".\Lecciones\des\historia_des.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
+    input()
+    clear_terminal()
     f = open(".\Lecciones\des\\teoria_des.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
@@ -318,6 +322,7 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
     f = open(".\Lecciones\\des\\reto_des.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
+    print()
     DES_cipher()
     respuesta = input("\nIntroduce el texto desencriptado: ")
     while respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas.":
@@ -331,8 +336,9 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
     print(
         f"\n¡{name}, ya lo sabes todo sobre los cifrados simétricos!\n\n¡Enhorabuena!")
     input()
-    print(f"\n\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
+    print(f"\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
     input()
+
 
 def lecciones_cifrados_asimetricos():
     while True:
