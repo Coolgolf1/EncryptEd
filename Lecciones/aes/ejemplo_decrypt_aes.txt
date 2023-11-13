@@ -1,0 +1,22 @@
+
+    1. Inicio del Descifrado:
+
+	Texto cifrado: 98e4751a9396430143c883e2b8d617b74e1f8176740208309bb337f611386be57b5bb400839eb3e395bbeadeedaa36fc
+	Clave de descifrado: "ContraseñaSegura123"
+
+    2. Preparación de la Clave:
+
+	La clave "ContraseñaSegura123" se expande generando varias subclaves para su uso en cada una de las 14 rondas de descifrado.
+
+    3. Rondas de Descifrado:
+
+	El proceso de descifrado también consiste en 14 rondas, pero en orden inverso al cifrado:
+	Adición de Clave (AddRoundKey): Combinar el bloque de texto cifrado con una subllave de descifrado.
+	Inversión de Mezcla de Columnas (InvMixColumns): Operación inversa a MixColumns para deshacer la mezcla.
+	Inversión de Cambio de Filas (InvShiftRows): Reordenar las filas a su posición original.
+	Inversión de Sustitución de Bytes (InvSubBytes): Revertir la sustitución de bytes usando la tabla inversa.
+
+    4. Resultado del Descifrado:
+
+	Después de completar todas las rondas, el texto cifrado se convierte de nuevo en el mensaje original:
+	Mensaje descifrado: "Hola Mundo!"

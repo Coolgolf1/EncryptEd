@@ -15,7 +15,7 @@ def clear_terminal():
 
 
 def get_name():
-    name = str(input("¿Cómo te llamas? "))
+    name = str(input("¡Bienvenido a EncryptEd!\n\n¿Cómo te llamas? "))
     while len(name) > 12:
         print("Error. Nombre demasiado largo.")
         name = str(input("¿Cómo te llamas? "))

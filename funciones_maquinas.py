@@ -528,17 +528,30 @@ def RSA_cipher():
             RSA_public_key = cargar_llave_de_archivo("public_key.pem")
             encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
             print(
-                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\nLlave pública: \n\n{RSA_public_key.export_key().decode()}\n")
+                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
 
         else:
             RSA_private_key = cargar_llave_de_archivo('private_key.pem')
             decrypted_text = RSA_cipher_process(
                 plaintext, RSA_private_key, "D")
             print(
-                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\nLlave privada: \n\n{RSA_private_key.export_key().decode()}\n")
+                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\n\n")
         input("Pulsa enter para continuar.")
     except:
         print("Has introducido algún dato de forma incorrecta.")
+
+
+def guardar_en_archivo(nombre_archivo, datos):
+    ruta = f".\\Llaves\\ECC\\{nombre_archivo}"
+    os.makedirs(os.path.dirname(ruta), exist_ok=True)
+    with open(ruta, "w") as archivo:
+        archivo.write(datos)
+
+
+def leer_de_archivo(nombre_archivo):
+    ruta = f".\\Llaves\\ECC\\{nombre_archivo}"
+    with open(ruta, "r") as archivo:
+        return archivo.read()
 
 
 def generar_ECC_keys():
@@ -559,7 +572,7 @@ def encriptar_ECC(plaintext, ECC_public_key, ECC_key):
     return ECC_key.public_key().export_key(format='PEM'), AES_cipher.nonce, tag, ciphertext
 
 
-def display_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext):
+def guardar_datos_encriptados(ECC_public_key, ECC_private_key, nonce, tag, ciphertext):
     nonce_b64 = base64.b64encode(nonce).decode('utf-8')
     tag_b64 = base64.b64encode(tag).decode('utf-8')
     ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
@@ -600,14 +613,17 @@ def ECC_cipher():
             plaintext = input("Introduce un texto: ")
         ECC_public_key, nonce, tag, ciphertext = encriptar_ECC(
             plaintext, ECC_public_key, ECC_key)
-        display_datos_encriptados(
+        guardar_datos_encriptados(
             ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
-        print("Se ha guardado la llave privada, la llave pública, el nonce y el tag en archivos.\n")
+        ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
+        print(f"El texto encriptado es: {ciphertext_b64}")
 
     else:
-        ciphertext_b64 = input("Introduce el texto encriptado: ")
-        while len(ciphertext_b64) < 1:
-            print("Error. Introduce un texto válido.")
+        try:
+            ECC_public_key_pem = leer_de_archivo("public_key.pem")
+            ECC_private_key_pem = leer_de_archivo("private_key.pem")
+            nonce_b64 = leer_de_archivo("nonce.txt")
+            tag_b64 = leer_de_archivo("tag.txt")
             ciphertext_b64 = input("Introduce el texto encriptado: ")
         #try:
         with open(".\Llaves\ECC\public_key.pem", "rb") as key_file:

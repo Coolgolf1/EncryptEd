@@ -1,0 +1,10 @@
+Reto
+
+    Eres un investigador que ha encontrado un mensaje cifrado dejado por un científico pionero en la criptografía. 
+    Se cree que este mensaje contiene una fórmula revolucionaria.
+
+    El mensaje cifrado es:
+
+    26c92c4ac04422785e00eb66e9d3825a802d995e321572751ff064e244d708275ced51b0da8def976ad6b4b2f774eba8df67042562a10dfa49d05e1531a7cd42f46bf8fdbfdda8e10b59e010b562518214883433062d4fdb634a2c1223728b646cb72417aea16a0676b8d20525144bb38cd66530407dec30891f596e685814d99fe68b34e2d05f7e3dd5027eee44671d1ffad839d207ce798b4913941413ae577c65ebdd2ec43bf9c8e57cdf2a1de6d33c1c2a4ff339292a8b7375595b8e00a4eccd0e2e2d5bd3a8a446c6d6bca3c82a236ddfd9722055ecf53ef8c1a491d794290842c47e2d7a48183a674da5ec180e7760bc6997c8ed8ac0182adb4afbaf5e
+
+    "Las llaves están ya guardadas en archivos para facilitarte el trabajo."

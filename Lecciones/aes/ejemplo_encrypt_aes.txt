@@ -1,0 +1,20 @@
+Ejemplo
+
+    1. Preparación de Datos y Clave:
+
+        Mensaje original: "Hola Mundo!"
+        Clave de cifrado: "ContraseñaSegura123"
+        El mensaje se organiza en un bloque de datos y la clave se expande para las rondas de cifrado.
+
+    2. Rondas de Cifrado:
+
+        AES-256 utiliza 14 rondas de cifrado. Cada ronda consta de varios pasos:
+        Sustitución de Bytes (SubBytes): Cada byte del mensaje se sustituye por otro de acuerdo con una tabla de sustitución.
+        Cambio de Filas (ShiftRows): Las filas del bloque se reorganizan para mezclar los datos.
+        Mezcla de Columnas (MixColumns): Cada columna del bloque se combina de manera compleja para aumentar la difusión.
+        Adición de Clave (AddRoundKey): La clave expandida se combina con el bloque de datos.
+
+    3. Resultado del Cifrado:
+
+        El texto original se transforma en un texto cifrado completamente diferente:
+        Texto cifrado: 98e4751a9396430143c883e2b8d617b74e1f8176740208309bb337f611386be57b5bb400839eb3e395bbeadeedaa36fc

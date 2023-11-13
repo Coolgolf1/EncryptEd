@@ -1,0 +1,30 @@
+Teoría 
+
+    ¿Qué es AES?
+        El Advanced Encryption Standard (AES) es un algoritmo de cifrado utilizado para proteger datos. 
+        Es un estándar global para la seguridad de la información, especialmente en la transmisión y almacenamiento de datos digitales.
+
+    ¿Cómo Funciona?
+        AES es un cifrado simétrico, lo que significa que utiliza la misma clave para cifrar y descifrar datos. 
+        Funciona transformando los datos originales (texto plano) en una versión indescifrable (texto cifrado) mediante una serie de pasos bien definidos.
+
+    Pasos Clave del AES:
+
+    1. Sustitución de Bytes: Cada byte de datos se reemplaza por otro según una tabla predefinida.
+    2. Cambio de Filas: Se reorganizan las filas de datos para mezclar el contenido.
+    3. Mezcla de Columnas: Similar al paso anterior, pero se mezclan las columnas de datos.
+    4. Adición de Clave: Se combina la clave de cifrado con los datos.
+
+    Estos pasos se repiten en varias rondas (10, 12 o 14 rondas, dependiendo del tamaño de la clave: 128, 192 o 256 bits, respectivamente).
+
+    Claves de Cifrado:
+        La seguridad de AES depende de la clave utilizada. 
+        Las claves pueden ser de 128, 192 o 256 bits, siendo más largas más seguras pero también más lentas en el proceso de cifrado y descifrado.
+
+    ¿Por Qué es Seguro?
+        La seguridad de AES reside en su complejidad y en el número de transformaciones que se realizan. 
+        Es resistente a muchos tipos de ataques criptográficos debido a su estructura bien diseñada.
+
+    Aplicaciones de AES:
+        AES se usa en una amplia variedad de aplicaciones: 
+        Desde asegurar transacciones financieras y proteger comunicaciones gubernamentales hasta cifrar mensajes en aplicaciones de mensajería como WhatsApp.

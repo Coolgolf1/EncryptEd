@@ -1,0 +1,16 @@
+Reto
+
+    Eres un agente de una agencia de inteligencia que ha interceptado un mensaje cifrado de un espía. 
+    Se cree que el mensaje contiene la ubicación de una reunión secreta. 
+    Sin embargo, la clave para descifrar el mensaje está oculta en el propio mensaje cifrado.
+
+    Texto encriptado: ae41a11c78642f6103220205c822bc16c6172f71c05b30b0b4eee805e739310be8be1830a47b8aae12c1dd8c22f397c078e103be4a536328708e4fe0c4f6f04c63cb2da16a58819d6201f1f3d4b55514e4acba7cf53924f7ad181d4bed3548f780675ffe1b844cb6f8ddcfa0fa5f4a2e
+
+    El espía siempre usa una palabra clave relacionada con su misión como clave de cifrado. 
+    Sabemos que el espía ha cifrado la clave en un cifrado, posiblemente César.
+
+    Adjunto al mensaje cifrado aparece este texto: geji
+
+    ¿Puede qué el número de shifts esté relacionado a la longitud de la clave?
+
+

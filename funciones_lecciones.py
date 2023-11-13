@@ -1,15 +1,4 @@
 # Lecciones
-import os
-import binascii
-import base64
-from Crypto.Cipher import AES
-from Crypto.Cipher import DES
-from Crypto.Random import get_random_bytes
-from Crypto.Util.Padding import pad, unpad
-from Crypto.Protocol.KDF import PBKDF2
-from Crypto.Hash import SHA256
-from Crypto.PublicKey import RSA, ECC
-from Crypto.Cipher import PKCS1_OAEP
 from funciones_maquinas import *
 from funciones_ct_gn import *
 
@@ -185,6 +174,7 @@ def lecciones_rail_fence_cipher():
     name = f.read()
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
     input()
+    clear_terminal()
     f = open(".\Lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
@@ -219,7 +209,7 @@ def lecciones_cifrados_simetricos():
     while True:
         clear_terminal()
         lecciones_cifrados_simetricos_choice = input(
-            "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+            "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-256\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_cifrados_simetricos_choice == "1":
             lecciones_AES_cipher()
@@ -232,11 +222,111 @@ def lecciones_cifrados_simetricos():
 
 
 def lecciones_AES_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado AES!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, ahora empieza lo interesante! Vas a aprender mucho sobre el cifrado más importante del mundo, usado en todo tipo de sistemas digitales y de comunicación, como WhatsApp.\n
+Bienvenido al corazón de la seguridad en internet.""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\aes\historia_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\aes\\teoria_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, es bastante abstracto, por lo que es normal si no lo entiendes de primeras.\n\nVuelve a leerlo hasta que entiendas la estructura.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\aes\ejemplo_encrypt_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\\aes\ejemplo_decrypt_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\aes\\reto_aes.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(
+        f"\n¡Buena suerte agente {name}! Necesitamos que desencriptes el texto para poder avanzar en la misión.\n")
+    caesar_cipher()
+    AES_cipher()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "reunión en la cafetería de la esquina a las 10 p.m. trae los documentos.":
+        print("El mensaje no ha sido desencriptado.\n")
+        print("Pista: mira la longitud de la clave... puede ser el número de shifts")
+        caesar_cipher()
+        AES_cipher()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡Muy bien, agente {name}! Hemos conseguido adelantarnos al espía y hemos podido capturarle.")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡¡¡{name} has aprendido sobre el cifrado más importante del mundo!!!\n\n¡Enhorabuena!")
+    input()
+    print(f"\nEn el siguiente cifrado vamos a volver algo atrás en el tiempo... al sistema de cifrado anterior al AES. El DES.")
+    input()
 
 
 def lecciones_DES_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado DES!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n 
+Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n 
+Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n 
+¡Descubramos juntos cómo este algoritmo clásico transformó el mundo de la seguridad digital!""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\des\historia_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\des\\teoria_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, como puedes observar, es un cifrado más simple que el AES. Por ello, dejó de usarse, ya que no era lo suficientemente seguro.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\des\ejemplo_encrypt_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\\des\ejemplo_decrypt_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\des\\reto_des.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    DES_cipher()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas.":
+        print("El mensaje no ha sido desencriptado.\n")
+        DES_cipher()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡Enhorabuena, {name}! ¡¡¡Es hora de ir a por el oro!!!.")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya lo sabes todo sobre los cifrados simétricos!\n\n¡Enhorabuena!")
+    input()
+    print(f"\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
+    input()
 
 
 def lecciones_cifrados_asimetricos():
@@ -255,9 +345,193 @@ def lecciones_cifrados_asimetricos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
+def RSA_cipher_process_lecciones(plaintext, RSA_key, modo):
+    if modo == "E":
+        RSA_cipher = PKCS1_OAEP.new(RSA_key)
+        encrypted_message = RSA_cipher.encrypt(plaintext.encode())
+        return binascii.hexlify(encrypted_message).decode()
+    else:
+        RSA_cipher = PKCS1_OAEP.new(RSA_key)
+        decrypted_message = RSA_cipher.decrypt(binascii.unhexlify(plaintext))
+        return decrypted_message.decode()
+
+
+def RSA_cipher_lecciones():
+    # Printea un menú por estética
+    print("=====Cifrado RSA =====")
+    # Pide un input de encriptar/desencriptar
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    # Mira que la respuesta al input sea válida
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    plaintext = input("Introduce un texto: ").lower()
+    while len(plaintext) < 1:
+        print("Error. Introduce un texto válido.")
+        plaintext = input("Introduce un texto: ").lower()
+    try:
+        if modo == "E":
+            RSA_public_key = cargar_llave_de_archivo("public_key_leccion.pem")
+            encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
+            print(
+                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
+
+        else:
+            RSA_private_key = cargar_llave_de_archivo(
+                'private_key_leccion.pem')
+            decrypted_text = RSA_cipher_process(
+                plaintext, RSA_private_key, "D")
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\n\n")
+        input("Pulsa enter para continuar.")
+    except:
+        print("Has introducido algún dato de forma incorrecta.")
+
+
 def lecciones_RSA_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado RSA!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n 
+Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad en el vasto mundo de Internet.""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\historia_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\\teoria_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, como se puede observar, el cifrado RSA requiere un cierto nivel matemático, aunque podemos entender la parte teórica del cifrado.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\ejemplo_encrypt_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\\rsa\ejemplo_decrypt_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\\rsa\\reto_rsa.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    RSA_cipher_lecciones()
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "descubierto: un método innovador para fortalecer rsa contra futuros ataques cuánticos.":
+        print("El mensaje no ha sido desencriptado.\n")
+        RSA_cipher_lecciones()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡{name}, vamos a buscar por el resto de su laboratorio a ver si encontramos el gran descubrimiento!")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya has aprendido sobre el cifrado RSA, uno de los más importantes en todo el mundo!\n\n¡Enhorabuena!")
+    input()
+    print(f"\n!A por el cifrado de Curva Elíptica! Suena raro, pero sí, existe un cifrado con ese nombre...")
+    input()
+
+
+def ECC_cipher_lecciones():
+    # Printea un menú por estética
+    print("===== Cifrado ECC =====")
+    # Pide un input de encriptar/desencriptar
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    # Mira que la respuesta al input sea válida
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    if modo == "E":
+        print("No se puede encriptar en este ejercicio.")
+    else:
+        try:
+            ECC_public_key_pem = leer_de_archivo("public_key_lecciones.pem")
+            ECC_private_key_pem = leer_de_archivo("private_key_lecciones.pem")
+            nonce_b64 = leer_de_archivo("nonce_lecciones.txt")
+            tag_b64 = leer_de_archivo("tag_lecciones.txt")
+            ciphertext_b64 = input("Introduce el texto encriptado: ")
+
+            ECC_public_key = ECC.import_key(ECC_public_key_pem)
+            ECC_private_key = ECC.import_key(ECC_private_key_pem)
+            nonce = base64.b64decode(nonce_b64)
+            tag = base64.b64decode(tag_b64)
+            ciphertext = base64.b64decode(ciphertext_b64)
+
+            decrypted_message = desencriptar_ECC(
+                ECC_public_key, nonce, tag, ciphertext, ECC_private_key)
+            print(
+                f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
+        except Exception as e:
+            print("Error durante la desencriptación: ", e)
 
 
 def lecciones_ECC_cipher():
-    pass
+    print("¡Bienvenido A La Lección Del Cifrado ECC!")
+    f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
+    name = f.read()
+    f.close()
+    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n 
+Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n 
+Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para crear un sistema criptográfico eficiente y poderoso.""")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\historia_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\\teoria_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print(f"\n{name}, al igual que RSA, requiere un cierto nivel en matemáticas, pero la teoría se puede seguir para entender el cifrado.")
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\ejemplo_encrypt_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    print(f"""{"="*100}""")
+    f = open(".\Lecciones\ecc\ejemplo_decrypt_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    input()
+    clear_terminal()
+    f = open(".\Lecciones\ecc\\reto_ecc.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    print("===== Cifrado ECC =====")
+    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
+        print("Error")
+        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
+
+    if modo == "E":
+        print("No se puede encriptar en este ejercicio.")
+    else:
+        input("Introduce el texto encriptado: ")
+        print("\nEl texto desencriptado es: revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.\nCifrado ECC\n")
+    respuesta = input("\nIntroduce el texto desencriptado: ")
+    while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
+        print("El mensaje no ha sido desencriptado.\n")
+        ECC_cipher_lecciones()
+        respuesta = input("Introduce el texto desencriptado: ")
+    print(
+        f"\n¡{name}, vamos al templo! ¡Pero cuidado con las trampas que puede haber!")
+    input()
+    clear_terminal()
+    print(
+        f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
+    input()
+    print(
+        f"\n¿Por qué no pruebas los retos ,{name}? Puede que sean interesantes ;)")
+    input()

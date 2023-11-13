@@ -1,0 +1,31 @@
+Teoría
+
+    Nota
+        Esta teoría requiere algo de conocimiento matemático. Si no entiendes la parte matemática, puedes buscarlo o intentar seguir la teoría quitando las matemáticas.
+        Recuerda también que no hay una necesidad de saber matemáticasa para poder hacer criptografía, solamente es una herramienta útil.
+
+    ¿Qué es RSA?
+        RSA es un algoritmo de criptografía asimétrica que utiliza un par de claves: una pública para cifrar y una privada para descifrar. 
+        Es esencial en la seguridad digital para tareas como cifrado de datos y firma digital.
+
+    ¿Cómo Funciona?
+        RSA se basa en el principio matemático de que es fácil multiplicar dos números primos grandes para obtener un producto N, 
+        pero extremadamente difícil realizar el proceso inverso (factorización).
+
+    Pasos Clave del RSA:
+
+    1. Generación de Claves: 
+        · Se seleccionan dos números primos grandes y se calcula su producto N y la función totiente de Euler phi(N). 
+        · Luego se elige un número entero e que sea coprimo con phi(N) y menor que este. 
+        · La clave pública es (N, e) y la clave privada se deriva de estos valores.
+    2. Cifrado: 
+        · Para cifrar un mensaje, se convierte en un número menor que N y luego se eleva a la potencia e módulo N.
+    3. Descifrado: 
+        · El mensaje cifrado se eleva a la potencia de la clave privada módulo N, recuperando el mensaje original.
+
+    Seguridad de RSA:
+        La seguridad de RSA reside en la dificultad de factorizar el producto 
+        N de dos números primos grandes, una tarea que se vuelve prácticamente imposible a medida que el tamaño de los primos aumenta.
+
+    Aplicaciones de RSA:
+        RSA se utiliza en una variedad de aplicaciones, como el cifrado de correos electrónicos, la autenticación de sitios web y la firma digital en documentos.
