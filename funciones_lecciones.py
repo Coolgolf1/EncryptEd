@@ -345,17 +345,6 @@ def lecciones_cifrados_asimetricos():
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
-def RSA_cipher_process_lecciones(plaintext, RSA_key, modo):
-    if modo == "E":
-        RSA_cipher = PKCS1_OAEP.new(RSA_key)
-        encrypted_message = RSA_cipher.encrypt(plaintext.encode())
-        return binascii.hexlify(encrypted_message).decode()
-    else:
-        RSA_cipher = PKCS1_OAEP.new(RSA_key)
-        decrypted_message = RSA_cipher.decrypt(binascii.unhexlify(plaintext))
-        return decrypted_message.decode()
-
-
 def RSA_cipher_lecciones():
     # Printea un menú por estética
     print("=====Cifrado RSA =====")

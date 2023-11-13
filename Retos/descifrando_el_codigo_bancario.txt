@@ -1,0 +1,15 @@
+===== Descifrando El Código Bancario =====
+
+Has encontrado un mensaje cifrado con DES que parece estar relacionado con una transacción bancaria clandestina de gran magnitud. 
+Adjunto al mensaje, hay un dossier con varios datos personales de un banquero prominente, que tenemos en la base de datos. 
+Uno de estos datos es la clave para descifrar el mensaje.
+
+El mensaje cifrado es: 0cab098d256dd31fa3b7160a9f0101918cd8c34b7a842b58cdc885e1448866b52e03625e12f3885f4c23c32a0f1d9b0f89e8a047918930030632ca5d0b9761ef79bb95c7137d4074f1d1a458c009246162900af75aba9bc40cddf18de64926ef71125f1e8d491b9614bde907888e837dcb00472dd43a74e9ed4bb3c4c10b044b
+
+Datos del Dossier:
+
+· Fecha de nacimiento: 12 de julio de 1962
+· Lugar de nacimiento: Zúrich, Suiza
+· Número de cuenta bancaria: 4857390583948503
+· Mascota favorita: Pastor alemán llamado "Max"
+· Fecha de inicio en el banco: 3 de marzo de 1995

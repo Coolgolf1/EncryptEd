@@ -297,11 +297,10 @@ def rail_fence_cipher():
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":  # Mira que el input para modo sea válido
         print("Error")
         modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-    # El plaintext solo acepta minúsculas
-    plaintext = input("Introduce un texto: ").lower()
+    plaintext = input("Introduce un texto: ")
     while len(plaintext) < 1:
         print("Error. Introduce un texto válido.")
-        plaintext = input("Introduce un texto: ").lower()
+        plaintext = input("Introduce un texto: ")
     # El número de railes (llave)
     rails = input("Introduce el número de railes: ")
     # Tiene que ser númerica y además entre 1 y la longitud del texto ya que si no, no sirve de nada (con esto explico las siguientes líneas):
