@@ -533,5 +533,5 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
         f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
     input()
     print(
-        f"\n¿Por qué no pruebas los retos ,{name}? Puede que sean interesantes ;)")
+        f"\n¿Por qué no pruebas los retos, {name}? Puede que sean interesantes ;)")
     input()
