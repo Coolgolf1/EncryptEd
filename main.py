@@ -1,6 +1,7 @@
 from funciones_ct_gn import *
 from funciones_maquinas import *
 from funciones_lecciones import *
+from funciones_retos import *
 
 
 def main_menu():
@@ -19,30 +20,6 @@ def main_menu():
             exit_programa()
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
-
-
-def retos_menu():
-    while True:
-        clear_terminal()
-        retos_choice = input("===== Retos =====\n1. ")
-        clear_terminal()
-        # opciones = ...
-
-
-def maquinas_menu():
-    while True:
-        clear_terminal()
-        maquinas_choice = input(
-            "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
-        clear_terminal()
-        if maquinas_choice == "1":
-            maquinas_cifrados_clasicos()
-        elif maquinas_choice == "2":
-            maquinas_cifrados_simetricos()
-        elif maquinas_choice == "3":
-            maquinas_cifrados_asimetricos()
-        elif maquinas_choice == "5":
-            return
 
 
 def exit_programa():
