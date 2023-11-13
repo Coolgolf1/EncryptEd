@@ -449,9 +449,18 @@ def ECC_cipher_lecciones():
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
         print("Error")
         modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-
+    ECC_key, ECC_private_key, ECC_public_key = generar_ECC_keys()
     if modo == "E":
-        print("No se puede encriptar en este ejercicio.")
+        plaintext = input("Introduce un texto: ")
+        while len(plaintext) < 1:
+            print("Error. Introduce un texto válido.")
+            plaintext = input("Introduce un texto: ")
+        ECC_public_key, nonce, tag, ciphertext = encriptar_ECC(
+            plaintext, ECC_public_key, ECC_key)
+        guardar_datos_encriptados(
+            ECC_public_key, ECC_private_key, nonce, tag, ciphertext)
+        ciphertext_b64 = base64.b64encode(ciphertext).decode('utf-8')
+        print(f"El texto encriptado es: {ciphertext_b64}")
     else:
         try:
             ECC_public_key_pem = leer_de_archivo("public_key_lecciones.pem")
@@ -459,7 +468,6 @@ def ECC_cipher_lecciones():
             nonce_b64 = leer_de_archivo("nonce_lecciones.txt")
             tag_b64 = leer_de_archivo("tag_lecciones.txt")
             ciphertext_b64 = input("Introduce el texto encriptado: ")
-
             ECC_public_key = ECC.import_key(ECC_public_key_pem)
             ECC_private_key = ECC.import_key(ECC_private_key_pem)
             nonce = base64.b64decode(nonce_b64)
@@ -472,6 +480,8 @@ def ECC_cipher_lecciones():
                 f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
         except Exception as e:
             print("Error durante la desencriptación: ", e)
+
+    input("Pulsa enter para continuar.")
 
 
 def lecciones_ECC_cipher():
@@ -509,17 +519,7 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
     print(f.read())
     f.close()
     print()
-    print("===== Cifrado ECC =====")
-    modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-    while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
-        print("Error")
-        modo = input("Elige encriptar o desencriptar (E/D): ").upper()
-
-    if modo == "E":
-        print("No se puede encriptar en este ejercicio.")
-    else:
-        input("Introduce el texto encriptado: ")
-        print("\nEl texto desencriptado es: revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.\nCifrado ECC\n")
+    ECC_cipher_lecciones()
     respuesta = input("\nIntroduce el texto desencriptado: ")
     while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
         print("El mensaje no ha sido desencriptado.\n")

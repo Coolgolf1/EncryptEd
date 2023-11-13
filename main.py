@@ -25,6 +25,7 @@ def main_menu():
 def exit_programa():
     os.remove(".\\temp\\nombre.txt")
     print("Saliendo del programa...")
+    print("\n¡Esperamos verte pronto!\n")
     exit(0)
 
 

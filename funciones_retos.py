@@ -19,8 +19,16 @@ def retos_menu():
 
 
 def retos_basicos_menu():
-    pass
+    while True:
+        clear_terminal()
+        retos_basicos_choice = input(
+            "===== Retos =====\n1Retos Básicos\n2.Retos Avanzados\n\nIntroduce tu opción: ")
+        clear_terminal()
 
 
 def retos_avanzados_menu():
-    pass
+    while True:
+        clear_terminal()
+        retos_avanzados_choice = input(
+            "===== Retos =====\n1Retos Básicos\n2.Retos Avanzados\n\nIntroduce tu opción: ")
+        clear_terminal()
