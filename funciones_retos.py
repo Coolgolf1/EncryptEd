@@ -22,18 +22,19 @@ def retos_basicos_menu():
     while True:
         clear_terminal()
         retos_basicos_choice = input(
-            """===== Retos =====
+            """===== Retos Básicos =====
 1. El Código de César
 2. El Secreto de la Relatividad
 3. Mensajes Ocultos en la Vía Férrea
 4. El Misterio del Cifrado AES 
 5. Descifrando el Código Bancario
-6. El Desafio RSA de César
+6. La Misión Diplomática Cifrada
 7. 
 8. 
 9. 
 10. 
 11. Atrás\n\nIntroduce tu opción: """)
+        clear_terminal()
         if retos_basicos_choice == "1":
             el_codigo_del_cesar()
         elif retos_basicos_choice == "2":
@@ -45,7 +46,7 @@ def retos_basicos_menu():
         elif retos_basicos_choice == "5":
             descifrando_el_codigo_bancario()
         elif retos_basicos_choice == "6":
-            pass
+            la_mision_diplomatica_cifrada()
         elif retos_basicos_choice == "7":
             pass
         elif retos_basicos_choice == "8":
@@ -63,7 +64,7 @@ def retos_avanzados_menu():
     while True:
         clear_terminal()
         retos_avanzados_choice = input(
-            "===== Retos =====\n1. Retos Básicos\n2. Retos Avanzados\n\nIntroduce tu opción: ")
+            "===== Retos Avanzados =====\n1. Retos Básicos\n2. Retos Avanzados\n\nIntroduce tu opción: ")
         clear_terminal()
 
 
@@ -81,6 +82,7 @@ def el_codigo_del_cesar():
     print("""¡Excelente trabajo! Has descifrado el código de César y revelado un pedazo de historia. 
 Al igual que Julio César conquistó territorios, tú has conquistado este reto criptográfico. 
 Prepárate para más desafíos en el mundo de los códigos secretos.""")
+    input()
     
 
 def el_secreto_de_la_relatividad():
@@ -97,6 +99,7 @@ def el_secreto_de_la_relatividad():
     print("""¡Has revelado con éxito el mensaje oculto! 
 Al igual que Einstein revolucionó nuestra comprensión del universo, tú has desentrañado un misterio de la criptografía. 
 Sigue adelante para descubrir más secretos encriptados.""")
+    input()
     
 
 def mensajes_ocultos_en_la_via_ferrea():
@@ -113,6 +116,7 @@ def mensajes_ocultos_en_la_via_ferrea():
     print("""¡Brillante! Has descifrado con éxito el mensaje oculto en la vía férrea
 y encontrado las pistas que incluso el mejor detective del siglo XIX pasó por alto. 
 Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptografía.""")
+    input()
 
 
 def el_misterio_del_cifrado_aes():
@@ -128,6 +132,7 @@ def el_misterio_del_cifrado_aes():
         respuesta = input("\nIntroduce el mensaje descifrado: ")
     print("""¡Enhorabuena! Has descifrado el mensaje secreto y descubierto los planes ocultos. 
 Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maestro de la criptografía moderna.""")
+    input()
 
 
 def descifrando_el_codigo_bancario():
@@ -143,6 +148,8 @@ def descifrando_el_codigo_bancario():
         respuesta = input("\nIntroduce el código de confirmación: ")
     print("""¡Increíble! Has demostrado ser un auténtico criptoanalista al descifrar el secreto del banquero. 
 Tu habilidad para conectar los puntos y descubrir la clave oculta en los detalles te ha llevado a revelar una operación bancaria encubierta.""")
+    input()
+
 
 
 def RSA_cipher_reto_mision_diplomatica():
@@ -156,37 +163,58 @@ def RSA_cipher_reto_mision_diplomatica():
     while len(plaintext) < 1:
         print("Error. Introduce un texto válido.")
         plaintext = input("Introduce un texto: ").lower()
-    try:
-        if modo == "E":
-            RSA_public_key = cargar_llave_de_archivo("public_key_reto_diplomatica.pem")
-            encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
-            print(
-                f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
+    #try:
+    if modo == "E":
+        RSA_public_key = cargar_llave_de_archivo("public_key_reto_diplomatica.pem")
+        encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
+        print(
+            f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
 
-        else:
-            RSA_private_key = input("Introduce la llave privada: ")
-            decrypted_text = RSA_cipher_process(
-                plaintext, RSA_private_key, "D")
-            print(
-                f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\n\n")
-        input("Pulsa enter para continuar.")
-    except:
-        print("Has introducido algún dato de forma incorrecta.")
-
+    else:
+        RSA_private_key = input("Introduce la llave privada: ")
+        decrypted_text = RSA_cipher_process(
+            plaintext, RSA_private_key, "D")
+        print(
+            f"\nEl texto desencriptado es: \n{decrypted_text}\n\nCifrado RSA\n\n")
+    input("Pulsa enter para continuar.")
+    #except:        
+       # print("Has introducido algún dato de forma incorrecta.")
 
 
 def la_mision_diplomatica_cifrada(): 
-    f = open(".\Retos\descifrando_el_codigo_bancario.txt", "r", encoding="utf-8")
+    f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
-    input()
-    DES_cipher()
-    respuesta = input("\nIntroduce el código de confirmación: ")
-    while respuesta != "deltaechosierra":
-        input("Ese no es el código de confirmación correcto.")
-        DES_cipher()
-        respuesta = input("\nIntroduce el código de confirmación: ")
-    print("""¡Has descifrado con éxito el doble cifrado! Tu habilidad para navegar por las complejidades de RSA y César demuestra que eres un estratega criptográfico astuto, digno de los grandes líderes de la historia.""")
+    print()
+    count = 0
+    while count < 2:
+        opcion = input("1. Rail Fence\n2. RSA\n\nElige que cifrado quieres usar: ")
+        if opcion == "1":
+            rail_fence_cipher()
+        elif opcion == "2":
+            RSA_cipher_reto_mision_diplomatica()
+        count += 1
+    respuesta = input("\nIntroduce el mensaje descifrado: ")
+    while respuesta != "urgente: reunión de embajadores programada para discutir la paz mundial. la clave está en la colaboración.":
+        input("El mensaje no ha sido descifrado correctamente.")
+        clear_terminal()
+        f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
+        print(f.read())
+        f.close()
+        print()
+        count = 0
+        while count < 2:
+            opcion = input("1. Rail Fence\n2. RSA\n\nElige que cifrado quieres usar: ")
+            if opcion == "1":
+                rail_fence_cipher()
+            elif opcion == "2":
+                RSA_cipher_reto_mision_diplomatica()
+            count += 1
+        respuesta = input("\nIntroduce el mensaje descifrado: ")
+    print("""¡Felicidades! Has descifrado con éxito el mensaje cifrado y contribuido a la paz internacional. 
+Tu destreza criptográfica ha demostrado ser esencial para el éxito de misiones diplomáticas críticas.""")
 
-def la_mision_diplomatica_cifrada():
+
+def sdfsd():
     pass
+
