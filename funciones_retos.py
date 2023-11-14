@@ -6,7 +6,7 @@ def retos_menu():
     while True:
         clear_terminal()
         retos_choice = input(
-            "===== Retos =====\n1Retos Básicos\n2.Retos Avanzados\n\nIntroduce tu opción: ")
+            "===== Retos =====\n1. Retos Básicos\n2. Retos Avanzados\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if retos_choice == "1":
             retos_basicos_menu()
@@ -23,17 +23,17 @@ def retos_basicos_menu():
         clear_terminal()
         retos_basicos_choice = input(
             """===== Retos =====
-            1. El Código de César
-            2. El Secreto de la Relatividad
-            3. Mensajes Ocultos en la Vía Férrea
-            4. El Misterio del Cifrado AES 
-            5. Descifrando el Código Bancario
-            6. El Desafio RSA de César
-            7. 
-            8. 
-            9. 
-            10. 
-            11. Atrás\n\nIntroduce tu opción: """)
+1. El Código de César
+2. El Secreto de la Relatividad
+3. Mensajes Ocultos en la Vía Férrea
+4. El Misterio del Cifrado AES 
+5. Descifrando el Código Bancario
+6. El Desafio RSA de César
+7. 
+8. 
+9. 
+10. 
+11. Atrás\n\nIntroduce tu opción: """)
         if retos_basicos_choice == "1":
             el_codigo_del_cesar()
         elif retos_basicos_choice == "2":
@@ -63,7 +63,7 @@ def retos_avanzados_menu():
     while True:
         clear_terminal()
         retos_avanzados_choice = input(
-            "===== Retos =====\n1Retos Básicos\n2.Retos Avanzados\n\nIntroduce tu opción: ")
+            "===== Retos =====\n1. Retos Básicos\n2. Retos Avanzados\n\nIntroduce tu opción: ")
         clear_terminal()
 
 
@@ -189,4 +189,4 @@ def la_mision_diplomatica_cifrada():
     print("""¡Has descifrado con éxito el doble cifrado! Tu habilidad para navegar por las complejidades de RSA y César demuestra que eres un estratega criptográfico astuto, digno de los grandes líderes de la historia.""")
 
 def la_mision_diplomatica_cifrada():
-
+    pass
