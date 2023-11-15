@@ -20,6 +20,8 @@ def lecciones_menu():
             lecciones_cifrados_asimetricos()
         elif lecciones_choice == "5":
             pass
+        elif lecciones_choice == "6":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -216,6 +218,8 @@ def lecciones_cifrados_simetricos():
             lecciones_AES_cipher()
         elif lecciones_cifrados_simetricos_choice == "2":
             lecciones_DES_cipher()
+        elif lecciones_cifrados_simetricos_choice == "3":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -339,6 +343,8 @@ def lecciones_cifrados_asimetricos():
             lecciones_RSA_cipher()
         elif lecciones_cifrados_asimetricos_choice == "2":
             lecciones_ECC_cipher()
+        elif lecciones_cifrados_asimetricos_choice == "3":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 

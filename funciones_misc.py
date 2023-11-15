@@ -55,9 +55,9 @@ def exit_programa():
     exit(0)
 
 
-def cansado():
+def funcion_cansado():
     cansado = False
     cansado_input = input("¿Quieres continuar? (S/N) ").upper()
-    if cansado_input == "S":
+    if cansado_input == "N":
         cansado = True
     return cansado

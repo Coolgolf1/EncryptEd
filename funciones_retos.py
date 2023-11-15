@@ -79,14 +79,18 @@ def el_codigo_del_cesar():
     input()
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
+    cansado = False
     while respuesta != "veni, vidi, vici" and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         caesar_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-        cansado = cansado()
-    print("""¡Excelente trabajo! Has descifrado el código de César y revelado un pedazo de historia. 
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""¡Excelente trabajo! Has descifrado el código de César y revelado un pedazo de historia. 
 Al igual que Julio César conquistó territorios, tú has conquistado este reto criptográfico. 
 Prepárate para más desafíos en el mundo de los códigos secretos.""")
+    else: 
+        print("¡Inténtalo en otro momento!")
     input()
     
 
@@ -97,13 +101,18 @@ def el_secreto_de_la_relatividad():
     input()
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "la imaginacion es mas importante que el conocimiento.":
+    cansado = False
+    while respuesta != "la imaginacion es mas importante que el conocimiento." and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         vigenere_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-    print("""¡Has revelado con éxito el mensaje oculto! 
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""¡Has revelado con éxito el mensaje oculto! 
 Al igual que Einstein revolucionó nuestra comprensión del universo, tú has desentrañado un misterio de la criptografía. 
 Sigue adelante para descubrir más secretos encriptados.""")
+    else:
+        print("¡Inténtalo en otro momento!")
     input()
     
 
@@ -114,13 +123,18 @@ def mensajes_ocultos_en_la_via_ferrea():
     input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "la solucion esta en los detalles mas insignificantes.":
+    cansado = False
+    while respuesta != "la solucion esta en los detalles mas insignificantes." and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         rail_fence_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-    print("""¡Brillante! Has descifrado con éxito el mensaje oculto en la vía férrea
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""¡Brillante! Has descifrado con éxito el mensaje oculto en la vía férrea
 y encontrado las pistas que incluso el mejor detective del siglo XIX pasó por alto. 
 Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptografía.""")
+    else: 
+        print("¡Inténtalo en otro momento!")
     input()
 
 
@@ -131,12 +145,17 @@ def el_misterio_del_cifrado_aes():
     input()
     AES_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "en el corazón de la criptografía moderna yace un secreto bien guardado, la llave para el futuro de la seguridad digital.":
+    cansado = False
+    while respuesta != "en el corazón de la criptografía moderna yace un secreto bien guardado, la llave para el futuro de la seguridad digital." and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         AES_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-    print("""¡Enhorabuena! Has descifrado el mensaje secreto y descubierto los planes ocultos. 
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""¡Enhorabuena! Has descifrado el mensaje secreto y descubierto los planes ocultos. 
 Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maestro de la criptografía moderna.""")
+    else:
+        print("¡Inténtalo en otro momento!")
     input()
 
 
@@ -147,12 +166,17 @@ def descifrando_el_codigo_bancario():
     input()
     DES_cipher()
     respuesta = input("\nIntroduce el código de confirmación: ")
-    while respuesta != "deltaechosierra":
+    cansado = False
+    while respuesta != "deltaechosierra" and not cansado:
         input("Ese no es el código de confirmación correcto.")
         DES_cipher()
         respuesta = input("\nIntroduce el código de confirmación: ")
-    print("""¡Increíble! Has demostrado ser un auténtico criptoanalista al descifrar el secreto del banquero. 
+        cansado = funcion_cansado()
+    if not cansado: 
+        print("""¡Increíble! Has demostrado ser un auténtico criptoanalista al descifrar el secreto del banquero. 
 Tu habilidad para conectar los puntos y descubrir la clave oculta en los detalles te ha llevado a revelar una operación bancaria encubierta.""")
+    else: 
+        print("¡Inténtalo en otro momento!")
     input()
 
 
@@ -200,7 +224,8 @@ def la_mision_diplomatica_cifrada():
             RSA_cipher_reto_mision_diplomatica()
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "urgente: reunión de embajadores programada para discutir la paz mundial. la clave está en la colaboración.":
+    cansado = False
+    while respuesta != "urgente: reunión de embajadores programada para discutir la paz mundial. la clave está en la colaboración." and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         clear_terminal()
         f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
@@ -216,8 +241,12 @@ def la_mision_diplomatica_cifrada():
                 RSA_cipher_reto_mision_diplomatica()
             count += 1
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-    print("""¡Felicidades! Has descifrado con éxito el mensaje cifrado y contribuido a la paz internacional. 
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""¡Felicidades! Has descifrado con éxito el mensaje cifrado y contribuido a la paz internacional. 
 Tu destreza criptográfica ha demostrado ser esencial para el éxito de misiones diplomáticas críticas.""")
+    else: 
+        print("¡Inténtalo en otro momento!")
 
 
 def sdfsd():
