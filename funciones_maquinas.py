@@ -13,7 +13,8 @@ from funciones_misc import *
 
 
 def maquinas_menu():
-    while True:
+    maquinas_choice = ""
+    while maquinas_choice != "5":
         clear_terminal()
         maquinas_choice = input(
             "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
@@ -24,12 +25,13 @@ def maquinas_menu():
             maquinas_cifrados_simetricos()
         elif maquinas_choice == "3":
             maquinas_cifrados_asimetricos()
-        elif maquinas_choice == "5":
-            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def maquinas_cifrados_clasicos():
-    while True:
+    maquinas_cifrados_clasicos_choice = ""
+    while maquinas_cifrados_clasicos_choice != "4":
         clear_terminal()
         maquinas_cifrados_clasicos_choice = input(
             "========= Máquinas ==========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
@@ -40,14 +42,13 @@ def maquinas_cifrados_clasicos():
             vigenere_cipher()
         elif maquinas_cifrados_clasicos_choice == "3":
             rail_fence_cipher()
-        elif maquinas_cifrados_clasicos_choice == "4":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def maquinas_cifrados_simetricos():
-    while True:
+    maquinas_cifrados_simetricos_choice = ""
+    while maquinas_cifrados_simetricos_choice != "3":
         clear_terminal()
         maquinas_cifrados_simetricos_choice = input(
             "========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
@@ -56,24 +57,21 @@ def maquinas_cifrados_simetricos():
             AES_cipher()
         elif maquinas_cifrados_simetricos_choice == "2":
             DES_cipher()
-        elif maquinas_cifrados_simetricos_choice == "3":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def maquinas_cifrados_asimetricos():
-    while True:
+    maquinas_cifrados_asimetricos_choice = ""
+    while maquinas_cifrados_asimetricos_choice != "3":
         clear_terminal()
-        maquinas_cifrados_simetricos_choice = input(
+        maquinas_cifrados_asimetricos_choice = input(
             "=========== Máquinas ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        if maquinas_cifrados_simetricos_choice == "1":
+        if maquinas_cifrados_asimetricos_choice == "1":
             RSA_cipher()
-        elif maquinas_cifrados_simetricos_choice == "2":
+        elif maquinas_cifrados_asimetricos_choice == "2":
             ECC_cipher()
-        elif maquinas_cifrados_simetricos_choice == "3":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 # Este es el proceso de encripción/desencripción del Cifrado César

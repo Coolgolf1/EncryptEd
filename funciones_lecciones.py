@@ -4,7 +4,8 @@ from funciones_misc import *
 
 
 def lecciones_menu():
-    while True:
+    lecciones_choice = ""
+    while lecciones_choice != "6":
         clear_terminal()
         lecciones_choice = input(
             "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
@@ -19,8 +20,8 @@ def lecciones_menu():
             lecciones_cifrados_asimetricos()
         elif lecciones_choice == "5":
             pass
-        elif lecciones_choice == "6":
-            return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def lecciones_introduccion():
@@ -48,7 +49,8 @@ def lecciones_introduccion():
 
 
 def lecciones_cifrados_clasicos():
-    while True:
+    lecciones_cifrados_clasicos_choice = ""
+    while lecciones_cifrados_clasicos_choice != "4":
         clear_terminal()
         lecciones_cifrados_clasicos_choice = input(
             "========= Lecciones =========\n===== Cifrados Clásicos =====\n1. Cifrado César\n2. Cifrado Vigènere\n3. Cifrado Rail Fence\n4. Atrás\n\nIntroduce tu opción: ")
@@ -59,8 +61,6 @@ def lecciones_cifrados_clasicos():
             lecciones_vigenere_cipher()
         elif lecciones_cifrados_clasicos_choice == "3":
             lecciones_rail_fence_cipher()
-        elif lecciones_cifrados_clasicos_choice == "4":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -206,7 +206,8 @@ def lecciones_rail_fence_cipher():
 
 
 def lecciones_cifrados_simetricos():
-    while True:
+    lecciones_cifrados_simetricos_choice = ""
+    while lecciones_cifrados_simetricos_choice != "3":
         clear_terminal()
         lecciones_cifrados_simetricos_choice = input(
             "========== Lecciones ==========\n===== Cifrados Simétricos =====\n1. Cifrado AES-256\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
@@ -215,8 +216,6 @@ def lecciones_cifrados_simetricos():
             lecciones_AES_cipher()
         elif lecciones_cifrados_simetricos_choice == "2":
             lecciones_DES_cipher()
-        elif lecciones_cifrados_simetricos_choice == "3":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -330,17 +329,16 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
 
 
 def lecciones_cifrados_asimetricos():
-    while True:
+    lecciones_cifrados_asimetricos_choice = ""
+    while lecciones_cifrados_asimetricos_choice != "3":
         clear_terminal()
-        maquinas_cifrados_simetricos_choice = input(
+        lecciones_cifrados_asimetricos_choice = input(
             "========== Lecciones ===========\n===== Cifrados Asimétricos =====\n1. Cifrado RSA\n2. Cifrado Curva Elíptica\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
-        if maquinas_cifrados_simetricos_choice == "1":
+        if lecciones_cifrados_asimetricos_choice == "1":
             lecciones_RSA_cipher()
-        elif maquinas_cifrados_simetricos_choice == "2":
+        elif lecciones_cifrados_asimetricos_choice == "2":
             lecciones_ECC_cipher()
-        elif maquinas_cifrados_simetricos_choice == "3":
-            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 

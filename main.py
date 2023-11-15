@@ -5,7 +5,8 @@ from funciones_retos import *
 
 
 def main_menu():
-    while main_menu_choice != 5:
+    main_menu_choice = ""
+    while main_menu_choice != "5":
         clear_terminal()
         main_menu_choice = (input(
             "==== Menú ====\n1. Lecciones\n2. Retos\n3. Máquinas\n4. Sigue Aprendiendo\n5. Salir\n\nIntroduce tu opción: "))

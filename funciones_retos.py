@@ -3,7 +3,8 @@ from funciones_maquinas import *
 
 
 def retos_menu():
-    while True:
+    retos_choice = ""
+    while retos_choice != "3":
         clear_terminal()
         retos_choice = input(
             "===== Retos =====\n1. Retos Básicos\n2. Retos Avanzados\n3. Atrás\n\nIntroduce tu opción: ")
@@ -19,7 +20,8 @@ def retos_menu():
 
 
 def retos_basicos_menu():
-    while True:
+    retos_basicos_choice = ""
+    while retos_basicos_choice != "11":
         clear_terminal()
         retos_basicos_choice = input(
             """===== Retos Básicos =====
@@ -57,6 +59,8 @@ def retos_basicos_menu():
             pass
         elif retos_basicos_choice == "11":
             return
+        else:
+            input("Error. No es una opción correcta. Pulsa enter para continuar.")
         clear_terminal()
 
 
@@ -75,10 +79,11 @@ def el_codigo_del_cesar():
     input()
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "veni, vidi, vici":
+    while respuesta != "veni, vidi, vici" and not cansado:
         input("El mensaje no ha sido descifrado correctamente.")
         caesar_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
+        cansado = cansado()
     print("""¡Excelente trabajo! Has descifrado el código de César y revelado un pedazo de historia. 
 Al igual que Julio César conquistó territorios, tú has conquistado este reto criptográfico. 
 Prepárate para más desafíos en el mundo de los códigos secretos.""")

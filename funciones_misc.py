@@ -53,3 +53,11 @@ def exit_programa():
     print("Saliendo del programa...")
     print("\n¡Esperamos verte pronto!\n")
     exit(0)
+
+
+def cansado():
+    cansado = False
+    cansado_input = input("¿Quieres continuar? (S/N) ").upper()
+    if cansado_input == "S":
+        cansado = True
+    return cansado
