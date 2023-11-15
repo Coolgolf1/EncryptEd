@@ -1,6 +1,6 @@
 # Lecciones
 from funciones_maquinas import *
-from funciones_ct_gn import *
+from funciones_misc import *
 
 
 def lecciones_menu():
