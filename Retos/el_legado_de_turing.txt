@@ -1,0 +1,11 @@
+===== El Legado De Turing =====
+
+Un mensaje cifrado utilizando una combinación de cifrado César y AES ha sido encontrado en un diario perteneciente a un criptoanalista famoso. 
+Se cree que contiene una cita importante de Alan Turing.
+
+El mensaje cifrado es: 6613fac016f08f8a3302e7895d5369649858525b2a06e4756d92f008888113759ecc8358db9b3d7b418ee384cacfe42268b4d6c7552c88baa1747c91a7d211ff4bcd347f52caead6779579f63ca48b5e8b5c8a8b2f3cccacded4429650f87634239cd6333f1b202c27f70c22b518bf06be853a27c2bdb3ba14c1db215523d2b148db86db998cc5c1c2a9ff94afdd19c1
+
+Sabemos que es importante este dato:
+La edad de Turing cuando escribió (no publicó) su famoso artículo "On Computable Numbers".
+
+Hemos también encontrado este mensaje encriptado: apgnrmcvnjmpybmpyjylrspgle

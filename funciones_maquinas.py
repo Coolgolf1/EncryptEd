@@ -25,6 +25,10 @@ def maquinas_menu():
             maquinas_cifrados_simetricos()
         elif maquinas_choice == "3":
             maquinas_cifrados_asimetricos()
+        elif maquinas_choice == "4":
+            pass
+        elif maquinas_choice == "5":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -42,6 +46,8 @@ def maquinas_cifrados_clasicos():
             vigenere_cipher()
         elif maquinas_cifrados_clasicos_choice == "3":
             rail_fence_cipher()
+        elif maquinas_cifrados_clasicos_choice == "4":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -57,6 +63,8 @@ def maquinas_cifrados_simetricos():
             AES_cipher()
         elif maquinas_cifrados_simetricos_choice == "2":
             DES_cipher()
+        elif maquinas_cifrados_simetricos_choice == "3":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
@@ -72,6 +80,8 @@ def maquinas_cifrados_asimetricos():
             RSA_cipher()
         elif maquinas_cifrados_asimetricos_choice == "2":
             ECC_cipher()
+        elif maquinas_cifrados_asimetricos_choice == "3":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 # Este es el proceso de encripción/desencripción del Cifrado César

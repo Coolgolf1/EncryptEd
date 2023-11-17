@@ -1,15 +1,9 @@
 ===== El Código Estelar =====
 
 Un mensaje cifrado de un astrónomo ha sido descubierto, se cree que contiene la ubicación de un nuevo exoplaneta. 
-El mensaje se cifró primero con Vigenère y luego con ECC. 
-La clave de Vigenère está relacionada con un famoso astrónomo.
+El mensaje se cifró primero con Vigènere y lueg con ECC. 
+La clave de Vigenère está relacionada con un famoso astrónomo, el primero en descubrir que la Luna tenía montañas.
 
-El mensaje cifrado es: 
-
-
-Clave: Galileo
+El mensaje cifrado es:  6kdIH5lS3U1jeV6+rafk5z5Uy9/Tj3LxX0GlT2ViKifKcrcOJ1KRXk6uCpMIJjF9plHSlDt8d2fgmI0lIRzLnOVhfZtJDXvUBBXOGxwaf+6vKl1s3D7HeBwDqijOC5JU87MDb7fVMsw46M4lHO7e/tR9OAu2ATiUfMsdNgi3lEFHd5azDo4hwy4d325lhrS0
 
 
-
-
-Revelación astronómica: en el cúmulo de nebulosas de Orión se ha detectado una secuencia de exoplanetas potencialmente habitables.
