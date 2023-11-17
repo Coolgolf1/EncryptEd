@@ -68,6 +68,7 @@ def lecciones_cifrados_clasicos():
 
 
 def lecciones_caesar_cipher():
+    cansado = False
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print("¡Bienvenido A La Lección Del Cifrado César!")
@@ -91,35 +92,45 @@ def lecciones_caesar_cipher():
     Llave: (el segundo número primo)\n
     Intenta desencriptarlo de forma manual, con una hoja y un boli.\n""")
     respuesta_1 = input("Introduce el texto desencriptado: ")
-    while respuesta_1 != "¡muy bien!":
+    while respuesta_1 != "¡muy bien!" and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         respuesta_1 = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
-    print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
-    input()
-    clear_terminal()
-    f = open(".\lecciones\caesar\\reto_caesar.txt", "r", encoding="utf-8")
-    print(f"""Reto Con Máquina:\n\n{name}, {f.read()}""")
-    f.close()
-    input("Pulsa enter para continuar.")
-    caesar_cipher()
-    respuesta = input("\nIntroduce el mensaje desencriptado: ")
-    while respuesta != "legion tres, movimiento inmediato hacia las colinas de pharsalus. refuerzo necesario en el flanco derecho para envolver al enemigo. mantengan la formacion de testudo hasta la senal de ataque. victoria espera.":
-        print("El mensaje no ha sido desencriptado.\n")
-        caesar_cipher()
-        respuesta = input("Introduce el mensaje desencriptado: ")
+        cansado = funcion_cansado()
         print()
-    print(
-        f"\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡{name}, prepara una ofensiva para vencerles!\n")
+    if not cansado:
+        print(
+            f"\n¡Genial, {name} has aprendido el funcionamiento del Cifrado César!\n")
+        print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
+        input()
+        clear_terminal()
+        f = open(".\lecciones\caesar\\reto_caesar.txt", "r", encoding="utf-8")
+        print(f"""Reto Con Máquina:\n\n{name}, {f.read()}""")
+        f.close()
+        input("Pulsa enter para continuar.")
+        caesar_cipher()
+        respuesta = input("\nIntroduce el mensaje desencriptado: ")
+        while respuesta != "legion tres, movimiento inmediato hacia las colinas de pharsalus. refuerzo necesario en el flanco derecho para envolver al enemigo. mantengan la formacion de testudo hasta la senal de ataque. victoria espera." and not cansado:
+            print("El mensaje no ha sido desencriptado.\n")
+            caesar_cipher()
+            respuesta = input("Introduce el mensaje desencriptado: ")
+            cansado = funcion_cansado()
+            print()
+        if not cansado:
+            print(
+                f"\n¡Correcto! ¡Ahora ya sabes los siguientes movimientos del ejército de Julio César!\n¡{name}, prepara una ofensiva para vencerles!\n")
+        else:
+            input("¡Inténtalo de nuevo en otro momento!")
 
-    input("Pulsa enter para continuar.")
-    clear_terminal()
-    print(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
-    input()
+        input("Pulsa enter para continuar.")
+        clear_terminal()
+        print(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
 
 
 def lecciones_vigenere_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -159,18 +170,21 @@ def lecciones_vigenere_cipher():
     f.close()
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
-    while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":
+    while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-
-    print(
-        f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
-    print(
-        f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
-    input()
-
+        cansado = funcion_cansado()
+    if not cansado:
+        print(
+            f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
+        print(
+            f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
 
 def lecciones_rail_fence_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -198,13 +212,17 @@ def lecciones_rail_fence_cipher():
     input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
-    while respuesta != "encuentro secreto en el muelle al amanecer":
+    while respuesta != "encuentro secreto en el muelle al amanecer" and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
-    print(f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
-    input()
+        cansado = funcion_cansado
+    if not cansado: 
+        print(
+            f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
+        print(f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
 
 
 def lecciones_cifrados_simetricos():
@@ -225,6 +243,7 @@ def lecciones_cifrados_simetricos():
 
 
 def lecciones_AES_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado AES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -262,24 +281,29 @@ Bienvenido al corazón de la seguridad en internet.""")
     caesar_cipher()
     AES_cipher()
     respuesta = input("\nIntroduce el texto desencriptado: ")
-    while respuesta != "reunión en la cafetería de la esquina a las 10 p.m. trae los documentos.":
+    while respuesta != "reunión en la cafetería de la esquina a las 10 p.m. trae los documentos." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         print("Pista: mira la longitud de la clave... puede ser el número de shifts")
         caesar_cipher()
         AES_cipher()
         respuesta = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡Muy bien, agente {name}! Hemos conseguido adelantarnos al espía y hemos podido capturarle.")
-    input()
-    clear_terminal()
-    print(
-        f"\n¡¡¡{name} has aprendido sobre el cifrado más importante del mundo!!!\n\n¡Enhorabuena!")
-    input()
-    print(f"\nEn el siguiente cifrado vamos a volver algo atrás en el tiempo... al sistema de cifrado anterior al AES. El DES.")
-    input()
+        cansado = funcion_cansado()
+    if not cansado:
+        print(
+            f"\n¡Muy bien, agente {name}! Hemos conseguido adelantarnos al espía y hemos podido capturarle.")
+        input()
+        clear_terminal()
+        print(
+            f"\n¡¡¡{name} has aprendido sobre el cifrado más importante del mundo!!!\n\n¡Enhorabuena!")
+        input()
+        print(f"\nEn el siguiente cifrado vamos a volver algo atrás en el tiempo... al sistema de cifrado anterior al AES. El DES.")
+        input()
+    else:
+        input("Inténtalo de nuevo en otro momento!")
 
 
 def lecciones_DES_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado DES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -317,19 +341,23 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
     print()
     DES_cipher()
     respuesta = input("\nIntroduce el texto desencriptado: ")
-    while respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas.":
+    while respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         DES_cipher()
         respuesta = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡Enhorabuena, {name}! ¡¡¡Es hora de ir a por el oro!!!.")
-    input()
-    clear_terminal()
-    print(
-        f"\n¡{name}, ya lo sabes todo sobre los cifrados simétricos!\n\n¡Enhorabuena!")
-    input()
-    print(f"\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
-    input()
+        cansado = funcion_cansado()
+    if not cansado:
+        print(
+            f"\n¡Enhorabuena, {name}! ¡¡¡Es hora de ir a por el oro!!!.")
+        input()
+        clear_terminal()
+        print(
+            f"\n¡{name}, ya lo sabes todo sobre los cifrados simétricos!\n\n¡Enhorabuena!")
+        input()
+        print(f"\nSiguiente: cifrados asimétricos, hmmm.... ¿como serán?\n¡Vamos a descubrirlo!")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
 
 
 def lecciones_cifrados_asimetricos():
@@ -383,6 +411,7 @@ def RSA_cipher_lecciones():
 
 
 def lecciones_RSA_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado RSA!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -418,19 +447,23 @@ Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad e
     print()
     RSA_cipher_lecciones()
     respuesta = input("\nIntroduce el texto desencriptado: ")
-    while respuesta != "descubierto: un método innovador para fortalecer rsa contra futuros ataques cuánticos.":
+    while respuesta != "descubierto: un método innovador para fortalecer rsa contra futuros ataques cuánticos." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         RSA_cipher_lecciones()
         respuesta = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡{name}, vamos a buscar por el resto de su laboratorio a ver si encontramos el gran descubrimiento!")
-    input()
-    clear_terminal()
-    print(
-        f"\n¡{name}, ya has aprendido sobre el cifrado RSA, uno de los más importantes en todo el mundo!\n\n¡Enhorabuena!")
-    input()
-    print(f"\n!A por el cifrado de Curva Elíptica! Suena raro, pero sí, existe un cifrado con ese nombre...")
-    input()
+        cansado = funcion_cansado()
+    if not cansado:
+        print(
+            f"\n¡{name}, vamos a buscar por el resto de su laboratorio a ver si encontramos el gran descubrimiento!")
+        input()
+        clear_terminal()
+        print(
+            f"\n¡{name}, ya has aprendido sobre el cifrado RSA, uno de los más importantes en todo el mundo!\n\n¡Enhorabuena!")
+        input()
+        print(f"\n!A por el cifrado de Curva Elíptica! Suena raro, pero sí, existe un cifrado con ese nombre...")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
 
 
 def ECC_cipher_lecciones():
@@ -478,6 +511,7 @@ def ECC_cipher_lecciones():
 
 
 def lecciones_ECC_cipher():
+    cansado = False
     print("¡Bienvenido A La Lección Del Cifrado ECC!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -514,17 +548,21 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
     print()
     ECC_cipher_lecciones()
     respuesta = input("\nIntroduce el texto desencriptado: ")
-    while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
+    while respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         ECC_cipher_lecciones()
         respuesta = input("Introduce el texto desencriptado: ")
-    print(
-        f"\n¡{name}, vamos al templo! ¡Pero cuidado con las trampas que puede haber!")
-    input()
-    clear_terminal()
-    print(
-        f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
-    input()
-    print(
-        f"\n¿Por qué no pruebas los retos, {name}? Puede que sean interesantes ;)")
-    input()
+        cansado = funcion_cansado()
+    if not cansado:
+        print(
+            f"\n¡{name}, vamos al templo! ¡Pero cuidado con las trampas que puede haber!")
+        input()
+        clear_terminal()
+        print(
+            f"\n¡{name}, ya sabes todo lo básico sobre cifrados asimétricos!\n\n¡Enhorabuena!")
+        input()
+        print(
+            f"\n¿Por qué no pruebas los retos, {name}? Puede que sean interesantes ;)")
+        input()
+    else:
+        input("¡Inténtalo de nuevo en otro momento!")
