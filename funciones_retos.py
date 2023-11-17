@@ -54,7 +54,7 @@ def retos_basicos_menu():
         elif retos_basicos_choice == "8":
             el_legado_de_turing()
         elif retos_basicos_choice == "9":
-            pass
+            el_enigma_de_la_esfinge()
         elif retos_basicos_choice == "10":
             pass
         elif retos_basicos_choice == "11":
@@ -374,3 +374,41 @@ Tu habilidad para combinar la historia de la criptografía con técnicas moderna
     else: 
         print("¡Inténtalo en otro momento!")
 
+
+def el_enigma_de_la_esfinge():
+    f = open(".\Retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    count = 0
+    while count < 2:
+        opcion = input("1. DES\n2. Vigènere\n\nElige que cifrado quieres usar: ")
+        if opcion == "1":
+            DES_cipher()
+        elif opcion == "2":
+            vigenere_cipher()
+        count += 1
+    respuesta = input("\nIntroduce el mensaje descifrado: ")
+    cansado = False
+    while respuesta != "la sabiduría es hablar y escuchar como los dioses." and not cansado:
+        input("El mensaje no ha sido descifrado correctamente.")
+        clear_terminal()
+        f = open(".\Retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
+        print(f.read())
+        f.close()
+        print()
+        count = 0
+        while count < 2:
+            opcion = input("1. DES\n2. Vigènere\n\nElige que cifrado quieres usar: ")
+            if opcion == "1":
+                DES_cipher()
+            elif opcion == "2":
+                vigenere_cipher()
+            count += 1
+        respuesta = input("\nIntroduce el mensaje descifrado: ")
+        cansado = funcion_cansado()
+    if not cansado:
+        print("""Has resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
+Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.""")
+    else: 
+        print("¡Inténtalo en otro momento!")

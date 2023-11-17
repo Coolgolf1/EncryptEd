@@ -63,6 +63,8 @@ def lecciones_cifrados_clasicos():
             lecciones_vigenere_cipher()
         elif lecciones_cifrados_clasicos_choice == "3":
             lecciones_rail_fence_cipher()
+        elif lecciones_cifrados_clasicos_choice == "4":
+            return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
