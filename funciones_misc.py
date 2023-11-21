@@ -30,7 +30,7 @@ def sigue_aprendiendo():
         clear_terminal()
         print("""Las lecciones de los cifrados avanzados en este juego son bastante simples
     Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada cifrado, que uses estos links.""")
-        links_choice = input("¿Qué cifrado quieres mirar?\n1. AES\n2. DES\n3. RSA\n4. ECC\n5. Atrás\n\nIntroduce tu opción: ")
+        links_choice = input("¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if links_choice == "1":
             print("CrypTool (Aprende Visualmente): https://www.cryptool.org/en/")
