@@ -79,9 +79,11 @@ def el_codigo_del_cesar():
     input()
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "veni, vidi, vici" and not cansado:
+    while respuesta != "veni, vidi, vici":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         caesar_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -91,7 +93,7 @@ Al igual que Julio César conquistó territorios, tú has conquistado este reto 
 Prepárate para más desafíos en el mundo de los códigos secretos.""")
     else: 
         print("¡Inténtalo en otro momento!")
-    input()
+    input("Pulsa enter para continuar.")
     
 
 def el_secreto_de_la_relatividad():
@@ -101,9 +103,11 @@ def el_secreto_de_la_relatividad():
     input()
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "la imaginacion es mas importante que el conocimiento." and not cansado:
+    while respuesta != "la imaginacion es mas importante que el conocimiento.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         vigenere_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -113,7 +117,7 @@ Al igual que Einstein revolucionó nuestra comprensión del universo, tú has de
 Sigue adelante para descubrir más secretos encriptados.""")
     else:
         print("¡Inténtalo en otro momento!")
-    input()
+    input("Pulsa enter para continuar.")
     
 
 def mensajes_ocultos_en_la_via_ferrea():
@@ -123,9 +127,11 @@ def mensajes_ocultos_en_la_via_ferrea():
     input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "la solucion esta en los detalles mas insignificantes." and not cansado:
+    while respuesta != "la solucion esta en los detalles mas insignificantes.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         rail_fence_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -135,7 +141,7 @@ y encontrado las pistas que incluso el mejor detective del siglo XIX pasó por a
 Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptografía.""")
     else: 
         print("¡Inténtalo en otro momento!")
-    input()
+    input("Pulsa enter para continuar.")
 
 
 def el_misterio_del_cifrado_aes():
@@ -145,9 +151,11 @@ def el_misterio_del_cifrado_aes():
     input()
     AES_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "en el corazón de la criptografía moderna yace un secreto bien guardado, la llave para el futuro de la seguridad digital." and not cansado:
+    while respuesta != "en el corazón de la criptografía moderna yace un secreto bien guardado, la llave para el futuro de la seguridad digital.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         AES_cipher()
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -156,7 +164,7 @@ def el_misterio_del_cifrado_aes():
 Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maestro de la criptografía moderna.""")
     else:
         print("¡Inténtalo en otro momento!")
-    input()
+    input("Pulsa enter para continuar.")
 
 
 def descifrando_el_codigo_bancario():
@@ -166,9 +174,11 @@ def descifrando_el_codigo_bancario():
     input()
     DES_cipher()
     respuesta = input("\nIntroduce el código de confirmación: ")
-    cansado = False
-    while respuesta != "deltaechosierra" and not cansado:
+    while respuesta != "deltaechosierra":
         input("Ese no es el código de confirmación correcto.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         DES_cipher()
         respuesta = input("\nIntroduce el código de confirmación: ")
         cansado = funcion_cansado()
@@ -177,7 +187,7 @@ def descifrando_el_codigo_bancario():
 Tu habilidad para conectar los puntos y descubrir la clave oculta en los detalles te ha llevado a revelar una operación bancaria encubierta.""")
     else: 
         print("¡Inténtalo en otro momento!")
-    input()
+    input("Pulsa enter para continuar.")
 
 
 
@@ -211,7 +221,7 @@ def RSA_cipher_reto_mision_diplomatica():
         input("Pulsa enter para continuar.")
     except:
         print("Has introducido algún dato de forma incorrecta.")
-
+    input("Pulsa enter para continuar.")
 
 def la_mision_diplomatica_cifrada(): 
     f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
@@ -220,16 +230,23 @@ def la_mision_diplomatica_cifrada():
     print()
     count = 0
     while count < 2:
-        opcion = input("1. Rail Fence\n2. RSA\n\nElige que cifrado quieres usar: ")
+        opcion = input("1. Rail Fence\n2. RSA\n3. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             rail_fence_cipher()
         elif opcion == "2":
             RSA_cipher_reto_mision_diplomatica()
+        elif opcion == "3":
+            break
+        else:
+            print("Opción Incorrecta.")
+            count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "urgente: reunión de embajadores programada para discutir la paz mundial. la clave está en la colaboración." and not cansado:
+    while respuesta != "urgente: reunión de embajadores programada para discutir la paz mundial. la clave está en la colaboración.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         clear_terminal()
         f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
         print(f.read())
@@ -237,11 +254,16 @@ def la_mision_diplomatica_cifrada():
         print()
         count = 0
         while count < 2:
-            opcion = input("1. Rail Fence\n2. RSA\n\nElige que cifrado quieres usar: ")
+            opcion = input("1. Rail Fence\n2. RSA\n3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 rail_fence_cipher()
             elif opcion == "2":
                 RSA_cipher_reto_mision_diplomatica()
+            elif opcion == "3":
+                break
+            else:
+                print("Opción Incorrecta.")
+                count -= 1
             count += 1
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -250,6 +272,7 @@ def la_mision_diplomatica_cifrada():
 Tu destreza criptográfica ha demostrado ser esencial para el éxito de misiones diplomáticas críticas.""")
     else: 
         print("¡Inténtalo en otro momento!")
+    input("Pulsa enter para continuar.")
 
 def ECC_cipher_reto_estelar():
     # Printea un menú por estética
@@ -291,9 +314,7 @@ def ECC_cipher_reto_estelar():
                 f"\nEl texto desencriptado es: \n{decrypted_message.decode()}\nCifrado ECC\n")
         except Exception as e:
             print("Error durante la desencriptación: ", e)
-
     input("Pulsa enter para continuar.")
-    clear_terminal()
 
 
 def el_codigo_estelar():
@@ -303,16 +324,23 @@ def el_codigo_estelar():
     print()
     count = 0
     while count < 2:
-        opcion = input("1. Vigènere\n2. ECC\n\nElige que cifrado quieres usar: ")
+        opcion = input("1. Vigènere\n2. ECC\n3. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             vigenere_cipher()
         elif opcion == "2":
             ECC_cipher_reto_estelar()
+        elif opcion == "3":
+            break
+        else:
+            print("Opción Incorrecta.")
+            count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "revelación astronómica: en el cúmulo de nebulosas de orión se ha detectado una secuencia de exoplanetas potencialmente habitables." and not cansado:
+    while respuesta != "revelación astronómica: en el cúmulo de nebulosas de orión se ha detectado una secuencia de exoplanetas potencialmente habitables.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         clear_terminal()
         f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
         print(f.read())
@@ -320,11 +348,16 @@ def el_codigo_estelar():
         print()
         count = 0
         while count < 2:
-            opcion = input("1. Vigènere\n2. ECC\n\nElige que cifrado quieres usar: ")
+            opcion = input("1. Vigènere\n2. ECC\n3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 vigenere_cipher()
             elif opcion == "2":
                 ECC_cipher_reto_estelar()
+            elif opcion == "3":
+                break
+            else:
+                print("Opción Incorrecta.")
+                count -= 1
             count += 1
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -335,6 +368,7 @@ Tu habilidad para navegar por estas sofisticadas técnicas criptográficas te co
 ¡Sigue así y sigue explorando los límites del universo criptográfico!""")
     else: 
         print("¡Inténtalo en otro momento!")
+    input("Pulsa enter para continuar.")
 
 def el_legado_de_turing():
     f = open(".\Retos\el_legado_de_turing.txt", "r", encoding="utf-8")
@@ -343,16 +377,23 @@ def el_legado_de_turing():
     print()
     count = 0
     while count < 2:
-        opcion = input("1. César\n2. AES\n\nElige que cifrado quieres usar: ")
+        opcion = input("1. César\n2. AES\n3. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             caesar_cipher()
         elif opcion == "2":
             AES_cipher()
+        elif opcion == "3":
+                break
+        else:
+            print("Opción Incorrecta.")
+            count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "podemos ver solo un poco del futuro, pero lo suficiente para darnos cuenta de que hay mucho por hacer." and not cansado:
+    while respuesta != "podemos ver solo un poco del futuro, pero lo suficiente para darnos cuenta de que hay mucho por hacer.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         clear_terminal()
         f = open(".\Retos\el_legado_de_turing.txt", "r", encoding="utf-8")
         print(f.read())
@@ -360,11 +401,16 @@ def el_legado_de_turing():
         print()
         count = 0
         while count < 2:
-            opcion = input("1. César\n2. AES\n\nElige que cifrado quieres usar: ")
+            opcion = input("1. César\n2. AES\n3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 caesar_cipher()
             elif opcion == "2":
                 AES_cipher()
+            elif opcion == "3":
+                break
+            else:
+                print("Opción Incorrecta.")
+                count -= 1
             count += 1
         respuesta = input("\nIntroduce el mensaje descifrado: ")
         cansado = funcion_cansado()
@@ -373,6 +419,7 @@ def el_legado_de_turing():
 Tu habilidad para combinar la historia de la criptografía con técnicas modernas demuestra que estás en el camino correcto para convertirte en un gran criptoanalista""")
     else: 
         print("¡Inténtalo en otro momento!")
+    input("Pulsa enter para continuar.")
 
 
 def el_enigma_de_la_esfinge():
@@ -382,16 +429,23 @@ def el_enigma_de_la_esfinge():
     print()
     count = 0
     while count < 2:
-        opcion = input("1. DES\n2. Vigènere\n\nElige que cifrado quieres usar: ")
+        opcion = input("1. DES\n2. Vigènere\n3. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             DES_cipher()
         elif opcion == "2":
             vigenere_cipher()
+        elif opcion == "3":
+                break
+        else:
+            print("Opción Incorrecta.")
+            count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    cansado = False
-    while respuesta != "la sabiduría es hablar y escuchar como los dioses." and not cansado:
+    while respuesta != "la sabiduría es hablar y escuchar como los dioses.":
         input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
         clear_terminal()
         f = open(".\Retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
         print(f.read())
@@ -399,16 +453,22 @@ def el_enigma_de_la_esfinge():
         print()
         count = 0
         while count < 2:
-            opcion = input("1. DES\n2. Vigènere\n\nElige que cifrado quieres usar: ")
+            opcion = input("1. DES\n2. Vigènere3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 DES_cipher()
             elif opcion == "2":
                 vigenere_cipher()
+            elif opcion == "3":
+                break
+            else:
+                print("Opción Incorrecta.")
+                count -= 1
             count += 1
         respuesta = input("\nIntroduce el mensaje descifrado: ")
-        cansado = funcion_cansado()
+        
     if not cansado:
         print("""Has resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
 Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.""")
     else: 
         print("¡Inténtalo en otro momento!")
+    input("Pulsa enter para continuar.")
