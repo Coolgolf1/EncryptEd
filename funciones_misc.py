@@ -33,7 +33,7 @@ def sigue_aprendiendo():
         links_choice = input("¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if links_choice == "1":
-            print("CrypTool (Aprende Visualmente): https://www.cryptool.org/en/")
+            print("CrypTool (Aprende Visualmente): https://www.cryptool.org/en/cto/")
             input()
         elif links_choice == "2":
             print("\nCryptoHack AES (INTERMEDIO): https://cryptohack.org/courses/symmetric/")
