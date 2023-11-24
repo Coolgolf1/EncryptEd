@@ -30,19 +30,22 @@ def sigue_aprendiendo():
         clear_terminal()
         print("""Las lecciones de los cifrados avanzados en este juego son bastante simples
     Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada cifrado, que uses estos links.""")
-        links_choice = input("¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
+        links_choice = input(
+            "¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if links_choice == "1":
             print("CrypTool (Aprende Visualmente): https://www.cryptool.org/en/cto/")
             input()
         elif links_choice == "2":
-            print("\nCryptoHack AES (INTERMEDIO): https://cryptohack.org/courses/symmetric/")
+            print(
+                "\nCryptoHack AES (INTERMEDIO): https://cryptohack.org/courses/symmetric/")
             input()
         elif links_choice == "3":
             print("\nGeeksForGeeks DES (ANTIGUO): https://www.geeksforgeeks.org/data-encryption-standard-des-set-1/")
             input()
         elif links_choice == "4":
-            print("\nCryptoHack RSA (INTERMEDIO): https://cryptohack.org/courses/public-key/")
+            print(
+                "\nCryptoHack RSA (INTERMEDIO): https://cryptohack.org/courses/public-key/")
             input()
         elif links_choice == "5":
             print("\CryptoHack ECC (DIFÍCIL): https://cryptohack.org/courses/elliptic/")

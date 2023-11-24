@@ -185,6 +185,7 @@ def lecciones_vigenere_cipher():
     else:
         input("¡Inténtalo de nuevo en otro momento!")
 
+
 def lecciones_rail_fence_cipher():
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
@@ -218,10 +219,11 @@ def lecciones_rail_fence_cipher():
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
         cansado = funcion_cansado
-    if not cansado: 
+    if not cansado:
         print(
             f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
-        print(f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
+        print(
+            f"Ahora, {name}, empieza lo interesante... !Prepárate para los cifrados simétricos y asimétricos! Empieza lo bueno ;)")
         input()
     else:
         input("¡Inténtalo de nuevo en otro momento!")
