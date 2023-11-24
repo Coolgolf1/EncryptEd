@@ -4,27 +4,10 @@ from funciones_maquinas import *
 
 def retos_menu():
     retos_choice = ""
-    while retos_choice != "3":
+    while retos_choice != "11":
         clear_terminal()
         retos_choice = input(
-            "===== Retos =====\n1. Retos Básicos\n2. Retos Avanzados\n3. Atrás\n\nIntroduce tu opción: ")
-        clear_terminal()
-        if retos_choice == "1":
-            retos_basicos_menu()
-        elif retos_choice == "2":
-            retos_avanzados_menu()
-        elif retos_choice == "3":
-            return
-        else:
-            input("Error. No es una opción correcta. Pulsa enter para continuar.")
-
-
-def retos_basicos_menu():
-    retos_basicos_choice = ""
-    while retos_basicos_choice != "11":
-        clear_terminal()
-        retos_basicos_choice = input(
-            """===== Retos Básicos =====
+            """===== Retos =====
 1. El Código de César
 2. El Secreto de la Relatividad
 3. Mensajes Ocultos en la Vía Férrea
@@ -37,43 +20,35 @@ def retos_basicos_menu():
 10. Códigos Del Espacio 
 11. Atrás\n\nIntroduce tu opción: """)
         clear_terminal()
-        if retos_basicos_choice == "1":
+        if retos_choice == "1":
             el_codigo_del_cesar()
-        elif retos_basicos_choice == "2":
+        elif retos_choice == "2":
             el_secreto_de_la_relatividad()
-        elif retos_basicos_choice == "3":
+        elif retos_choice == "3":
             mensajes_ocultos_en_la_via_ferrea()
-        elif retos_basicos_choice == "4":
+        elif retos_choice == "4":
             el_misterio_del_cifrado_aes()
-        elif retos_basicos_choice == "5":
+        elif retos_choice == "5":
             descifrando_el_codigo_bancario()
-        elif retos_basicos_choice == "6":
+        elif retos_choice == "6":
             la_mision_diplomatica_cifrada()
-        elif retos_basicos_choice == "7":
+        elif retos_choice == "7":
             el_codigo_estelar()
-        elif retos_basicos_choice == "8":
+        elif retos_choice == "8":
             el_legado_de_turing()
-        elif retos_basicos_choice == "9":
+        elif retos_choice == "9":
             el_enigma_de_la_esfinge()
-        elif retos_basicos_choice == "10":
-            pass
-        elif retos_basicos_choice == "11":
+        elif retos_choice == "10":
+            el_secreto_de_la_atlantida()
+        elif retos_choice == "11":
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
         clear_terminal()
 
 
-def retos_avanzados_menu():
-    while True:
-        clear_terminal()
-        retos_avanzados_choice = input(
-            "===== Retos Avanzados =====\n1. Retos Básicos\n2. Retos Avanzados\n\nIntroduce tu opción: ")
-        clear_terminal()
-
-
 def el_codigo_del_cesar():
-    f = open(".\Retos\el_codigo_del_cesar.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_codigo_del_cesar.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
@@ -97,7 +72,7 @@ Prepárate para más desafíos en el mundo de los códigos secretos.""")
     
 
 def el_secreto_de_la_relatividad():
-    f = open(".\Retos\el_secreto_de_la_relatividad.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_secreto_de_la_relatividad.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
@@ -121,7 +96,7 @@ Sigue adelante para descubrir más secretos encriptados.""")
     
 
 def mensajes_ocultos_en_la_via_ferrea():
-    f = open(".\Retos\mensajes_ocultos_en_la_via_ferrea.txt", "r", encoding="utf-8")
+    f = open(".\\retos\mensajes_ocultos_en_la_via_ferrea.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
@@ -145,7 +120,7 @@ Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptogra
 
 
 def el_misterio_del_cifrado_aes():
-    f = open(".\Retos\el_misterio_del_cifrado_aes.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_misterio_del_cifrado_aes.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
@@ -168,7 +143,7 @@ Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maes
 
 
 def descifrando_el_codigo_bancario():
-    f = open(".\Retos\descifrando_el_codigo_bancario.txt", "r", encoding="utf-8")
+    f = open(".\\retos\descifrando_el_codigo_bancario.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     input()
@@ -224,7 +199,7 @@ def RSA_cipher_reto_mision_diplomatica():
     input("Pulsa enter para continuar.")
 
 def la_mision_diplomatica_cifrada(): 
-    f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
+    f = open(".\\retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     print()
@@ -248,7 +223,7 @@ def la_mision_diplomatica_cifrada():
         if cansado:
             break
         clear_terminal()
-        f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
+        f = open(".\\retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
         print(f.read())
         f.close()
         print()
@@ -318,7 +293,7 @@ def ECC_cipher_reto_estelar():
 
 
 def el_codigo_estelar():
-    f = open(".\Retos\el_codigo_estelar.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_codigo_estelar.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     print()
@@ -342,7 +317,7 @@ def el_codigo_estelar():
         if cansado:
             break
         clear_terminal()
-        f = open(".\Retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
+        f = open(".\\retos\la_mision_diplomatica_cifrada.txt", "r", encoding="utf-8")
         print(f.read())
         f.close()
         print()
@@ -371,7 +346,7 @@ Tu habilidad para navegar por estas sofisticadas técnicas criptográficas te co
     input("Pulsa enter para continuar.")
 
 def el_legado_de_turing():
-    f = open(".\Retos\el_legado_de_turing.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_legado_de_turing.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     print()
@@ -395,7 +370,7 @@ def el_legado_de_turing():
         if cansado:
             break
         clear_terminal()
-        f = open(".\Retos\el_legado_de_turing.txt", "r", encoding="utf-8")
+        f = open(".\\retos\el_legado_de_turing.txt", "r", encoding="utf-8")
         print(f.read())
         f.close()
         print()
@@ -423,7 +398,7 @@ Tu habilidad para combinar la historia de la criptografía con técnicas moderna
 
 
 def el_enigma_de_la_esfinge():
-    f = open(".\Retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
+    f = open(".\\retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
     print(f.read())
     f.close()
     print()
@@ -447,7 +422,7 @@ def el_enigma_de_la_esfinge():
         if cansado:
             break
         clear_terminal()
-        f = open(".\Retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
+        f = open(".\\retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
         print(f.read())
         f.close()
         print()
@@ -469,6 +444,77 @@ def el_enigma_de_la_esfinge():
     if not cansado:
         print("""Has resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
 Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.""")
+    else: 
+        print("¡Inténtalo en otro momento!")
+    input("Pulsa enter para continuar.")
+
+
+def el_secreto_de_la_atlantida():
+    f = open(".\\retos\el_secreto_de_la_atlantida.txt", "r", encoding="utf-8")
+    print(f.read())
+    f.close()
+    print()
+    count = 0
+    while count < 5:
+        opcion = input("1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Atrás\n\nElige que cifrado quieres usar: ")
+        if opcion == "1":
+            rail_fence_cipher()
+        elif opcion == "2":
+            vigenere_cipher()
+        elif opcion == "3":
+            caesar_cipher()
+        elif opcion == "4":
+            DES_cipher()
+        elif opcion == "5":
+            AES_cipher()
+        elif opcion == "6":
+            break
+        else:
+            print("Opción Incorrecta.")
+            count -= 1
+        count += 1
+    respuesta = input("\nIntroduce el mensaje descifrado: ")
+    while respuesta != "en las profundidades del oceano, las ruinas de la atlantida esperan ser descubiertas, ocultando sabiduria de un pasado remoto.":
+        input("El mensaje no ha sido descifrado correctamente.")
+        cansado = funcion_cansado()
+        if cansado:
+            break
+        clear_terminal()
+        f = open(".\\retos\el_secreto_de_la_atlantida.txt", "r", encoding="utf-8")
+        print(f.read())
+        f.close()
+        print()
+        count = 0
+        while count < 5:
+            opcion = input("1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Atrás\n\nElige que cifrado quieres usar: ")
+            if opcion == "1":
+                rail_fence_cipher()
+            elif opcion == "2":
+                vigenere_cipher()
+            elif opcion == "3":
+                caesar_cipher()
+            elif opcion == "4":
+                DES_cipher()
+            elif opcion == "5":
+                AES_cipher()
+            elif opcion == "6":
+                break
+            else:
+                print("Opción Incorrecta.")
+                count -= 1
+            count += 1
+        respuesta = input("\nIntroduce el mensaje descifrado: ")
+        
+    if not cansado:
+        print("""¡Felicidades! Has revelado el Secreto de la Atlántida, combinando tu pasión por la historia antigua con una maestría en criptografía. 
+Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento que ha permanecido oculto durante milenios.\n\n""")
+        
+        print("""¡Extraordinario! Has completado el último y más desafiante reto de 'EncryptEd'. 
+Tu viaje a través de los laberintos de la criptografía te ha llevado desde los códigos clásicos hasta los misterios de la criptografía moderna. 
+Has demostrado no solo habilidad y agudeza en el arte del cifrado y descifrado, sino también perseverancia y curiosidad intelectual. 
+Este no es solo un logro en el juego, sino un paso significativo en tu camino como criptoanalista. 
+¡Felicidades por desbloquear todos los secretos y gracias por embarcarte en esta aventura criptográfica!\n""")
+        
     else: 
         print("¡Inténtalo en otro momento!")
     input("Pulsa enter para continuar.")
