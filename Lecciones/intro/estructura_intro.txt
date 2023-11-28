@@ -1,6 +1,0 @@
-Estructura del programa:
-          
-    1. Lecciones: Aquí podrás aprender todo sobre los cifrados más comunes e importantes desde una perspectiva más accesible, en vez de matemática.
-                  En las lecciones encontrarás un poco de historia, teoría con una demostración práctica y un reto final para porerlo en práctica.
-    2. Retos: En este apartado, hay retos que puedes intentar usando lo que has aprendido en el apartado de Lecciones.
-    3. Máquina: En la máquina se encuentran todos los cifrados para poder encriptar o desencriptar mensajes si se conocen los datos necesarios.

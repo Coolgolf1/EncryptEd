@@ -1,8 +1,0 @@
-Historia Del Cifrado AES
-
-    El Advanced Encryption Standard (AES), desarrollado por los criptógrafos belgas Vincent Rijmen y Joan Daemen,
-    fue adoptado en 2001 por el Instituto Nacional de Estándares y Tecnología de EE. UU. como el sucesor del Data Encryption Standard (DES).
- 
-    AES se destacó por su seguridad y eficiencia en distintos dispositivos, operando con claves de 128, 192 y 256 bits (la máquina AES del programa funciona con AES-256 (256 bits)).
- 
-    Hoy en día, es ampliamente usado para proteger información digital a nivel mundial, siendo un pilar fundamental de la criptografía moderna.

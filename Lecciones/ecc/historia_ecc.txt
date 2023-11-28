@@ -1,9 +1,0 @@
-Historia Del Cifrado ECC
-
-    ECC fue introducida en la criptografía en 1985 por Neal Koblitz y Victor S. Miller de manera independiente. 
-
-    Se basa en la teoría de curvas elípticas sobre campos finitos y se ha destacado por su eficiencia y seguridad con claves más pequeñas comparadas con otros sistemas como RSA. 
-    
-    Su adopción en protocolos de seguridad como SSL/TLS y en criptomonedas como Bitcoin evidencia su importancia en la protección de la información en la era digital. 
-    
-    La capacidad de ECC para proporcionar un alto nivel de seguridad con claves más cortas lo ha convertido en una opción atractiva para sistemas donde los recursos son limitados, como dispositivos móviles.

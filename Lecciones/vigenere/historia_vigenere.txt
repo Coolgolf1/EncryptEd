@@ -1,9 +1,0 @@
-Historia Del Cifrado Vigènere
-          
-    El cifrado Vigenère, atribuido al francés Blaise de Vigenère en el siglo XVI, representa una evolución del cifrado por sustitución. 
-          
-    A pesar de su complejidad, que le valió el título de "cifrado indescifrable",
-    fue finalmente descifrado en el siglo XIX gracias a los avances en el análisis de frecuencias.
-          
-    Breve explicación: el análisis de frecuencias permite, con gran complejidad matemática,
-    asociar ciertas letras encriptadas a letras del abecedario original para desencriptar el mensaje.

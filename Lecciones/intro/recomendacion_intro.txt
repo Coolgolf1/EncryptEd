@@ -1,8 +1,0 @@
-Recomendación:
-          
-    Empezar por los cifrados clásicos (en orden) para entender en que se basa la criptografía.
-        
-    Luego, ya entendidos los cifrados clásicos, ¡podrás adentrarte en el mundo de la criptografía simétrica y asimétrica!
-          
-    La criptografía es difícil de entender, pero es preciosa una vez entiendes diferentes partes de ella.
-    Por ello, ¡¡¡no perdamos más tiempo en la introducción y a comenzar!!!

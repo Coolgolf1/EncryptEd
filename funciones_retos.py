@@ -1,5 +1,6 @@
 from funciones_misc import *
 from funciones_maquinas import *
+import json
 
 
 def retos_menu():
@@ -17,7 +18,7 @@ def retos_menu():
 7. El Código Estelar
 8. El Legado de Turing
 9. El Enigma de la Esfinge
-10. Códigos Del Espacio 
+10. El Secreto de la Atlántida 
 11. Atrás\n\nIntroduce tu opción: """)
         clear_terminal()
         if retos_choice == "1":
@@ -48,9 +49,9 @@ def retos_menu():
 
 
 def el_codigo_del_cesar():
-    f = open(".\\retos\el_codigo_del_cesar.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_codigo_del_cesar'])
     input()
     caesar_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
@@ -72,9 +73,9 @@ Prepárate para más desafíos en el mundo de los códigos secretos.""")
 
 
 def el_secreto_de_la_relatividad():
-    f = open(".\\retos\el_secreto_de_la_relatividad.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_secreto_de_la_relatividad'])
     input()
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
@@ -96,10 +97,9 @@ Sigue adelante para descubrir más secretos encriptados.""")
 
 
 def mensajes_ocultos_en_la_via_ferrea():
-    f = open(".\\retos\mensajes_ocultos_en_la_via_ferrea.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['mensajes_ocultos_en_la_via_ferrea'])
     input()
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
@@ -121,9 +121,9 @@ Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptogra
 
 
 def el_misterio_del_cifrado_aes():
-    f = open(".\\retos\el_misterio_del_cifrado_aes.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_misterio_del_cifrado_aes'])
     input()
     AES_cipher()
     respuesta = input("\nIntroduce el mensaje descifrado: ")
@@ -144,10 +144,9 @@ Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maes
 
 
 def descifrando_el_codigo_bancario():
-    f = open(".\\retos\descifrando_el_codigo_bancario.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['descifrando_el_codigo_bancario'])
     input()
     DES_cipher()
     respuesta = input("\nIntroduce el código de confirmación: ")
@@ -202,10 +201,9 @@ def RSA_cipher_reto_mision_diplomatica():
 
 
 def la_mision_diplomatica_cifrada():
-    f = open(".\\retos\la_mision_diplomatica_cifrada.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['la_mision_diplomatica_cifrada'])
     print()
     count = 0
     while count < 2:
@@ -228,10 +226,7 @@ def la_mision_diplomatica_cifrada():
         if cansado:
             break
         clear_terminal()
-        f = open(".\\retos\la_mision_diplomatica_cifrada.txt",
-                 "r", encoding="utf-8")
-        print(f.read())
-        f.close()
+        print(data['retos']['la_mision_diplomatica_cifrada'])
         print()
         count = 0
         while count < 2:
@@ -302,9 +297,9 @@ def ECC_cipher_reto_estelar():
 
 
 def el_codigo_estelar():
-    f = open(".\\retos\el_codigo_estelar.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_codigo_estelar'])
     print()
     count = 0
     while count < 2:
@@ -327,10 +322,7 @@ def el_codigo_estelar():
         if cansado:
             break
         clear_terminal()
-        f = open(".\\retos\la_mision_diplomatica_cifrada.txt",
-                 "r", encoding="utf-8")
-        print(f.read())
-        f.close()
+        print(data['retos']['el_codigo_estelar'])
         print()
         count = 0
         while count < 2:
@@ -359,9 +351,9 @@ Tu habilidad para navegar por estas sofisticadas técnicas criptográficas te co
 
 
 def el_legado_de_turing():
-    f = open(".\\retos\el_legado_de_turing.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_legado_de_turing'])
     print()
     count = 0
     while count < 2:
@@ -384,9 +376,7 @@ def el_legado_de_turing():
         if cansado:
             break
         clear_terminal()
-        f = open(".\\retos\el_legado_de_turing.txt", "r", encoding="utf-8")
-        print(f.read())
-        f.close()
+        print(data['retos']['el_legado_de_turing'])
         print()
         count = 0
         while count < 2:
@@ -413,9 +403,9 @@ Tu habilidad para combinar la historia de la criptografía con técnicas moderna
 
 
 def el_enigma_de_la_esfinge():
-    f = open(".\\retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_enigma_de_la_esfinge'])
     print()
     count = 0
     while count < 2:
@@ -438,9 +428,7 @@ def el_enigma_de_la_esfinge():
         if cansado:
             break
         clear_terminal()
-        f = open(".\\retos\el_enigma_de_la_esfinge.txt", "r", encoding="utf-8")
-        print(f.read())
-        f.close()
+        print(data['retos']['el_enigma_de_la_esfinge'])
         print()
         count = 0
         while count < 2:
@@ -467,9 +455,9 @@ Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te 
 
 
 def el_secreto_de_la_atlantida():
-    f = open(".\\retos\el_secreto_de_la_atlantida.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['retos']['el_secreto_de_la_atlantida'])
     print()
     count = 0
     while count < 5:
@@ -498,10 +486,7 @@ def el_secreto_de_la_atlantida():
         if cansado:
             break
         clear_terminal()
-        f = open(".\\retos\el_secreto_de_la_atlantida.txt",
-                 "r", encoding="utf-8")
-        print(f.read())
-        f.close()
+        print(data['retos']['el_secreto_de_la_atlantida']['reto'])
         print()
         count = 0
         while count < 5:
@@ -531,11 +516,7 @@ Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento
         f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
         name = f.read()
         f.close()
-        print(f"""¡Extraordinario, {name}! Has completado el último y más desafiante reto de EncryptEd. 
-Tu viaje a través de los laberintos de la criptografía te ha llevado desde los códigos clásicos hasta los misterios de la criptografía moderna. 
-Has demostrado no solo habilidad y agudeza en el arte del cifrado y descifrado, sino también perseverancia y curiosidad intelectual. 
-Este no es solo un logro en el juego, sino un paso significativo en tu camino como criptoanalista. 
-¡Felicidades por desbloquear todos los secretos y gracias por embarcarte en esta aventura criptográfica, {name}!\n""")
+        print(data['retos']['el_secreto_de_la_atlantida']['enhorabuena'])
 
     else:
         print("¡Inténtalo en otro momento!")

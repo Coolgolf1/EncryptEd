@@ -1,10 +1,10 @@
 import os
 
-# Convertir un document .txt a una sola línea para pasar a .json
+# Convertir un document .txt a una sola línea para ctrl+c/ctrl+v en el .json
 
-def convertidor(carpeta1, carpeta2 ,archivo):
+def convertidor(carpeta1 ,archivo):
     os.system("cls")
-    with open(f".\\{carpeta1}\\{carpeta2}\\{archivo}.txt", "r", encoding="utf-8") as file:
+    with open(f".\\{carpeta1}\\{archivo}.txt", "r", encoding="utf-8") as file:
             text = file.readlines()
             for i in text:
                 i = i.replace("\n","\\n")
@@ -12,6 +12,6 @@ def convertidor(carpeta1, carpeta2 ,archivo):
 
 if __name__ == "__main__":
     carpeta1 = input("Introduce la primera carpeta: ")
-    carpeta2 = input("Introduce la segunda carpeta: ")
+    # carpeta2 = input("Introduce la segunda carpeta: ")
     archivo = input("Introduce el nombre del archivo: ")
-    convertidor(carpeta1,carpeta2,archivo)
+    convertidor(carpeta1,archivo)
