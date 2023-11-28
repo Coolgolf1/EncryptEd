@@ -1,7 +1,7 @@
 # Lecciones
 from funciones_maquinas import *
 from funciones_misc import *
-
+import json
 
 def lecciones_menu():
     lecciones_choice = ""
@@ -75,20 +75,16 @@ def lecciones_caesar_cipher():
     name = f.read()
     print("¡Bienvenido A La Lección Del Cifrado César!")
     input(f"\n¡{name}, hoy te embarcas en tu primera lección de criptografía!\n")
-    f = open(".\lecciones\caesar\historia_caesar.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['lecciones']['clasicos']['cesar']['historia'])
+    input("\nPulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\caesar\\teoria_caesar.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['cesar']['teoria'])
+    input("\nPulsa entera para continuar.")
     print(f"""\n{"="*100}""")
-    f = open(".\lecciones\caesar\\ejemplo_caesar.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input(f"{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.")
+    print(data['lecciones']['clasicos']['cesar']['ejemplo'])
+    input(f"\n{name}, debes entender esto muy bien para seguir con los retos. Pulsa enter para ir a los retos.")
     print("""Reto Manual:\n
     Texto encriptado: "¡pxb elhq!"
     Llave: (el segundo número primo)\n
@@ -105,9 +101,8 @@ def lecciones_caesar_cipher():
         print("El siguiente reto es un reto automático, haciendo uso de la máquina del Cifrado César implementada en el programa.")
         input()
         clear_terminal()
-        f = open(".\lecciones\caesar\\reto_caesar.txt", "r", encoding="utf-8")
-        print(f"""Reto Con Máquina:\n\n{name}, {f.read()}""")
-        f.close()
+        print()
+        print(f"""Reto Con Máquina:\n\n{name}, {data['lecciones']['clasicos']['cesar']['reto']}""")
         input("Pulsa enter para continuar.")
         caesar_cipher()
         respuesta = input("\nIntroduce el mensaje desencriptado: ")
@@ -126,7 +121,7 @@ def lecciones_caesar_cipher():
         input("Pulsa enter para continuar.")
         clear_terminal()
         print(f"¡{name}, ya has aprendido como funciona el Cifrado César!\n\n¿Ves qué fácil?\n\n¡Ahora continua con el resto de lecciones y aprende todo sobre la criptografía!")
-        input()
+        input("Pulsa enter para continuar.")
     else:
         input("¡Inténtalo de nuevo en otro momento!")
 
@@ -137,39 +132,24 @@ def lecciones_vigenere_cipher():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
-    f = open(".\lecciones\\vigenere\\historia_vigenere.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['lecciones']['clasicos']['vigenere']['historia'])
     clear_terminal()
-    f = open(".\lecciones\\vigenere\\teoria_1_vigenere.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['vigenere']['teoria_1'])
+    input("Pulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\\vigenere\\teoria_2_vigenere.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['vigenere']['teoria_2'])
+    input("Pulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\\vigenere\\teoria_3_vigenere.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['vigenere']['teoria_3'])
+    input("Pulsa enter para continuar.")
     clear_terminal()
     print(f"""\n{"="*100}\nAhora vamos a ver un ejemplo:\n""")
-    f = open(".\lecciones\\vigenere\\ejemplo_vigenere.txt",
-             "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    print(data['lecciones']['clasicos']['vigenere']['ejemplo'])
     input("\n¡Antes de pasar al reto con máquina, intenta hacer este ejemplo tú mismo!")
     clear_terminal()
-    f = open(".\lecciones\\vigenere\\reto_vigenere.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    print(data['lecciones']['clasicos']['vigenere']['reto'])
     vigenere_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones." and not cansado:
@@ -181,7 +161,7 @@ def lecciones_vigenere_cipher():
             f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
         print(
             f"\n!Queda un último cifrado clásico por aprender! ¡A por ello, {name}!")
-        input()
+        input("Pulsa enter para continuar.")
     else:
         input("¡Inténtalo de nuevo en otro momento!")
 
@@ -192,27 +172,21 @@ def lecciones_rail_fence_cipher():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print(f"""\n¡{name}, esta es la tercera y última lección de los cifrados clásicos!\n\nAprenderás sobre un cifrado de trasposición, el Rail Fence, en vez de cifrados de sustitución cómo los anteriores.\n""")
-    input()
+    input("Pulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\\rail_fence\\historia_rf.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    with open("textos.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print(data['lecciones']['clasicos']['rail_fence']['historia'])
+    input("Pulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\\rail_fence\\teoria_rf.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['rail_fence']['teoria'])
+    input("Pulsa enter para continuar.")
     clear_terminal()
-    f = open(".\lecciones\\rail_fence\\ejemplo_rf.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
+    print(data['lecciones']['clasicos']['rail_fence']['ejemplo'])
     input(f"\n¡{name} si entiendes este ejemplo, pulsa entera para ir a los retos!")
     clear_terminal()
-    f = open(".\lecciones\\rail_fence\\reto_rf.txt", "r", encoding="utf-8")
-    print(f.read())
-    f.close()
-    input()
+    print(data['lecciones']['clasicos']['rail_fence']['reto'])
+    input("Pulsa enter para continuar.")
     rail_fence_cipher()
     respuesta = input("\nIntroduce el mensaje desencriptado: ")
     while respuesta != "encuentro secreto en el muelle al amanecer" and not cansado:
