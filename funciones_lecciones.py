@@ -107,7 +107,8 @@ def lecciones_caesar_cipher():
             print("El mensaje no ha sido desencriptado.\n")
             caesar_cipher()
             respuesta = input("Introduce el mensaje desencriptado: ")
-            cansado = funcion_cansado()
+            if respuesta != "legion tres, movimiento inmediato hacia las colinas de pharsalus. refuerzo necesario en el flanco derecho para envolver al enemigo. mantengan la formacion de testudo hasta la senal de ataque. victoria espera.":
+                cansado = funcion_cansado()
             print()
         if not cansado:
             print(
@@ -152,7 +153,8 @@ def lecciones_vigenere_cipher():
     while respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones." and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado()
+        if respuesta != "cita secreta al amanecer en old bridge. esperen mas instrucciones.":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡Enhorabuena, {name}! !Ya sabes cómo funciona el cifrado Vigènere!")
@@ -189,7 +191,8 @@ def lecciones_rail_fence_cipher():
     while respuesta != "encuentro secreto en el muelle al amanecer" and not cansado:
         print("El mensaje no ha sido desencriptado.\n")
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado
+        if respuesta != "encuentro secreto en el muelle al amanecer":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡Enhorabuena {name}! ¡Has terminado las tres lecciones de los cifrados clásicos!\n")
@@ -254,7 +257,8 @@ Bienvenido al corazón de la seguridad en internet.""")
         caesar_cipher()
         AES_cipher()
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado()
+        if respuesta != "reunión en la cafetería de la esquina a las 10 p.m. trae los documentos.":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡Muy bien, agente {name}! Hemos conseguido adelantarnos al espía y hemos podido capturarle.")
@@ -304,7 +308,8 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
         print("El mensaje no ha sido desencriptado.\n")
         DES_cipher()
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado()
+        if respuesta != "en la base del viejo roble, donde la sombra toca el río al amanecer, encontrarás lo que buscas.":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡Enhorabuena, {name}! ¡¡¡Es hora de ir a por el oro!!!.")
@@ -402,7 +407,8 @@ Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad e
         print("El mensaje no ha sido desencriptado.\n")
         RSA_cipher_lecciones()
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado()
+        if respuesta != "descubierto: un método innovador para fortalecer rsa contra futuros ataques cuánticos.":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡{name}, vamos a buscar por el resto de su laboratorio a ver si encontramos el gran descubrimiento!")
@@ -494,7 +500,8 @@ Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para cre
         print("El mensaje no ha sido desencriptado.\n")
         ECC_cipher_lecciones()
         respuesta = input("Introduce el texto desencriptado: ")
-        cansado = funcion_cansado()
+        if respuesta != "revelado: las coordenadas secretas del antiguo templo oculto en la selva amazónica.":
+            cansado = funcion_cansado()
     if not cansado:
         print(
             f"\n¡{name}, vamos al templo! ¡Pero cuidado con las trampas que puede haber!")
