@@ -1,7 +1,0 @@
-Historia Del Cifrado DES
-
-    Desarrollado en los años 70 por IBM y la NSA, el Data Encryption Standard (DES) fue el estándar federal de EE. UU. para cifrado desde 1977.
-
-    Utilizando una clave de 56 bits, DES fue ampliamente empleado en la protección de información no clasificada.
-
-    Con el tiempo, debido a limitaciones de seguridad, fue reemplazado por el más avanzado AES en 2001, marcando una evolución significativa en la criptografía moderna.
