@@ -34,7 +34,7 @@ def maquinas_cifrados_simetricos():
     while True:
         clear_terminal()
         maquinas_cifrados_simetricos_choice = input(
-            "========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-56\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
+            "========== Máquinas ===========\n===== Cifrados Simétricos =====\n1. Cifrado AES-256\n2. Cifrado DES\n3. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if maquinas_cifrados_simetricos_choice == "1":
             AES_cipher()
