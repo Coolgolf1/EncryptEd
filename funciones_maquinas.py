@@ -194,7 +194,7 @@ def vigenere_cipher():
     # Si la llave es mayor al texto, la acorta para que sea igual de larga que el plaintext o texto
     while len(vigenere_key) > len(plaintext):
         vigenere_key = vigenere_key[:len(plaintext)]
-    caracteres_no_permitidos = "1234567890ªº\|!@·#\"$%&/()=?¿'¡,.;:-_¨çÇ}{][+*`^"
+    caracteres_no_permitidos = "1234567890ªº|!@·#\"$%&/()=?¿'¡,.;:-_¨çÇ}{][+*`^"
     # Mira que la llave tenga solo caracteres permitidos
     while any(i in caracteres_no_permitidos for i in vigenere_key):
         print("Error. La llave debe solo tener letras.")
@@ -466,12 +466,12 @@ def generar_RSA_keys():
 
 
 def guardar_llave_en_archivo(key, filename):
-    with open(f".\llaves\\rsa\{filename}", 'wb') as key_file:
+    with open(f".\\llaves\\rsa\\{filename}", 'wb') as key_file:
         key_file.write(key)
 
 
 def cargar_llave_de_archivo(filename):
-    with open(f".\llaves\\rsa\{filename}", 'rb') as key_file:
+    with open(f".\\llaves\\rsa\\{filename}", 'rb') as key_file:
         return RSA.import_key(key_file.read())
 
 
@@ -523,14 +523,14 @@ def RSA_cipher():
 
 
 def guardar_en_archivo(nombre_archivo, datos):
-    ruta = f".\llaves\\ecc\\{nombre_archivo}"
+    ruta = f".\\llaves\\ecc\\{nombre_archivo}"
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
     with open(ruta, "w") as archivo:
         archivo.write(datos)
 
 
 def leer_de_archivo(nombre_archivo):
-    ruta = f".\llaves\\ecc\\{nombre_archivo}"
+    ruta = f".\\llaves\\ecc\\{nombre_archivo}"
     with open(ruta, "r") as archivo:
         return archivo.read()
 
