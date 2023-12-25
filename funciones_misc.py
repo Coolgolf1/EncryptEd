@@ -28,7 +28,7 @@ def sigue_aprendiendo():
     while links_choice != "6":
         clear_terminal()
         print("""Las lecciones de los cifrados avanzados en este juego son bastante simples
-    Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada cifrado, que uses estos links.""")
+Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada cifrado, que uses estos links.""")
         links_choice = input(
             "¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
