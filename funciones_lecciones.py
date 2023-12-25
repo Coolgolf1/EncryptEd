@@ -6,10 +6,10 @@ import json
 
 def lecciones_menu():
     lecciones_choice = ""
-    while lecciones_choice != "6":
+    while lecciones_choice != "5":
         clear_terminal()
         lecciones_choice = input(
-            "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
+            "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_choice == "1":
             lecciones_introduccion()
@@ -20,8 +20,6 @@ def lecciones_menu():
         elif lecciones_choice == "4":
             lecciones_cifrados_asimetricos()
         elif lecciones_choice == "5":
-            pass
-        elif lecciones_choice == "6":
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")

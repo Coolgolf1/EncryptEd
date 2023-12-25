@@ -14,10 +14,10 @@ from funciones_misc import *
 
 def maquinas_menu():
     maquinas_choice = ""
-    while maquinas_choice != "5":
+    while maquinas_choice != "4":
         clear_terminal()
         maquinas_choice = input(
-            "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Hashes\n5. Atrás\n\nIntroduce tu opción: ")
+            "===== Máquinas =====\n1. Cifrados Clásicos\n2. Cifrado Simétricos\n3. Cifrados Asimétricos\n4. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if maquinas_choice == "1":
             maquinas_cifrados_clasicos()
@@ -26,8 +26,6 @@ def maquinas_menu():
         elif maquinas_choice == "3":
             maquinas_cifrados_asimetricos()
         elif maquinas_choice == "4":
-            pass
-        elif maquinas_choice == "5":
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
