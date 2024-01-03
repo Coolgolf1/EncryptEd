@@ -29,7 +29,8 @@ def lecciones_introduccion():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
+    input(f"\nPerfecto, {
+          name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -127,7 +128,8 @@ def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
-    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
+    input(f"\n¡{
+          name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['lecciones']['clasicos']['vigenere']['historia'])
@@ -277,9 +279,9 @@ def lecciones_DES_cipher():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n 
-Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n 
-Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n 
+    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n
+Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n
+Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n
 ¡Descubramos juntos cómo este algoritmo clásico transformó el mundo de la seguridad digital!""")
     input("Pulsa enter para continuar")
     clear_terminal()
@@ -378,7 +380,7 @@ def lecciones_RSA_cipher():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n 
+    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n
 Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad en el vasto mundo de Internet.""")
     input("Pulsa enter para continuar")
     clear_terminal()
@@ -471,8 +473,8 @@ def lecciones_ECC_cipher():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n 
-Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n 
+    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n
+Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n
 Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para crear un sistema criptográfico eficiente y poderoso.""")
     input("Pulsa enter para continuar")
     clear_terminal()
