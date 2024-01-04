@@ -49,6 +49,7 @@ def retos_menu():
 
 
 def el_codigo_del_cesar():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_codigo_del_cesar'])
@@ -73,6 +74,7 @@ Prepárate para más desafíos en el mundo de los códigos secretos.""")
 
 
 def el_secreto_de_la_relatividad():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_secreto_de_la_relatividad'])
@@ -97,6 +99,7 @@ Sigue adelante para descubrir más secretos encriptados.""")
 
 
 def mensajes_ocultos_en_la_via_ferrea():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['mensajes_ocultos_en_la_via_ferrea'])
@@ -121,6 +124,7 @@ Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptogra
 
 
 def el_misterio_del_cifrado_aes():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_misterio_del_cifrado_aes'])
@@ -144,6 +148,7 @@ Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maes
 
 
 def descifrando_el_codigo_bancario():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['descifrando_el_codigo_bancario'])
@@ -201,6 +206,7 @@ def RSA_cipher_reto_mision_diplomatica():
 
 
 def la_mision_diplomatica_cifrada():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['la_mision_diplomatica_cifrada'])
@@ -297,6 +303,7 @@ def ECC_cipher_reto_estelar():
 
 
 def el_codigo_estelar():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_codigo_estelar'])
@@ -351,6 +358,7 @@ Tu habilidad para navegar por estas sofisticadas técnicas criptográficas te co
 
 
 def el_legado_de_turing():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_legado_de_turing'])
@@ -403,6 +411,7 @@ Tu habilidad para combinar la historia de la criptografía con técnicas moderna
 
 
 def el_enigma_de_la_esfinge():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_enigma_de_la_esfinge'])
@@ -433,7 +442,7 @@ def el_enigma_de_la_esfinge():
         count = 0
         while count < 2:
             opcion = input(
-                "1. DES\n2. Vigènere3. Ninguno\n\nElige que cifrado quieres usar: ")
+                "1. DES\n2. Vigènere\n3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 DES_cipher()
             elif opcion == "2":
@@ -447,14 +456,15 @@ def el_enigma_de_la_esfinge():
         respuesta = input("\nIntroduce el mensaje descifrado: ")
 
     if not cansado:
-        print("""Has resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
-Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.""")
+        print("""\nHas resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
+Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.\n""")
     else:
         print("¡Inténtalo en otro momento!")
     input("Pulsa enter para continuar.")
 
 
 def el_secreto_de_la_atlantida():
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_secreto_de_la_atlantida']['reto'])
@@ -462,7 +472,7 @@ def el_secreto_de_la_atlantida():
     count = 0
     while count < 5:
         opcion = input(
-            "1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Atrás\n\nElige que cifrado quieres usar: ")
+            "1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             rail_fence_cipher()
         elif opcion == "2":
@@ -480,7 +490,7 @@ def el_secreto_de_la_atlantida():
             count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "en las profundidades del oceano, las ruinas de la atlantida esperan ser descubiertas, ocultando sabiduria de un pasado remoto.":
+    while respuesta != "en las profundidades del océano, las ruinas de la atlántida esperan ser descubiertas, ocultando sabiduría de un pasado remoto.":
         input("El mensaje no ha sido descifrado correctamente.")
         cansado = funcion_cansado()
         if cansado:
@@ -511,11 +521,11 @@ def el_secreto_de_la_atlantida():
         respuesta = input("\nIntroduce el mensaje descifrado: ")
 
     if not cansado:
-        print("""¡Felicidades! Has revelado el Secreto de la Atlántida, combinando tu pasión por la historia antigua con una maestría en criptografía. 
-Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento que ha permanecido oculto durante milenios.\n\n""")
         f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
         name = f.read()
         f.close()
+        print(f"""¡Felicidades, {name}! Has revelado el Secreto de la Atlántida, combinando tu pasión por la historia antigua con una maestría en criptografía. 
+Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento que ha permanecido oculto durante milenios.\n\n""")
         print(data['retos']['el_secreto_de_la_atlantida']['enhorabuena'])
 
     else:
