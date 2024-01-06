@@ -518,6 +518,7 @@ def RSA_cipher():
         input("Pulsa enter para continuar.")
     except:
         print("Has introducido algún dato de forma incorrecta.")
+        input("Pulsa enter para continuar.")
 
 
 def guardar_en_archivo(nombre_archivo, datos):

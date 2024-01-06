@@ -33,7 +33,7 @@ Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada
             "¿Qué cifrado quieres mirar?\n1. Animaciones\n2. AES\n3. DES\n4. RSA\n5. ECC\n6. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if links_choice == "1":
-            print("CrypTool (Aprende Visualmente): https://www.cryptool.org/en/cto/")
+            print("\nCrypTool (Aprende Visualmente): https://www.cryptool.org/en/cto/")
             input()
         elif links_choice == "2":
             print(
@@ -47,7 +47,7 @@ Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada
                 "\nCryptoHack RSA (INTERMEDIO): https://cryptohack.org/courses/public-key/")
             input()
         elif links_choice == "5":
-            print("\CryptoHack ECC (DIFÍCIL): https://cryptohack.org/courses/elliptic/")
+            print("\nCryptoHack ECC (DIFÍCIL): https://cryptohack.org/courses/elliptic/")
             input()
         elif links_choice == "6":
             return
