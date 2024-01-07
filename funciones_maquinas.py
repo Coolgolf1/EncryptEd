@@ -489,7 +489,7 @@ def DES_cipher_process(plaintext: str, DES_key: str, modo: str) -> str:
     Por último, genera el texto cifrado y lo devuelve en forma de bytes.
 
     En modo desencriptar: recoge el vector "iv" y reproduce el proceso de encriptar pero de forma inversa para llegar al mensaje desencriptado.
-    
+
 
     Args:
         plaintext (str): El texto introducido por el usuario.
@@ -549,7 +549,7 @@ def DES_cipher():
     input("Pulsa enter para continuar.")
 
 
-def generar_RSA_keys() -> bytes :
+def generar_RSA_keys() -> bytes:
     """Genera las llaves para el cifrado RSA.
 
     Returns:
