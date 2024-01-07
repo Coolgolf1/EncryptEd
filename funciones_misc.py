@@ -1,8 +1,9 @@
 import os
 
 
-# Esta función limpia la terminal por estética
 def clear_terminal():
+    """Limpia la terminal por estética e imprime el título principal del juego.
+    """
     os.system("cls")
     print("""\n\n             _|_|_|_|                                                      _|      _|_|_|_|        _|  
              _|        _|_|_|      _|_|_|  _|  _|_|  _|    _|  _|_|_|    _|_|_|_|  _|          _|_|_|  
@@ -13,7 +14,12 @@ def clear_terminal():
                                                          _|_|  _|   \n""")
 
 
-def get_name():
+def get_name() -> str:
+    """Le pide el nombre al usuario y hace error handling y pone un buffer para que no se pueda hacer un buffer overflow al programa.
+
+    Returns:
+        str: Devuelve el nombre capitalizado para luego guardarlo en un archivo y poder usarlo en cualquier momento necesario.
+    """
     name = str(input("¡Bienvenido a EncryptEd!\n\n¿Cómo te llamas? "))
     while len(name) > 12:
         print("Error. Nombre demasiado largo.")
@@ -24,6 +30,8 @@ def get_name():
 
 
 def sigue_aprendiendo():
+    """Muestra un menú con links para seguir aprendiendo.
+    """
     links_choice = 0
     while links_choice != "6":
         clear_terminal()
@@ -56,13 +64,20 @@ Por ello, recomiendo, que si quieres aprender el funcionamiento completo de cada
 
 
 def exit_programa():
+    """Maneja la salida del programa y el código de salida. 
+    """
     os.remove(".\\temp\\nombre.txt")
     print("Saliendo del programa...")
     print("\n¡Esperamos verte pronto!\n")
     exit(0)
 
 
-def funcion_cansado():
+def funcion_cansado() -> bool:
+    """Pregunta al usuario si quiere seguir con el reto en el que está o no.
+
+    Returns:
+        bool: Devuelve si el usuario está "cansado" de hacer el reto para parar de hacerlo.
+    """
     cansado = False
     cansado_input = input("¿Quieres continuar? (S/N) ").upper()
     if cansado_input == "N":

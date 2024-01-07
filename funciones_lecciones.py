@@ -5,6 +5,8 @@ import json
 
 
 def lecciones_menu():
+    """En este menú imprimo las lecciones y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_choice = ""
     while lecciones_choice != "5":
         clear_terminal()
@@ -26,6 +28,8 @@ def lecciones_menu():
 
 
 def lecciones_introduccion():
+    """LLamo a los archivos json de la introducción, la primera lección.
+    """
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
@@ -46,6 +50,8 @@ def lecciones_introduccion():
 
 
 def lecciones_cifrados_clasicos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados clásicos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_clasicos_choice = ""
     while lecciones_cifrados_clasicos_choice != "4":
         clear_terminal()
@@ -65,6 +71,8 @@ def lecciones_cifrados_clasicos():
 
 
 def lecciones_caesar_cipher():
+    """LLamo a los archivos json de la lección del cifrado césar y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -124,6 +132,8 @@ def lecciones_caesar_cipher():
 
 
 def lecciones_vigenere_cipher():
+    """LLamo a los archivos json de la lección del cifrado vigènere y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -166,6 +176,8 @@ def lecciones_vigenere_cipher():
 
 
 def lecciones_rail_fence_cipher():
+    """LLamo a los archivos json de la lección del cifrado rail fence y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -204,6 +216,8 @@ def lecciones_rail_fence_cipher():
 
 
 def lecciones_cifrados_simetricos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados simétricos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_simetricos_choice = ""
     while lecciones_cifrados_simetricos_choice != "3":
         clear_terminal()
@@ -221,6 +235,8 @@ def lecciones_cifrados_simetricos():
 
 
 def lecciones_AES_cipher():
+    """LLamo a los archivos json de la lección del cifrado AES y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado AES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -274,6 +290,8 @@ Bienvenido al corazón de la seguridad en internet.""")
 
 
 def lecciones_DES_cipher():
+    """LLamo a los archivos json de la lección del cifrado DES y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado DES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -325,6 +343,8 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
 
 
 def lecciones_cifrados_asimetricos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados asimétricos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_asimetricos_choice = ""
     while lecciones_cifrados_asimetricos_choice != "3":
         clear_terminal()
@@ -342,6 +362,10 @@ def lecciones_cifrados_asimetricos():
 
 
 def RSA_cipher_lecciones():
+    """Aquí está la lógica del cifrado RSA y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar RSA.
+    """
     # Printea un menú por estética
     print("=====Cifrado RSA =====")
     # Pide un input de encriptar/desencriptar
@@ -375,6 +399,8 @@ def RSA_cipher_lecciones():
 
 
 def lecciones_RSA_cipher():
+    """LLamo a los archivos json de la lección del cifrado RSA y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado RSA!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -424,6 +450,10 @@ Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad e
 
 
 def ECC_cipher_lecciones():
+    """Aquí está la lógica del cifrado ECC y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar ECC.
+    """
     # Printea un menú por estética
     print("===== Cifrado ECC =====")
     # Pide un input de encriptar/desencriptar
@@ -468,6 +498,8 @@ def ECC_cipher_lecciones():
 
 
 def lecciones_ECC_cipher():
+    """LLamo a los archivos json de la lección del cifrado de curva elíptica y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado ECC!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
