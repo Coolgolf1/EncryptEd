@@ -136,7 +136,7 @@ def caesar_cipher():
     """Esta función maneja los inputs incorrectos para que la función del caesar_cipher_process() no de ningún error.
     """
     # Printea un menú por estética
-    print("=====Cifrado César=====")
+    print("===== Cifrado César =====")
     # Pide un input de encriptar/desencriptar
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Mira que la respuesta al input sea válida
@@ -215,7 +215,7 @@ def vigenere_cipher_process(plaintext: str, vigenere_key: str, modo: str) -> str
 def vigenere_cipher():
     """Admite los inputs y genera las respuestas llamando a la funcion vigenere_cipher_process(), e imprime el mensaje encriptado/desencriptado.
     """
-    print("=====Cifrado Vigènere=====")
+    print("===== Cifrado Vigènere =====")
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Hace un check y valida que la opción elegida es correcta
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":
@@ -347,7 +347,7 @@ def rail_fence_cipher_process(plaintext: str, rails: int, modo: str) -> str:
 def rail_fence_cipher():
     """Admite los inputs y genera las respuestas llamando a la funcion rail_fence_cipher_process(), e imprime el mensaje encriptado/desencriptado.
     """
-    print("=====Cifrado Rail Fence=====")
+    print("===== Cifrado Rail Fence =====")
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     while modo not in "ED" or modo == "" or modo in " " or modo == "ED":  # Mira que el input para modo sea válido
         print("Error")
@@ -450,7 +450,7 @@ def AES_cipher():
     """Admite los inputs y genera las respuestas llamando a la funcion AES_cipher_process(), e imprime el mensaje encriptado/desencriptado.
     """
     # Printea un menú por estética
-    print("=====Cifrado AES-256 =====")
+    print("===== Cifrado AES-256 =====")
     # Pide un input de encriptar/desencriptar
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Mira que la respuesta al input sea válida
@@ -525,7 +525,7 @@ def DES_cipher():
     """Admite los inputs y genera las respuestas llamando a la funcion DES_cipher_process(), e imprime el mensaje encriptado/desencriptado.
     """
     # Printea un menú por estética
-    print("=====Cifrado DES =====")
+    print("===== Cifrado DES =====")
     # Pide un input de encriptar/desencriptar
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Mira que la respuesta al input sea válida
@@ -611,7 +611,7 @@ def RSA_cipher():
     """Admite los inputs y genera las respuestas llamando a la funcion RSA_cipher_process(), e imprime el mensaje encriptado/desencriptado.
     """
     # Printea un menú por estética
-    print("=====Cifrado RSA =====")
+    print("===== Cifrado RSA =====")
     # Pide un input de encriptar/desencriptar
     modo = input("Elige encriptar o desencriptar (E/D): ").upper()
     # Mira que la respuesta al input sea válida
