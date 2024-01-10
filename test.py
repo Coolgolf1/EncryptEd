@@ -5,5 +5,3 @@ print("======= Test.py ======= ")
 f.caesar_cipher()
 
 f.rail_fence_cipher()
-
-
