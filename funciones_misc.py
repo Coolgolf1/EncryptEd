@@ -57,8 +57,7 @@ def sigue_aprendiendo():
 
 def exit_programa():
     os.remove(".\\temp\\nombre.txt")
-    print("Saliendo del programa...")
-    print("\n¡Esperamos verte pronto!\n")
+    print("Saliendo del programa...\n")
     exit(0)
 
 

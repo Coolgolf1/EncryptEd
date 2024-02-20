@@ -457,7 +457,7 @@ Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te 
 def el_secreto_de_la_atlantida():
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
-    print(data['retos']['el_secreto_de_la_atlantida'])
+    print(data['retos']['el_secreto_de_la_atlantida']['reto'])
     print()
     count = 0
     while count < 5:
