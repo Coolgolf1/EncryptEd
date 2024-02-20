@@ -4,6 +4,8 @@ import json
 
 
 def retos_menu():
+    """En este menú imprimo el nombre de los retos y le doy la opción al usuario de elegir cuál quiere hacer.
+    """
     retos_choice = ""
     while retos_choice != "11":
         clear_terminal()
@@ -49,6 +51,10 @@ def retos_menu():
 
 
 def el_codigo_del_cesar():
+    """Imprime mediante las diferentes partes del json el reto del código del césar y chequea que el input sea el mensaje descifrado correctamente.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_codigo_del_cesar'])
@@ -73,6 +79,10 @@ Prepárate para más desafíos en el mundo de los códigos secretos.""")
 
 
 def el_secreto_de_la_relatividad():
+    """Imprime mediante las diferentes partes del json el reto del secreto de la relatividad y chequea que el input sea el mensaje descifrado correctamente.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_secreto_de_la_relatividad'])
@@ -97,6 +107,10 @@ Sigue adelante para descubrir más secretos encriptados.""")
 
 
 def mensajes_ocultos_en_la_via_ferrea():
+    """Imprime mediante las diferentes partes del json el reto de los mensajes ocultos en la vía férrea y chequea que el input sea el mensaje descifrado correctamente.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['mensajes_ocultos_en_la_via_ferrea'])
@@ -121,6 +135,10 @@ Tu agudeza para descifrar códigos te llevará lejos en el mundo de la criptogra
 
 
 def el_misterio_del_cifrado_aes():
+    """Imprime mediante las diferentes partes del json el reto del misterio del cifrado aes y chequea que el input sea el mensaje descifrado correctamente.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_misterio_del_cifrado_aes'])
@@ -144,6 +162,10 @@ Tus habilidades en descifrar el complejo cifrado AES demuestran que eres un maes
 
 
 def descifrando_el_codigo_bancario():
+    """Imprime mediante las diferentes partes del json el reto descifrando el código bancario y chequea que el input sea el mensaje descifrado correctamente.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['descifrando_el_codigo_bancario'])
@@ -167,6 +189,10 @@ Tu habilidad para conectar los puntos y descubrir la clave oculta en los detalle
 
 
 def RSA_cipher_reto_mision_diplomatica():
+    """Aquí está la lógica del cifrado RSA y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar RSA.
+    """
     # Printea un menú por estética
     print("=====Cifrado RSA =====")
     # Pide un input de encriptar/desencriptar
@@ -201,6 +227,11 @@ def RSA_cipher_reto_mision_diplomatica():
 
 
 def la_mision_diplomatica_cifrada():
+    """Imprime mediante las diferentes partes del json el reto de la misión diplomática cifrada y chequea que el input sea el mensaje descifrado correctamente.
+    Este reto incluye un menú para elegir que cifrado usar, por si tiene que usarlos en un orden concreto.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['la_mision_diplomatica_cifrada'])
@@ -253,6 +284,10 @@ Tu destreza criptográfica ha demostrado ser esencial para el éxito de misiones
 
 
 def ECC_cipher_reto_estelar():
+    """Aquí está la lógica del cifrado ECC y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar ECC.
+    """
     # Printea un menú por estética
     print("===== Cifrado ECC =====")
     # Pide un input de encriptar/desencriptar
@@ -297,6 +332,11 @@ def ECC_cipher_reto_estelar():
 
 
 def el_codigo_estelar():
+    """Imprime mediante las diferentes partes del json el reto del código estelar y chequea que el input sea el mensaje descifrado correctamente.
+    Este reto incluye un menú para elegir que cifrado usar, por si tiene que usarlos en un orden concreto.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_codigo_estelar'])
@@ -351,6 +391,11 @@ Tu habilidad para navegar por estas sofisticadas técnicas criptográficas te co
 
 
 def el_legado_de_turing():
+    """Imprime mediante las diferentes partes del json el reto del legado de Turing y chequea que el input sea el mensaje descifrado correctamente.
+    Este reto incluye un menú para elegir que cifrado usar, por si tiene que usarlos en un orden concreto.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_legado_de_turing'])
@@ -403,6 +448,11 @@ Tu habilidad para combinar la historia de la criptografía con técnicas moderna
 
 
 def el_enigma_de_la_esfinge():
+    """Imprime mediante las diferentes partes del json el reto del enigma de la esfinge y chequea que el input sea el mensaje descifrado correctamente.
+    Este reto incluye un menú para elegir que cifrado usar, por si tiene que usarlos en un orden concreto.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_enigma_de_la_esfinge'])
@@ -433,7 +483,7 @@ def el_enigma_de_la_esfinge():
         count = 0
         while count < 2:
             opcion = input(
-                "1. DES\n2. Vigènere3. Ninguno\n\nElige que cifrado quieres usar: ")
+                "1. DES\n2. Vigènere\n3. Ninguno\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
                 DES_cipher()
             elif opcion == "2":
@@ -447,14 +497,19 @@ def el_enigma_de_la_esfinge():
         respuesta = input("\nIntroduce el mensaje descifrado: ")
 
     if not cansado:
-        print("""Has resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
-Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.""")
+        print("""\nHas resuelto el enigma de la Esfinge y descifrado el mensaje oculto. 
+Al igual que los antiguos sabios, tu conocimiento y habilidad criptográfica te han llevado a la verdad.\n""")
     else:
         print("¡Inténtalo en otro momento!")
     input("Pulsa enter para continuar.")
 
 
 def el_secreto_de_la_atlantida():
+    """Imprime mediante las diferentes partes del json el reto del secreto de la Atlantida y chequea que el input sea el mensaje descifrado correctamente.
+    Este reto incluye un menú para elegir que cifrado usar, por si tiene que usarlos en un orden concreto.
+    También tiene una variable "cansado" en la que si el usuario quiere dejar de hacer el reto puede elegirlo y el reto se terminará.
+    """
+    cansado = False
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['retos']['el_secreto_de_la_atlantida']['reto'])
@@ -462,7 +517,7 @@ def el_secreto_de_la_atlantida():
     count = 0
     while count < 5:
         opcion = input(
-            "1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Atrás\n\nElige que cifrado quieres usar: ")
+            "1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Ninguno\n\nElige que cifrado quieres usar: ")
         if opcion == "1":
             rail_fence_cipher()
         elif opcion == "2":
@@ -480,7 +535,7 @@ def el_secreto_de_la_atlantida():
             count -= 1
         count += 1
     respuesta = input("\nIntroduce el mensaje descifrado: ")
-    while respuesta != "en las profundidades del oceano, las ruinas de la atlantida esperan ser descubiertas, ocultando sabiduria de un pasado remoto.":
+    while respuesta != "en las profundidades del océano, las ruinas de la atlántida esperan ser descubiertas, ocultando sabiduría de un pasado remoto.":
         input("El mensaje no ha sido descifrado correctamente.")
         cansado = funcion_cansado()
         if cansado:
@@ -489,7 +544,7 @@ def el_secreto_de_la_atlantida():
         print(data['retos']['el_secreto_de_la_atlantida']['reto'])
         print()
         count = 0
-        while count < 5:
+        while count < 6:
             opcion = input(
                 "1. Rail Fence\n2. Vigènere\n3. César\n4. DES\n5. AES\n6. Atrás\n\nElige que cifrado quieres usar: ")
             if opcion == "1":
@@ -511,11 +566,11 @@ def el_secreto_de_la_atlantida():
         respuesta = input("\nIntroduce el mensaje descifrado: ")
 
     if not cansado:
-        print("""¡Felicidades! Has revelado el Secreto de la Atlántida, combinando tu pasión por la historia antigua con una maestría en criptografía. 
-Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento que ha permanecido oculto durante milenios.\n\n""")
         f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
         name = f.read()
         f.close()
+        print(f"""¡Felicidades, {name}! Has revelado el Secreto de la Atlántida, combinando tu pasión por la historia antigua con una maestría en criptografía.
+Tu viaje a través de los misterios del pasado te ha llevado a un descubrimiento que ha permanecido oculto durante milenios.\n\n""")
         print(data['retos']['el_secreto_de_la_atlantida']['enhorabuena'])
 
     else:

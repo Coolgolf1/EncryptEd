@@ -5,11 +5,13 @@ import json
 
 
 def lecciones_menu():
+    """En este menú imprimo las lecciones y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_choice = ""
-    while lecciones_choice != "6":
+    while lecciones_choice != "5":
         clear_terminal()
         lecciones_choice = input(
-            "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Hashes\n6. Atrás\n\nIntroduce tu opción: ")
+            "===== Lecciones =====\n1. Introducción\n2. Cifrados Clásicos\n3. Cifrados Simétricos\n4. Cifrados Asimétricos\n5. Atrás\n\nIntroduce tu opción: ")
         clear_terminal()
         if lecciones_choice == "1":
             lecciones_introduccion()
@@ -20,18 +22,19 @@ def lecciones_menu():
         elif lecciones_choice == "4":
             lecciones_cifrados_asimetricos()
         elif lecciones_choice == "5":
-            pass
-        elif lecciones_choice == "6":
             return
         else:
             input("Error. No es una opción correcta. Pulsa enter para continuar.")
 
 
 def lecciones_introduccion():
+    """LLamo a los archivos json de la introducción, la primera lección.
+    """
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
+    input(f"\nPerfecto, {
+          name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -47,6 +50,8 @@ def lecciones_introduccion():
 
 
 def lecciones_cifrados_clasicos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados clásicos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_clasicos_choice = ""
     while lecciones_cifrados_clasicos_choice != "4":
         clear_terminal()
@@ -66,6 +71,8 @@ def lecciones_cifrados_clasicos():
 
 
 def lecciones_caesar_cipher():
+    """LLamo a los archivos json de la lección del cifrado césar y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
@@ -125,11 +132,14 @@ def lecciones_caesar_cipher():
 
 
 def lecciones_vigenere_cipher():
+    """LLamo a los archivos json de la lección del cifrado vigènere y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
-    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
+    input(f"\n¡{
+          name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['lecciones']['clasicos']['vigenere']['historia'])
@@ -166,6 +176,8 @@ def lecciones_vigenere_cipher():
 
 
 def lecciones_rail_fence_cipher():
+    """LLamo a los archivos json de la lección del cifrado rail fence y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado Rail Fence!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -204,6 +216,8 @@ def lecciones_rail_fence_cipher():
 
 
 def lecciones_cifrados_simetricos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados simétricos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_simetricos_choice = ""
     while lecciones_cifrados_simetricos_choice != "3":
         clear_terminal()
@@ -221,6 +235,8 @@ def lecciones_cifrados_simetricos():
 
 
 def lecciones_AES_cipher():
+    """LLamo a los archivos json de la lección del cifrado AES y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado AES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
@@ -274,14 +290,16 @@ Bienvenido al corazón de la seguridad en internet.""")
 
 
 def lecciones_DES_cipher():
+    """LLamo a los archivos json de la lección del cifrado DES y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado DES!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n 
-Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n 
-Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n 
+    print(f"""\n¡{name}, prepárate para explorar el Data Encryption Standard (DES), el precursor de la criptografía moderna!\n
+Aunque hoy ha sido superado por tecnologías más avanzadas, DES jugó un papel crucial en la historia del cifrado digital.\n
+Fue el estándar de oro para la seguridad de datos durante décadas y sentó las bases para los sistemas de cifrado que usamos hoy en día.\n
 ¡Descubramos juntos cómo este algoritmo clásico transformó el mundo de la seguridad digital!""")
     input("Pulsa enter para continuar")
     clear_terminal()
@@ -325,6 +343,8 @@ Fue el estándar de oro para la seguridad de datos durante décadas y sentó las
 
 
 def lecciones_cifrados_asimetricos():
+    """En este menú imprimo las lecciones en la categoría de los cifrados asimétricos y doy la opción al usuario para elegir cuál quiere hacer.
+    """
     lecciones_cifrados_asimetricos_choice = ""
     while lecciones_cifrados_asimetricos_choice != "3":
         clear_terminal()
@@ -342,6 +362,10 @@ def lecciones_cifrados_asimetricos():
 
 
 def RSA_cipher_lecciones():
+    """Aquí está la lógica del cifrado RSA y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar RSA.
+    """
     # Printea un menú por estética
     print("=====Cifrado RSA =====")
     # Pide un input de encriptar/desencriptar
@@ -375,12 +399,14 @@ def RSA_cipher_lecciones():
 
 
 def lecciones_RSA_cipher():
+    """LLamo a los archivos json de la lección del cifrado RSA y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado RSA!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n 
+    print(f"""\n¡{name}, explora el mundo de RSA, el pilar de la criptografía asimétrica que protege las comunicaciones digitales!\n
 Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad en el vasto mundo de Internet.""")
     input("Pulsa enter para continuar")
     clear_terminal()
@@ -424,6 +450,10 @@ Descubre cómo este algoritmo esencial asegura la privacidad y la autenticidad e
 
 
 def ECC_cipher_lecciones():
+    """Aquí está la lógica del cifrado ECC y las llaves guardadas en archivos para poder descifrar correctamente el mensaje que se le da al usuario por pantalla.
+    Esto es necesario ya que cada vez que se genera un mensaje va ligado a sus llaves, y si las llaves cambian, este reto no se podría completar, por lo que,
+    esas llaves están guardadas en un archivo diferente al que usa la máquina de encriptar ECC.
+    """
     # Printea un menú por estética
     print("===== Cifrado ECC =====")
     # Pide un input de encriptar/desencriptar
@@ -468,13 +498,15 @@ def ECC_cipher_lecciones():
 
 
 def lecciones_ECC_cipher():
+    """LLamo a los archivos json de la lección del cifrado de curva elíptica y en la parte de los retos hago un check del input para ver si el mensaje ha sido descifrado correctamente.
+    """
     cansado = False
     print("¡Bienvenido A La Lección Del Cifrado ECC!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     f.close()
-    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n 
-Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n 
+    print(f"""\n¡{name}, sumérgete en el elegante mundo de ECC, la criptografía basada en curvas elípticas!\n
+Esta tecnología moderna ofrece seguridad robusta con claves más cortas, siendo esencial para proteger comunicaciones móviles y transacciones en línea.\n
 Descubre cómo ECC combina matemáticas avanzadas con seguridad digital para crear un sistema criptográfico eficiente y poderoso.""")
     input("Pulsa enter para continuar")
     clear_terminal()

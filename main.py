@@ -5,6 +5,8 @@ from funciones_retos import *
 
 
 def main_menu():
+    """Esta función imprime el menú principal y toma valores númericos para elegir a que otro menú quiere navegar el usuario.
+    """
     main_menu_choice = ""
     while main_menu_choice != "5":
         clear_terminal()
