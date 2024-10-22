@@ -631,7 +631,6 @@ def RSA_cipher():
                 guardar_llave_en_archivo(RSA_public_key, "public_key.pem")
                 print("Llaves guardadas en \"private_key.pem\" y \"public_key.pem\".")
             RSA_public_key = cargar_llave_de_archivo("public_key.pem")
-            print(type(RSA_public_key))
             encrypted_text = RSA_cipher_process(plaintext, RSA_public_key, "E")
             print(
                 f"\nEl texto encriptado es: \n{encrypted_text}\n\nCifrado RSA\n\n")
