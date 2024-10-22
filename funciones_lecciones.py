@@ -33,8 +33,7 @@ def lecciones_introduccion():
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
     print("¡Bienvenido A La Lección Introductoria De EncryptEd!")
-    input(f"\nPerfecto, {
-          name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
+    input(f"\nPerfecto, {name}! Vamos a empezar con una introducción de como funciona el programa. Después, veremos los conocimientos básicos de la criptografía que debes saber.")
     clear_terminal()
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -138,8 +137,7 @@ def lecciones_vigenere_cipher():
     print("¡Bienvenido A La Lección Del Cifrado Vigènere!")
     f = open(".\\temp\\nombre.txt", "r", encoding="utf-8")
     name = f.read()
-    input(f"\n¡{
-          name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
+    input(f"\n¡{name}, esta es la segunda lección! Aprenderás sobre el llamado \"cifrado indescifrable\".\n")
     with open("textos.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     print(data['lecciones']['clasicos']['vigenere']['historia'])
